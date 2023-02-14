@@ -1,13 +1,25 @@
-import { useRef, useState, useEffect } from "react";
-import axios from "axios";
+import { useRef } from "react";
 
 import classes from "./LoginPage.module.css";
 
+import { LoginApi } from "../api/LoginApi";
+import { loginState } from "../store/Atom";
+import {useRecoilState} from "recoil";
+
+
 function LoginPage() {
+  console.log("LoginPage 모듈 실행>>");
+  //로그인 상태 확인 > isLogin = true 이면 해당페이지 접근 불가
+  const [isLogin, setIsLogin] = useRecoilState(loginState);
+
+  if (isLogin) {
+    console.log("로그인중");
+  } else {
+    console.log("로그인 안됨");
+  }
+
   const idInputRef = useRef(); //useRef 실행 -> 해당 객체를 통해 <input type="text" required id="title" ref={titleInputRef}/> element로 접근가능
   const passwordInputRef = useRef();
-
-  const [loginState, setLoginState] = useState(false); //로그인안함 false
 
   //login 실행
   const login = (event) => {
@@ -22,26 +34,11 @@ function LoginPage() {
       password: inputPassword,
     };
 
+    console.log("입력받은 ID : " + inputId + ", PW : " + inputPassword);
     // 서버로 POST 요청 전송
-    axios({
-      method: "post",
-      url: "/login",
-      baseURL: "http://localhost:8080",
-      data: {
-        id: inputId,
-        password: inputPassword,
-      },
-    })
-      .then(function (response) {
-        console.log(response);
-        if (response.status === 200) {
-          console.log("로그인성공");
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+    LoginApi(user);
+
+  }
 
   return (
     <section>
