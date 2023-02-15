@@ -10,6 +10,7 @@ const getCookie = (name: String) => {
 export const customAxios: AxiosInstance = axios.create({
     baseURL: "http://localhost:8080", // 기본 서버 주소 입력
     withCredentials: true,
+
 /*    headers: {
         access_token: cookies.get('access_token'),
     },*/
