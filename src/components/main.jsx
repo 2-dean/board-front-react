@@ -1,6 +1,10 @@
-import {useNavigate} from "react-router";
+import { useNavigate } from "react-router";
+import { useRecoilValue } from "recoil";
+import { loginState } from "../store/Atom";
 
 const MainPage = () => {
+    const isLogin = useRecoilValue(loginState);
+    console.log("[MainPage] isLogin : " + isLogin);
 
     const navigate = useNavigate();
 
@@ -9,7 +13,7 @@ const MainPage = () => {
             <h1>main Page</h1>
             <span>안녕하세용 로그인하세요</span>
             <div>
-                <button onClick={navigate("/login")}>로그인하기</button>
+                <button onClick={() => navigate("/login")}>로그인하기</button>
             </div>
         </div>
     );

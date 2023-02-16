@@ -1,15 +1,11 @@
 import {customAxios} from "./axiosProvider";
 
+export function UserApi(props) {
 
-// 지금 사용안함
-export function LoginApi(props) {
-
-    customAxios.post("/login", props)
+    customAxios.post("/users", props)
         .then(function (response) {
-
             console.log(response);
             alert(response);
-
         })
         .catch(function (error) {
             alert(error);
