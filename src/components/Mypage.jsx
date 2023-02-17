@@ -16,13 +16,7 @@ const Mypage = () => {
     // 로그인한 사용자 정보 가져오기 userState 에 사용자 정보 매핑
 
     console.log("user 정보 가져오기 요청 id : " + loginUser.id);
-    setLoginUser({
-        id: null,
-        name: null,
-        isLogin: false,
-    })
     UserApi(loginUser);
-
     console.log("user : " + loginUser.id, + ", " + loginUser.isLogin +", " + loginUser.name)
 
     if(accessToken ===  undefined || loginUser.isLogin === false){
@@ -31,9 +25,8 @@ const Mypage = () => {
         userLogout();
         navigate("/")
     } else {
-        console.log("accessToken : " + accessToken);
-    }
 
+    }
 
     const logout = (event) => {
         event.preventDefault();

@@ -12,13 +12,17 @@ export function UserApi(props) {
         customAxios.post("/users", props)
             .then(function (response) {
                 console.log(response);
-                setLoginUser(response.data)
+                setLoginUser({
+                    id: response.data.id,
+                    name: response.data.name,
+                    isLogin: true,
+                })
 
-                console.log("setLoginUser : " + loginUser);
+                console.log("userApi end " );
             })
             .catch(function (error) {
                 alert(error);
             });
-    });
+    }, []);
 
 }

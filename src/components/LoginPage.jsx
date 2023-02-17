@@ -21,12 +21,12 @@ const LoginPage = () => {
     console.log("[ LoginPage ] accessToken : " + accessToken);
     console.log("[ LoginPage ] isLogin : " + loginUser.isLogin);
 
-    useEffect(() => {
+    /*useEffect(() => {
         if(loginUser.isLogin === true || accessToken !== null) {
             alert("잘못된 접근입니다. [로그인 중  id : " + loginUser.id + " ] mypage 로 이동합니다.")
             navigate("/my-page")
         }
-    }, []);
+    }, []);*/
 
 
     const idInputRef = useRef(); //useRef 실행 -> 해당 객체를 통해 <input type="text" required id="title" ref={titleInputRef}/> element로 접근가능
