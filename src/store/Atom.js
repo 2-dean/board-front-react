@@ -15,10 +15,13 @@ export const loginState = atom({
 );
 
 
-export const userState = atom(
-    {
+export const userState = atom({
         key: 'userState',
-        default: null,
+        default: {
+            id: null,
+            name: null,
+            isLogin: false,
+        },
         effects_UNSTABLE: [persistAtom],
     }
 );

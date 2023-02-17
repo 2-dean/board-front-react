@@ -6,10 +6,8 @@ export function LoginApi(props) {
 
     customAxios.post("/login", props)
         .then(function (response) {
-
+            console.log("/login axios 시작");
             console.log(response);
-            alert(response);
-
         })
         .catch(function (error) {
             alert(error);

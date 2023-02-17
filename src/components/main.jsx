@@ -3,8 +3,6 @@ import { useRecoilValue } from "recoil";
 import { loginState } from "../store/Atom";
 
 const MainPage = () => {
-    const isLogin = useRecoilValue(loginState);
-    console.log("[MainPage] isLogin : " + isLogin);
 
     const navigate = useNavigate();
 

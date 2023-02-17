@@ -1,26 +1,39 @@
-import {useRecoilState, useRecoilValue} from "recoil";
+import {useRecoilState, useRecoilValue, useResetRecoilState} from "recoil";
 import {loginState, userState} from "../store/Atom";
-import { useNavigate } from "react-router";
-import { LogoutApi } from "../api/LogoutApi";
-import { BoardsApi } from "../api/BoardsApi";
+import {useNavigate} from "react-router";
+import {LogoutApi} from "../api/LogoutApi";
+import {BoardsApi} from "../api/BoardsApi";
 import {UserApi} from "../api/UserApi";
+import {getCookie} from "./getAccessToken";
 
 const Mypage = () => {
-    console.log("Mypage===================================");
-    const [isLogin, setIsLogin]= useRecoilState(loginState);
-    const loginUser = useRecoilValue(userState);
+    console.log("MyPage===================================");
+    const [loginUser, setLoginUser] = useRecoilState(userState);
+    const userLogout = useResetRecoilState(userState);
     const navigate = useNavigate();
+    const accessToken = getCookie("accessToken");
 
-    console.log("user 정보 가져오기 요청 id : " + loginUser)
+    // 로그인한 사용자 정보 가져오기 userState 에 사용자 정보 매핑
+
+    console.log("user 정보 가져오기 요청 id : " + loginUser.id);
+    setLoginUser({
+        id: null,
+        name: null,
+        isLogin: false,
+    })
     UserApi(loginUser);
 
-    console.log("isLogin : " + isLogin);
+    console.log("user : " + loginUser.id, + ", " + loginUser.isLogin +", " + loginUser.name)
 
-    // Todo 로그인된 사용자 정보 가지고오기
-
-    if(isLogin === false) {
-        navigate("/");
+    if(accessToken ===  undefined || loginUser.isLogin === false){
+        alert("[Mypage] access token 없음 > 로그인하세요")
+        // user 상태 초기화
+        userLogout();
+        navigate("/")
+    } else {
+        console.log("accessToken : " + accessToken);
     }
+
 
     const logout = (event) => {
         event.preventDefault();
@@ -29,12 +42,11 @@ const Mypage = () => {
         console.log("[ logoutAPI ] 요청");
         LogoutApi();
 
+        console.log("[ userState ] 초기화");
+        userLogout();
+
         console.log("[ navigate ] 실행")
         navigate("/");
-
-        console.log("isLogin 변경 실행")
-        setIsLogin(false);
-        console.log("isLogin : " + isLogin);
     }
 
     const boards = (event) => {
@@ -50,9 +62,9 @@ const Mypage = () => {
     return (
         <>
             <h1>MyPage</h1>
-            <p>{}님, 안녕하세요!</p>
+            <p> [ {loginUser.name} ] 님, 안녕하세요!</p>
             <div>
-            <button onClick={boards}>게시판 ㄱ</button>
+            <button onClick={boards}>게시판</button>
             </div>
             <div>
                 <button onClick={logout}>logout</button>
