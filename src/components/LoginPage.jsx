@@ -21,12 +21,14 @@ const LoginPage = () => {
     console.log("[ LoginPage ] accessToken : " + accessToken);
     console.log("[ LoginPage ] isLogin : " + loginUser.isLogin);
 
-    /*useEffect(() => {
+
+    useEffect(() => {
         if(loginUser.isLogin === true || accessToken !== null) {
             alert("잘못된 접근입니다. [로그인 중  id : " + loginUser.id + " ] mypage 로 이동합니다.")
             navigate("/my-page")
         }
-    }, []);*/
+    }, []);
+
 
 
     const idInputRef = useRef(); //useRef 실행 -> 해당 객체를 통해 <input type="text" required id="title" ref={titleInputRef}/> element로 접근가능
@@ -64,13 +66,19 @@ const LoginPage = () => {
 
                 // Mypage로 이동
                 navigate("/my-page");
-            }
 
-                if (response.status === 500) {
+
+            }
+            }).catch((response)=>{
+
+                // TODO 백에서 이상하게 넘겨준듯?
+            console.log(response)
+            console.log(response.response.status)
+            console.log(response.response.data)
+            if (response.response.status === 500) {
                 console.log("Password 가 틀립니다.");
                 console.log("isLogin:" + loginUser.isLogin);
             }
-
         });
 
     }

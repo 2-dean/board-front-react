@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router";
-import { useRecoilValue } from "recoil";
-import { loginState } from "../store/Atom";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {loginState, userState} from "../store/Atom";
 
 const MainPage = () => {
+    const loginUser = useRecoilValue(userState);
+
 
     const navigate = useNavigate();
 

@@ -11,14 +11,17 @@ export function UserApi(props) {
     useEffect(() => {
         customAxios.post("/users", props)
             .then(function (response) {
+                console.log("UserApi 시작");
                 console.log(response);
+
+                // 로그인 상태로 설정
                 setLoginUser({
                     id: response.data.id,
                     name: response.data.name,
                     isLogin: true,
                 })
 
-                console.log("userApi end " );
+                console.log("userApi end");
             })
             .catch(function (error) {
                 alert(error);

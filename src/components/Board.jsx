@@ -1,15 +1,22 @@
 import { useRecoilValue } from "recoil";
 import { loginState, userState } from "../store/Atom";
+import {useNavigate} from "react-router";
+import {useEffect} from "react";
 
 const BoardPage = () => {
-    const isLogin= useRecoilValue(loginState);
     const loginUser = useRecoilValue(userState);
+    const navigate = useNavigate();
 
-    //const navigate = useNavigate();
+    useEffect(() => {
+        console.log("Board 컴포넌트 나타남")
+        if(loginUser.isLogin === false) {
+            alert("로그인 정보가 없습니다. 로그인 페이지로 이동")
+            navigate("/login");
+        }
+    }, []);
 
 
-    console.log("[LoginPage] loginUser ID: " + loginUser.id + ", PW: " + loginUser.password + ", isLogin: " + loginUser.isLogin);
-
+    console.log("[LoginPage] loginUser ID: " + loginUser.id + ", NAME: " + loginUser.name + ", isLogin: " + loginUser.isLogin);
 
     return(
         <div>

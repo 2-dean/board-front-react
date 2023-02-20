@@ -1,5 +1,5 @@
 import {useRecoilState, useRecoilValue, useResetRecoilState} from "recoil";
-import {loginState, userState} from "../store/Atom";
+import {userState} from "../store/Atom";
 import {useNavigate} from "react-router";
 import {LogoutApi} from "../api/LogoutApi";
 import {BoardsApi} from "../api/BoardsApi";
@@ -14,18 +14,15 @@ const Mypage = () => {
     const accessToken = getCookie("accessToken");
 
     // 로그인한 사용자 정보 가져오기 userState 에 사용자 정보 매핑
-
-    console.log("user 정보 가져오기 요청 id : " + loginUser.id);
+    console.log("[ MyPage ] user 정보 가져오기 요청 id : " + loginUser.id);
     UserApi(loginUser);
-    console.log("user : " + loginUser.id, + ", " + loginUser.isLogin +", " + loginUser.name)
+    console.log("[ MyPage ] loginUser ID: " + loginUser.id + ", NAME: " + loginUser.name + ", isLogin: " + loginUser.isLogin);
 
-    if(accessToken ===  undefined || loginUser.isLogin === false){
-        alert("[Mypage] access token 없음 > 로그인하세요")
+    if(accessToken ===  undefined){
+        alert("[ Mypage ] access token 없음 > 로그인하세요")
         // user 상태 초기화
         userLogout();
         navigate("/")
-    } else {
-
     }
 
     const logout = (event) => {
@@ -49,7 +46,6 @@ const Mypage = () => {
 
         console.log("[ BoardsApi ] 요청");
         BoardsApi();
-
     }
 
     return (

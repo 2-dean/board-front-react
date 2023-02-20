@@ -6,8 +6,8 @@ export function BoardsApi(props) {
 
     customAxios.get("/boards/1", props)
         .then(function (response) {
+            console.log("BoardsApi 시작");
             console.log(response);
-            alert(response);
         })
         .catch(function (error) {
             alert(error);
