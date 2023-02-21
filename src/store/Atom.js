@@ -7,9 +7,16 @@ import {recoilPersist} from "recoil-persist";
 
 const { persistAtom } = recoilPersist();
 
-export const loginState = atom({
-    key: 'loginState',
-    default: false,
+export const boardList = atom({
+    key: 'boardList',
+    default: {
+        idx: null,
+        title: null,
+        content: null,
+        name: null,
+        saveDate: null,
+        modifyDate: null
+    },
     effects_UNSTABLE: [persistAtom],
     }
 );

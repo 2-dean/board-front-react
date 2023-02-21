@@ -1,10 +1,13 @@
-import { useRecoilValue } from "recoil";
-import { loginState, userState } from "../store/Atom";
+import {useRecoilValue} from "recoil";
+import {userState} from "../store/Atom";
 import {useNavigate} from "react-router";
 import {useEffect} from "react";
 
+import classes from '../style/BoardPage.module.css'
+
 const BoardPage = () => {
     const loginUser = useRecoilValue(userState);
+    const boardList = useRecoilValue(boardList);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -13,13 +16,11 @@ const BoardPage = () => {
             alert("로그인 정보가 없습니다. 로그인 페이지로 이동")
             navigate("/login");
         }
-    }, []);
-
-
+    }, []); // 한번만
     console.log("[LoginPage] loginUser ID: " + loginUser.id + ", NAME: " + loginUser.name + ", isLogin: " + loginUser.isLogin);
 
     return(
-        <div>
+        <div className={classes.container}>
             <h1>게시판 >> 로그인된 사용자만</h1>
             <table>
                 <thead>

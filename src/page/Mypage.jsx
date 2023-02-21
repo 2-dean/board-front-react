@@ -4,7 +4,7 @@ import {useNavigate} from "react-router";
 import {LogoutApi} from "../api/LogoutApi";
 import {BoardsApi} from "../api/BoardsApi";
 import {UserApi} from "../api/UserApi";
-import {getCookie} from "./getAccessToken";
+import {getCookie} from "../components/getAccessToken";
 
 const Mypage = () => {
     console.log("MyPage===================================");

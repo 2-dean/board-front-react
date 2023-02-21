@@ -1,9 +1,9 @@
 import {Route, Routes} from "react-router-dom";
 
-import LoginPage from "./components/LoginPage";
-import Mypage from "./components/Mypage";
-import MainPage from "./components/main";
-import BoardPage from "./components/Board";
+import LoginPage from "./page/LoginPage";
+import Mypage from "./page/Mypage";
+import MainPage from "./page/MainPage";
+import BoardPage from "./page/BoardPage";
 import {RecoilRoot} from "recoil";
 
 

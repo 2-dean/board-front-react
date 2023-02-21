@@ -1,12 +1,12 @@
 import {useEffect, useRef} from "react";
 
-import classes from "./LoginPage.module.css";
+import classes from "../style/LoginPage.module.css";
 import {userState} from "../store/Atom";
 import {useRecoilState} from "recoil";
 import {customAxios} from "../api/axiosProvider";
 
 import {useNavigate} from "react-router";
-import {getCookie} from "./getAccessToken";
+import {getCookie} from "../components/getAccessToken";
 
 
 const LoginPage = () => {
