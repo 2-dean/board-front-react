@@ -1,39 +1,34 @@
 import {customAxios} from "./axiosProvider";
-import {useRecoilState, useSetRecoilState} from "recoil";
+import {useRecoilState} from "recoil";
 import {boardList} from "../store/Atom";
-import BoardPage from "../page/BoardPage";
+import {useEffect} from "react";
 
 
-// 지금 사용안함
+// Back 에서 데이터 받아온 다음에 boardState에 저장해주기
 export function BoardsApi(props) {
-    const setBoardList = useSetRecoilState(boardList);
+    const [boards, setBoards] = useRecoilState(boardList);
 
     //TODO 페이지 번호 넘겨받아야함
-    customAxios.get("/boards/1", props)
-        .then(function (response) {
-            console.log("BoardsApi 시작");
-            console.log(response);
-            console.log(response.data.list); // 게시글 목록
+    useEffect(() => {
+        customAxios.get("/boards/1", props)
+            .then((response) => {
+                console.log("[ Axios - BoardsApi ] 시작");
+                console.log(response);
+                console.log(response.data.list); // 게시글 목록
+                return response.data.list;
+            })
+            .then((data) => {
+                console.log("[ Axios - BoardsApi ] 데이터 목록에 담기");
+                const boardsList = data;
 
-            const list = response.data.list;
-            setBoardList(
-                list.map((list) => {
+                console.log(boardsList)
+                setBoards(boardsList); // 무한반복
+            })
+            .catch((error) => {
+                alert("Axios error");
+                console.log("[ Axios - BoardsApi ] error 발생");
+                console.log(error)
+            });
 
-                }))
-        })
-        .catch(function (error) {
-            alert(error);
-        });
+    }, [] );
 }
-
-
-/*
-
-  idx: {list.idx}
-                        title: {list.title}
-                        content: {list.content}
-                        name: {list.name}
-                        saveDate: {list.saveDate}
-                        modifyDate: {list.modifyDate}
-
-* */

@@ -11,7 +11,7 @@ export function UserApi(props) {
     useEffect(() => {
         customAxios.post("/users", props)
             .then(function (response) {
-                console.log("UserApi 시작");
+                console.log("[ Axios - UserApi ] (로그인 상태 설정) 시작");
                 console.log(response);
 
                 // 로그인 상태로 설정
@@ -21,7 +21,7 @@ export function UserApi(props) {
                     isLogin: true,
                 })
 
-                console.log("userApi end");
+                console.log("[ Axios - UserApi ] 끝");
             })
             .catch(function (error) {
                 alert(error);

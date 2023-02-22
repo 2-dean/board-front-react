@@ -1,29 +1,30 @@
-import {useRecoilState, useRecoilValue, useResetRecoilState} from "recoil";
+import {useRecoilState, useResetRecoilState} from "recoil";
 import {userState} from "../store/Atom";
 import {useNavigate} from "react-router";
 import {LogoutApi} from "../api/LogoutApi";
-import {BoardsApi} from "../api/BoardsApi";
 import {UserApi} from "../api/UserApi";
 import {getCookie} from "../components/getAccessToken";
+import {useEffect} from "react";
 
 const Mypage = () => {
-    console.log("MyPage===================================");
+    console.log("===================== MyPage =====================");
     const [loginUser, setLoginUser] = useRecoilState(userState);
     const userLogout = useResetRecoilState(userState);
     const navigate = useNavigate();
     const accessToken = getCookie("accessToken");
 
     // 로그인한 사용자 정보 가져오기 userState 에 사용자 정보 매핑
+    useEffect(() => {
+        if(accessToken ===  null){
+            alert("[ Mypage ] access token 없음 > 로그인하세요")
+            userLogout();
+            navigate("/");
+        }
+    }, []);
+
     console.log("[ MyPage ] user 정보 가져오기 요청 id : " + loginUser.id);
     UserApi(loginUser);
     console.log("[ MyPage ] loginUser ID: " + loginUser.id + ", NAME: " + loginUser.name + ", isLogin: " + loginUser.isLogin);
-
-    if(accessToken ===  undefined){
-        alert("[ Mypage ] access token 없음 > 로그인하세요")
-        // user 상태 초기화
-        userLogout();
-        navigate("/")
-    }
 
     const logout = (event) => {
         event.preventDefault();
@@ -41,11 +42,8 @@ const Mypage = () => {
 
     const boards = (event) => {
         event.preventDefault();
-        alert("게시판 가기");
+        console.log("[ BoardPage ] 이동");
         navigate("/board");
-
-        console.log("[ BoardsApi ] 요청");
-        BoardsApi();
     }
 
     return (

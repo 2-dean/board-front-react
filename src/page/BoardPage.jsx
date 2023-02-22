@@ -1,46 +1,42 @@
-import {useRecoilValue} from "recoil";
-import {userState} from "../store/Atom";
+import {useRecoilValue, useResetRecoilState} from "recoil";
+import {boardList, userState} from "../store/Atom";
 import {useNavigate} from "react-router";
 import {useEffect} from "react";
 
 import classes from '../style/BoardPage.module.css'
+import {getCookie} from "../components/getAccessToken";
+import {BoardsApi} from "../api/BoardsApi";
+import BooardList from "../components/BooardList";
 
 const BoardPage = () => {
     const loginUser = useRecoilValue(userState);
-    const boardList = useRecoilValue(boardList);
+    const userLogout = useResetRecoilState(userState);
+    const board = useRecoilValue(boardList);
     const navigate = useNavigate();
+    const accessToken = getCookie("accessToken");
+
+
+    console.log("===================== BoardPage =====================");
+    console.log("[ BoardPage ] loginUser ID: " + loginUser.id + ", NAME: " + loginUser.name + ", isLogin: " + loginUser.isLogin);
 
     useEffect(() => {
-        console.log("Board 컴포넌트 나타남")
-        if(loginUser.isLogin === false) {
-            alert("로그인 정보가 없습니다. 로그인 페이지로 이동")
-            navigate("/login");
+        if(accessToken ===  null){
+            alert("[ BoardPage ] access token 없음 > 로그인하세요")
+            userLogout();
+            navigate("/");
         }
-    }, []); // 한번만
-    console.log("[LoginPage] loginUser ID: " + loginUser.id + ", NAME: " + loginUser.name + ", isLogin: " + loginUser.isLogin);
+
+    },[]);
+
+
+    console.log("[ BoardPage ] BoardApi 요청>")
+    BoardsApi();
+    console.log("[ BoardPage ] BoardApi 끝>")
 
     return(
         <div className={classes.container}>
             <h1>게시판 >> 로그인된 사용자만</h1>
-            <table>
-                <thead>
-                <tr>
-                    <td>제목</td>
-                    <td>작성자</td>
-                    <td>작성일자</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>가져올 제목 </td>
-                    <td>가져올 작성자</td>
-                    <td>가져올 작성일자</td>
-                </tr>
-                </tbody>
-                <tfoot>
-
-                </tfoot>
-            </table>
+            <BooardList boards={board} />
         </div>
     );
 }

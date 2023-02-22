@@ -2,11 +2,13 @@ import {useEffect, useRef} from "react";
 
 import classes from "../style/LoginPage.module.css";
 import {userState} from "../store/Atom";
-import {useRecoilState} from "recoil";
+import {useRecoilState, useResetRecoilState} from "recoil";
 import {customAxios} from "../api/axiosProvider";
 
 import {useNavigate} from "react-router";
 import {getCookie} from "../components/getAccessToken";
+import {UserApi} from "../api/UserApi";
+import {LogoutApi} from "../api/LogoutApi";
 
 
 const LoginPage = () => {
@@ -14,6 +16,7 @@ const LoginPage = () => {
 
     //로그인 상태 확인 > isLogin = true 이면 해당페이지 접근 불가
     const [loginUser, setLoginUser] = useRecoilState(userState);
+    const userLogout = useResetRecoilState(userState); //초기화
     const accessToken = getCookie("accessToken");
 
     const navigate = useNavigate();
@@ -21,14 +24,16 @@ const LoginPage = () => {
     console.log("[ LoginPage ] accessToken : " + accessToken);
     console.log("[ LoginPage ] isLogin : " + loginUser.isLogin);
 
-
     useEffect(() => {
-        if(loginUser.isLogin === true || accessToken !== null) {
-            alert("잘못된 접근입니다. [로그인 중  id : " + loginUser.id + " ] mypage 로 이동합니다.")
+        if(accessToken !== null) {
+            alert("잘못된 접근입니다. [로그인 중  id : " + loginUser.id + " ] mypage 로 이동합니다.");
             navigate("/my-page")
         }
+        if (accessToken === null) {
+            userLogout();
+        }
     }, []);
-
+    console.log("[ LoginPage ] isLogin : " + loginUser.isLogin);
 
 
     const idInputRef = useRef(); //useRef 실행 -> 해당 객체를 통해 <input type="text" required id="title" ref={titleInputRef}/> element로 접근가능
