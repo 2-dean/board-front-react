@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Cookies } from 'react-cookie';
+import {AxiosInstance} from "axios";
 
 const cookies = new Cookies();
 

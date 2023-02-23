@@ -5,6 +5,7 @@ import {LogoutApi} from "../api/LogoutApi";
 import {UserApi} from "../api/UserApi";
 import {getCookie} from "../components/getAccessToken";
 import {useEffect} from "react";
+import {LoginApi} from "../api/LoginApi";
 
 const Mypage = () => {
     console.log("===================== MyPage =====================");
@@ -12,14 +13,24 @@ const Mypage = () => {
     const userLogout = useResetRecoilState(userState);
     const navigate = useNavigate();
     const accessToken = getCookie("accessToken");
+    const refreshToken = getCookie("refreshToken");
 
     // 로그인한 사용자 정보 가져오기 userState 에 사용자 정보 매핑
     useEffect(() => {
-        if(accessToken ===  null){
+        //access 재발급
+        if(accessToken === null && refreshToken != null){
+            LoginApi(loginUser);
+        }
+
+        //access + refresh 만료 => 로그아웃
+        if(accessToken ===  null && refreshToken === null){
             alert("[ Mypage ] access token 없음 > 로그인하세요")
             userLogout();
             navigate("/");
         }
+
+
+
     }, []);
 
     console.log("[ MyPage ] user 정보 가져오기 요청 id : " + loginUser.id);

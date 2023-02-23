@@ -7,24 +7,36 @@ import classes from '../style/BoardPage.module.css'
 import {getCookie} from "../components/getAccessToken";
 import {BoardsApi} from "../api/BoardsApi";
 import BooardList from "../components/BooardList";
+import {LoginApi} from "../api/LoginApi";
 
 const BoardPage = () => {
+    // User 관련
     const loginUser = useRecoilValue(userState);
     const userLogout = useResetRecoilState(userState);
+
+    // Board 관련
     const board = useRecoilValue(boardList);
-    const navigate = useNavigate();
+
+    // Token 관련
     const accessToken = getCookie("accessToken");
+    const refreshToken = getCookie("refreshToken");
 
-
+    // Navigate
+    const navigate = useNavigate();
     console.log("===================== BoardPage =====================");
     console.log("[ BoardPage ] loginUser ID: " + loginUser.id + ", NAME: " + loginUser.name + ", isLogin: " + loginUser.isLogin);
 
+    if(accessToken === null && refreshToken != null){
+        console.log("[ BoardPage ] LoginApi 요청>")
+        LoginApi(loginUser);
+    }
     useEffect(() => {
-        if(accessToken ===  null){
+        // token 재요청
+     /*   if(accessToken ===  null && refreshToken === null){
             alert("[ BoardPage ] access token 없음 > 로그인하세요")
             userLogout();
             navigate("/");
-        }
+        }*/
 
     },[]);
 

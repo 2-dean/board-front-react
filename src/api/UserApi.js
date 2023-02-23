@@ -17,6 +17,7 @@ export function UserApi(props) {
                 // 로그인 상태로 설정
                 setLoginUser({
                     id: response.data.id,
+                    password: response.data.password,
                     name: response.data.name,
                     isLogin: true,
                 })

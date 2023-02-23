@@ -26,6 +26,7 @@ export const userState = atom({
         key: 'userState',
         default: {
             id: null,
+            password: null,
             name: null,
             isLogin: false,
         },

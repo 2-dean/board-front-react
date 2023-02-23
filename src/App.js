@@ -14,7 +14,7 @@ function App() {
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/login" element={<LoginPage/>}/>
                 <Route path="/my-page" element={<Mypage/>}/>
-                <Route path="/board" element={<BoardPage/>}/>
+                <Route path="/board" element={<BoardPage/>} errorElement={<LoginPage/>}/>
             </Routes>
         </RecoilRoot>
     );

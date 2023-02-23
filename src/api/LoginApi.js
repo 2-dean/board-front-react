@@ -9,7 +9,7 @@ export function LoginApi(props) {
             console.log("LoginApi 시작");
             console.log(response);
         })
-        .catch(function (error) {
+        .catch((error, response) => {
             alert(error);
         });
 }

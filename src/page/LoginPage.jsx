@@ -13,23 +13,27 @@ import {LogoutApi} from "../api/LogoutApi";
 
 const LoginPage = () => {
     console.log("===================== LoginPage =====================");
-
-    //로그인 상태 확인 > isLogin = true 이면 해당페이지 접근 불가
     const [loginUser, setLoginUser] = useRecoilState(userState);
-    const userLogout = useResetRecoilState(userState); //초기화
+    const userLogout = useResetRecoilState(userState); //loginUser 상태 초기화
+
     const accessToken = getCookie("accessToken");
+    const refreshToken = getCookie("refreshToken");
 
     const navigate = useNavigate();
 
     console.log("[ LoginPage ] accessToken : " + accessToken);
     console.log("[ LoginPage ] isLogin : " + loginUser.isLogin);
 
+    //acess 없으면 refresh 확인 후 access 재발급
+    //refresh도 없으면 로그아웃
     useEffect(() => {
+        //login 중인데 [Login] 페이지 접근
         if(accessToken !== null) {
             alert("잘못된 접근입니다. [로그인 중  id : " + loginUser.id + " ] mypage 로 이동합니다.");
             navigate("/my-page")
         }
-        if (accessToken === null) {
+
+        if(accessToken === null && refreshToken === null)  {
             userLogout();
         }
     }, []);
@@ -65,6 +69,7 @@ const LoginPage = () => {
                 // 로그인 상태 변경
                 setLoginUser({
                     id: user.id,
+                    password: user.password,
                     name: null,
                     isLogin: true,
                 })
