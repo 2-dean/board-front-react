@@ -1,14 +1,12 @@
 import {useEffect, useRef} from "react";
 
-import classes from "../style/LoginPage.module.css";
+import classes from "./style/LoginPage.module.css";
 import {userState} from "../store/Atom";
 import {useRecoilState, useResetRecoilState} from "recoil";
 import {customAxios} from "../api/axiosProvider";
 
 import {useNavigate} from "react-router";
-import {getCookie} from "../components/getAccessToken";
-import {UserApi} from "../api/UserApi";
-import {LogoutApi} from "../api/LogoutApi";
+import {getCookie} from "../common/getAccessToken";
 
 
 const LoginPage = () => {
@@ -22,9 +20,10 @@ const LoginPage = () => {
     const navigate = useNavigate();
 
     console.log("[ LoginPage ] accessToken : " + accessToken);
+    console.log("[ LoginPage ] refreshToken : " + refreshToken);
     console.log("[ LoginPage ] isLogin : " + loginUser.isLogin);
 
-    //acess 없으면 refresh 확인 후 access 재발급
+    //access 없으면 refresh 확인 후 access 재발급
     //refresh도 없으면 로그아웃
     useEffect(() => {
         //login 중인데 [Login] 페이지 접근
@@ -67,7 +66,7 @@ const LoginPage = () => {
                 console.log("loginUser : " + loginUser)
 
                 // 로그인 상태 변경
-                setLoginUser({
+                 setLoginUser({
                     id: user.id,
                     password: user.password,
                     name: null,
@@ -80,7 +79,6 @@ const LoginPage = () => {
 
             }
             }).catch((response)=>{
-
                 // TODO 백에서 이상하게 넘겨준듯?
             console.log(response)
             console.log(response.response.status)
@@ -94,7 +92,7 @@ const LoginPage = () => {
     }
 
         return (
-            <section>
+            <section className={classes.login}>
                 <form className={classes.form} onSubmit={login}>
                     <div className={classes.control}>
                         <h1>Login</h1>

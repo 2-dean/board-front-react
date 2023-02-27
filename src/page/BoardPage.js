@@ -3,10 +3,10 @@ import {boardList, userState} from "../store/Atom";
 import {useNavigate} from "react-router";
 import {useEffect} from "react";
 
-import classes from '../style/BoardPage.module.css'
-import {getCookie} from "../components/getAccessToken";
+import classes from './style/BoardPage.module.css'
+import {getCookie} from "../common/getAccessToken";
 import {BoardsApi} from "../api/BoardsApi";
-import BooardList from "../components/BooardList";
+import BooardList from "../components/Board/BooardList";
 import {LoginApi} from "../api/LoginApi";
 
 const BoardPage = () => {
@@ -26,28 +26,34 @@ const BoardPage = () => {
     console.log("===================== BoardPage =====================");
     console.log("[ BoardPage ] loginUser ID: " + loginUser.id + ", NAME: " + loginUser.name + ", isLogin: " + loginUser.isLogin);
 
-    if(accessToken === null && refreshToken != null){
-        console.log("[ BoardPage ] LoginApi 요청>")
-        LoginApi(loginUser);
-    }
+    console.log("accessToken :" + accessToken);
+    console.log("refreshToken :" + refreshToken);
+
+
     useEffect(() => {
-        // token 재요청
-     /*   if(accessToken ===  null && refreshToken === null){
+             //access 재발급
+        if(accessToken === null && refreshToken != null){
+            alert("accessToken 재요청")
+            console.log("[ BoardPage ] LoginApi (access재)요청>")
+            LoginApi(loginUser);
+        }
+
+        if(accessToken ===  null && refreshToken === null){
             alert("[ BoardPage ] access token 없음 > 로그인하세요")
             userLogout();
             navigate("/");
-        }*/
+        }
 
-    },[]);
+    }, []);
 
 
+    //TODO accessToken 재요청과 동시에 이뤄지는 것 같음 !!
     console.log("[ BoardPage ] BoardApi 요청>")
     BoardsApi();
-    console.log("[ BoardPage ] BoardApi 끝>")
 
     return(
         <div className={classes.container}>
-            <h1>게시판 >> 로그인된 사용자만</h1>
+            <h1>게시판</h1>
             <BooardList boards={board} />
         </div>
     );

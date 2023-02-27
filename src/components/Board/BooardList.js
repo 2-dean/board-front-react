@@ -1,7 +1,12 @@
 import BoardItem from "./BoardItem";
+import Paging from "./Paging";
+
+import classes from './BoardList.module.css';
 
 const BooardList = (props) => {
+
     return (
+        <>
         <ul>
             <li>
                 글번호 / 제목 / 작성자 / 시간
@@ -16,7 +21,8 @@ const BooardList = (props) => {
                 />
             ))}
         </ul>
-
+        <Paging/>
+        </>
     );
 }
 
