@@ -3,11 +3,12 @@ import {customAxios} from "./axiosProvider";
 export function LogoutApi() {
 
     customAxios.post("/logout")
-        .then(function (response) {
-            console.log("LogoutApi 실행")
+        .then((response) => {
+            console.log("[ /logout API 요청 ]===========")
             console.log(response);
         })
-        .catch(function (error) {
+        .catch((error) => {
             alert(error);
         });
+
 }

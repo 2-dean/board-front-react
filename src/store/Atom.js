@@ -20,6 +20,10 @@ export const userState = atom({
     }
 );
 
+export const tokenState = atom({
+    key: 'initialToken',
+    default: ''
+})
 
 
 export const boardList = atom({

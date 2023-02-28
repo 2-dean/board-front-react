@@ -15,8 +15,8 @@ function App() {
             <Layout>
             <Routes>
                 <Route path="/" element={<MainPage/>}/>
-                <Route path="/login" element={<LoginPage/>}/>
-                <Route path="/my-page" element={<Mypage/>}/>
+                <Route path="/login" element={<LoginPage/>} errorElement={<MainPage/>} />
+                <Route path="/my-page" element={<Mypage/>}  errorElement={<LoginPage/>}/>
                 <Route path="/board" element={<BoardPage/>} errorElement={<LoginPage/>}/>
             </Routes>
             </Layout>

@@ -1,10 +1,6 @@
 import BoardItem from "./BoardItem";
-import Paging from "./Paging";
 
-import classes from './BoardList.module.css';
-
-const BooardList = (props) => {
-
+const BoardList = (props) => {
     return (
         <>
         <ul>
@@ -21,9 +17,9 @@ const BooardList = (props) => {
                 />
             ))}
         </ul>
-        <Paging/>
+        {/*<Paging/>*/}
         </>
     );
 }
 
-export default BooardList;
+export default BoardList;

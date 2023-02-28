@@ -1,28 +1,28 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import classes from "./MainNavigation.module.css";
-import {useRecoilValue, useResetRecoilState} from "recoil";
-import {userAuthState, userState} from "../../store/Atom";
+import {useRecoilState, useRecoilValue, useResetRecoilState} from "recoil";
+import {tokenState, userState} from "../../store/Atom";
 import {LogoutApi} from "../../api/LogoutApi";
-import {useNavigate} from "react-router";
+import {getCookie} from "../../common/getAccessToken";
 
 const MainNavigation = () => {
     const loginUser = useRecoilValue(userState);
-    const userLogout = useResetRecoilState(userState);
+    const loginUserReset = useResetRecoilState(userState);
+    const [token, setToken] = useRecoilState(tokenState);
+    const accessToken = getCookie("accessToken");
 
-    const navigate = useNavigate();
 
     const logout = (event) => {
         event.preventDefault();
         alert("logout 클릭");
 
-        console.log("[ logoutAPI ] 요청");
+        setToken(null);
+        localStorage.removeItem("token");
+
+        loginUserReset();
+
+        console.log("accessToken :" + accessToken);
         LogoutApi();
-
-        console.log("[ userState ] 초기화");
-        userLogout();
-
-        console.log("[ navigate ] 실행")
-        //navigate("/");
     }
 
 
@@ -38,19 +38,19 @@ const MainNavigation = () => {
                             <Link to="/login">Login</Link>
                         </li>
                     }
-                    {loginUser.isLogin && (
+                   {/* {loginUser.isLogin && (
                         <li>
                             <Link to="/my-page">My Page</Link>
                         </li>
-                    )}
+                    )}*/}
                     {loginUser.isLogin &&
                         <li>
-                            <Link to="/Board">Board</Link>
+                            <Link to="/board">Board</Link>
                         </li>
                     }
                     {loginUser.isLogin &&
                         <li>
-                            <Link to="/" onClick={logout}>Logout</Link>
+                            <button onClick={logout}>Logout</button>
                         </li>
                     }
                 </ul>

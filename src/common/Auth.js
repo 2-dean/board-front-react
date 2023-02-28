@@ -1,26 +1,43 @@
 import {getCookie} from "./getAccessToken";
-import {useRecoilState} from "recoil";
 import {useCookies} from "react-cookie";
-import {tokenState} from "../store/Atom";
+import {useRecoilState} from "recoil";
+import {userState} from "../store/Atom";
 
-const accessToken = getCookie("accessToken");
-const refreshToken = getCookie("refreshToken");
 
-export const AuthProvider = (props) => {
-    const [token, setToken] = useRecoilState(tokenState); // 토큰이 없거나 저정되어있는 토큰
-    const [removeCookie] = useCookies(['accessToken']);
+
+
+
+export const Auth = () => {
+
+    const accessToken = getCookie("accessToken");
+    const initialToken = localStorage.getItem("token");
+
+    const [token, setToken] = useRecoilState(initialToken);
+    const [loginUser, setLoginUser] = useRecoilState(userState);
+
 
     const userIsLoggedIn = !!token; //빈 문자열이 아니면 false
 
     const logoutHandler = () => {
-        removeCookie('accessToken');
-        removeCookie('refreshToken')
+        setToken(null);
+        localStorage.removeItem("token");
+        window.location.href = '/';
+
     };
 
-    const loginHandler = (accessToken) => {
-        setToken(accessToken);
+    const loginHandler = (token) => {
+        localStorage.setItem("token", accessToken); //k/v 쌍임
+
     }
 
+    const LoginUser = () => {
+        setLoginUser({
+            token: token,
+            isLogin: userIsLoggedIn,
+            login: loginHandler,
+            logout: logoutHandler
+        });
+    }
 
 };
 
