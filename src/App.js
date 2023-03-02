@@ -16,6 +16,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/login" element={<LoginPage/>} errorElement={<MainPage/>} />
+               {/* <Route path="/login" element={<PrivateRoute isPrivate={true}/>} errorElement={<MainPage/>} />*/}
                 <Route path="/my-page" element={<Mypage/>}  errorElement={<LoginPage/>}/>
                 <Route path="/board" element={<BoardPage/>} errorElement={<LoginPage/>}/>
             </Routes>

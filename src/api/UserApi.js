@@ -1,4 +1,4 @@
-import {customAxios} from "./axiosProvider";
+import {Api} from "./axiosProvider";
 import {userState} from "../store/Atom";
 import {useRecoilState} from "recoil";
 import {useEffect} from "react";
@@ -9,7 +9,7 @@ export function UserApi(props) {
     const [loginUser, setLoginUser] = useRecoilState(userState);
 
     useEffect(() => {
-        customAxios.post("/users", props)
+        Api.post("/users", props)
             .then(function (response) {
                 console.log("[ Axios - UserApi ] (로그인 상태 설정) 시작");
                 console.log(response);

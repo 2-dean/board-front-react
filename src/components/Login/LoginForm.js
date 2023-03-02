@@ -1,14 +1,16 @@
 import classes from "../../page/style/LoginPage.module.css";
-import {useRef} from "react";
-import {customAxios} from "../../api/axiosProvider";
+import {useEffect, useRef} from "react";
+import {Api, customAxios} from "../../api/axiosProvider";
 import {useRecoilState} from "recoil";
-import {userState} from "../../store/Atom";
+import {tokenState, userState} from "../../store/Atom";
 import {useNavigate} from "react-router";
+import {LoginApi} from "../../api/LoginApi";
 
 const LoginForm = () => {
     console.log("===================== LoginForm =====================");
     const [loginUser, setLoginUser] = useRecoilState(userState);
-    console.log("loginUser :" + loginUser.isLogin);
+    const [accessToken, setAccessToken] =useRecoilState(tokenState);
+    console.log("[ LoginForm ] loginUser :" + loginUser.id + ", isLogin : " + loginUser.isLogin);
     const navigate = useNavigate();
 
     const idInputRef = useRef(); //useRef 실행 -> 해당 객체를 통해 <input type="text" required id="title" ref={titleInputRef}/> element로 접근가능
@@ -22,37 +24,43 @@ const LoginForm = () => {
         const inputId = idInputRef.current.value;
         const inputPassword = passwordInputRef.current.value;
 
-        let user = {
-            id: inputId,
-            password: inputPassword,
-        };
         console.log("입력받은 ID : " + inputId + ", PW : " + inputPassword);
 
+        const user = {
+            id: inputId,
+            password: inputPassword
+        }
+
         // 백엔드 서버로 login 요청z
-        //LoginApi(user);
-        customAxios.post("/login", user)
+        // LoginApi();
+
+        Api.post("/login", user)
             .then((response) => {
 
                 console.log(response);
 
                 if (response.status === 200) {
-                    const token = response.headers.get('accessToken');
-                    console.log("Header access토큰 :" + token);
+                    const token = response.headers.get('Authorization');
+                    console.log("Header access 토큰 :" + token);
                     setLoginUser({
                         id: user.id,
                         password: user.password,
                         name: null,
                         isLogin: true,
                     })
-                    //loacalStorage에 저장
-                    localStorage.setItem("token", token); //k/v 쌍임
+                    //localStorage 에 저장
+                    localStorage.setItem("token", token);
+                    setAccessToken({
+                        token: token,
+                        expirationTime: 1
+                    })
                     navigate("/board");
                 }
 
             }).catch((response) => {
                 console.log(response);
                 if (response.response.status === 500) {
-                    console.log("Password 가 틀립니다.");
+                    alert("로그인 정보를 확인하세요.")
                     console.log("isLogin:" + loginUser.isLogin);
                 }
             });

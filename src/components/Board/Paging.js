@@ -6,11 +6,9 @@ import {pageInfo} from "../../store/Atom";
 const Paging = () => {
     const [pageContent, setPageContent] = useRecoilState(pageInfo);
 
-
     const [page, setPage] = useState(1);
 
     const handlePageChange = (page) => {
-
         setPage(page);
     };
 

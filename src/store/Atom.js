@@ -16,27 +16,23 @@ export const userState = atom({
             name: null,
             isLogin: false,
         },
-        effects_UNSTABLE: [persistAtom],
+        //effects_UNSTABLE: [persistAtom],// api를 한번 더 호출하는게 나음ㅎ
     }
 );
 
 export const tokenState = atom({
-    key: 'initialToken',
-    default: ''
+    key: 'tokenState',
+    default: {
+        access: '',
+        expirationTime: ''
+    }
 })
 
 
 export const boardList = atom({
         key: 'boardList',
-        default: {
-            idx: null,
-            title: null,
-            content: null,
-            name: null,
-            saveDate: null,
-            modifyDate: null
-        },
-        effects_UNSTABLE: [persistAtom],
+        default: [],
+        // effects_UNSTABLE: [persistAtom],
     }
 );
 

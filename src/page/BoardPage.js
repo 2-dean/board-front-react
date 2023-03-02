@@ -1,4 +1,4 @@
-import {useRecoilValue} from "recoil";
+import {useRecoilState, useRecoilValue, useSetRecoilState} from "recoil";
 import {boardList, userState} from "../store/Atom";
 import {useNavigate} from "react-router";
 
@@ -15,7 +15,7 @@ const BoardPage = () => {
     const loginUser = useRecoilValue(userState);
 
     // BoardList
-    const boards = useRecoilValue(boardList);
+    const [boards, setBoards] = useRecoilState(boardList);
 
     // Token 관련
     const refreshToken = getCookie("refreshToken");
@@ -25,17 +25,20 @@ const BoardPage = () => {
 
     console.log("refreshToken :" + refreshToken);
 
-    BoardsApi();
-  /* useEffect(() => {
-        BoardsApi();
+    //BoardsApi();
+
+    useEffect(() => {
+        console.log("BoardApi 요청>>>>>>>.")
+         BoardsApi().then(res => {
+            setBoards(res);
+        })
     },[]);
-*/
-    console.log("boards :>>>>>>>>>> ")
-    console.log(boards)
+
+
     return(
         <div className={classes.container}>
             <h1>게시판</h1>
-            <BoardList boards={boards} />
+                <BoardList />
         </div>
     );
 }

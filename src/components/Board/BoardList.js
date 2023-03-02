@@ -1,13 +1,19 @@
 import BoardItem from "./BoardItem";
+import {useRecoilValue} from "recoil";
+import {boardList} from "../../store/Atom";
 
-const BoardList = (props) => {
+const BoardList = () => {
+    const boards = useRecoilValue(boardList);
+console.log("================= BoardList-============")
+    console.log(boards)
+
     return (
         <>
         <ul>
             <li>
                 글번호 / 제목 / 작성자 / 시간
             </li>
-            {props.boards.map((board) => (
+            {boards.map((board) => (
                 <BoardItem
                     key={board.idx}
                     idx={board.idx}
