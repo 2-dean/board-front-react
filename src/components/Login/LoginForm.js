@@ -1,15 +1,16 @@
 import classes from "../../page/style/LoginPage.module.css";
-import {useEffect, useRef} from "react";
-import {Api, customAxios} from "../../api/axiosProvider";
-import {useRecoilState} from "recoil";
+import {useRef} from "react";
+import {Api} from "../../api/axiosProvider";
+import {useRecoilState, useSetRecoilState} from "recoil";
 import {tokenState, userState} from "../../store/Atom";
 import {useNavigate} from "react-router";
-import {LoginApi} from "../../api/LoginApi";
+import {refreshErrorHandler} from "../../api/Refresh";
+import axios from "axios";
 
 const LoginForm = () => {
     console.log("===================== LoginForm =====================");
     const [loginUser, setLoginUser] = useRecoilState(userState);
-    const [accessToken, setAccessToken] =useRecoilState(tokenState);
+    const setAccessToken = useSetRecoilState(tokenState);
     console.log("[ LoginForm ] loginUser :" + loginUser.id + ", isLogin : " + loginUser.isLogin);
     const navigate = useNavigate();
 
@@ -34,14 +35,18 @@ const LoginForm = () => {
         // 백엔드 서버로 login 요청z
         // LoginApi();
 
-        Api.post("/login", user)
+        axios.post("http://localhost:8080/login", user, {
+            withCredentials: true
+        })
             .then((response) => {
-
                 console.log(response);
 
                 if (response.status === 200) {
                     const token = response.headers.get('Authorization');
+                    const expireTime = response.headers.get('expireTime');
+
                     console.log("Header access 토큰 :" + token);
+                    console.log("AccessToken expireTime :" + expireTime);
                     setLoginUser({
                         id: user.id,
                         password: user.password,
@@ -50,19 +55,19 @@ const LoginForm = () => {
                     })
                     //localStorage 에 저장
                     localStorage.setItem("token", token);
+                    localStorage.setItem("expireTime", expireTime);
                     setAccessToken({
                         token: token,
-                        expirationTime: 1
+                        expireTime: expireTime
                     })
-                    navigate("/board");
-                }
+                    console.log(">>>>>>>>>>>>>>로그인 성공")
+                    //navigate("/board");
 
-            }).catch((response) => {
-                console.log(response);
-                if (response.response.status === 500) {
-                    alert("로그인 정보를 확인하세요.")
-                    console.log("isLogin:" + loginUser.isLogin);
-                }
+                    }
+
+            }).catch((error) => {
+                alert("로그인 정보를 확인하세요.");
+                //console.log(error);
             });
 
     };

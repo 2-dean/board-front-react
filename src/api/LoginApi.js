@@ -10,11 +10,8 @@ export function LoginApi() {
     console.log("LoginApi 호출")
 
     const navigate = useNavigate();
-    console.log(1);
+
     console.log("[ LoginForm ] isLogin : " + loginUser.isLogin);
-    console.log(2);
-    console.log(3);
-    console.log(4);
 
 
     Api.post("/login", loginUser)
@@ -24,6 +21,7 @@ export function LoginApi() {
 
             if (response.status === 200) {
                 const token = response.headers.get('Authorization');
+                const expireTime = response.headers.get('expireTime');
                 console.log("Header access 토큰 :" + token);
                 setLoginUser({
                     id: loginUser.id,
@@ -32,6 +30,7 @@ export function LoginApi() {
                     isLogin: true,
                 })
                 //localStorage 에 저장
+                localStorage.setItem("token", token);
                 localStorage.setItem("token", token);
                 navigate("/board");
             }

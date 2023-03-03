@@ -1,18 +1,9 @@
 import {Api} from "./axiosProvider";
-import axios from "axios";
-import {useRecoilState} from "recoil";
-import {tokenState} from "../store/Atom";
 
 
 // Back 에서 데이터 받아온 다음에 boardState에 저장해주기
 export function BoardsApi() {
     console.log("BoardsApi 시작===================")
-
-    const [accessToken, setAccessToken] =useRecoilState(tokenState);
-    const refresh = axios.create();
-    refresh.interceptors.request.use(() => {
-
-    })
 
     return Api.get("/boards/1")
         .then((response) => {
@@ -21,14 +12,13 @@ export function BoardsApi() {
             console.log(response.data.list); // 게시글 목록
             console.log("[ Axios - BoardsApi ] 데이터 목록에 담기");
             return response.data.list;
-
         })
         .catch((error) => {
             console.log("[ Axios - BoardsApi ] error 발생");
             console.log(error)
            return  alert("Axios error");
-
         });
 
 
 }
+

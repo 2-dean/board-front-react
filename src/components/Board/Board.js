@@ -1,4 +1,4 @@
-const BoardItem = (props) => {
+const Board = (props) => {
     const boardDetail = () => {
         alert("게시글 클릭");
     }
@@ -15,4 +15,4 @@ const BoardItem = (props) => {
     );
 };
 
-export default BoardItem;
+export default Board;

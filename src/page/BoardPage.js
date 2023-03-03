@@ -7,6 +7,8 @@ import {getCookie} from "../common/getAccessToken";
 import BoardList from "../components/Board/BoardList";
 import {BoardsApi} from "../api/BoardsApi";
 import {useEffect, useState} from "react";
+import {Api} from "../api/axiosProvider";
+import {refresh} from "../api/Refresh";
 
 const BoardPage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +17,7 @@ const BoardPage = () => {
     const loginUser = useRecoilValue(userState);
 
     // BoardList
-    const [boards, setBoards] = useRecoilState(boardList);
+
 
     // Token 관련
     const refreshToken = getCookie("refreshToken");
@@ -27,18 +29,13 @@ const BoardPage = () => {
 
     //BoardsApi();
 
-    useEffect(() => {
-        console.log("BoardApi 요청>>>>>>>.")
-         BoardsApi().then(res => {
-            setBoards(res);
-        })
-    },[]);
+
 
 
     return(
         <div className={classes.container}>
             <h1>게시판</h1>
-                <BoardList />
+              <BoardList />
         </div>
     );
 }

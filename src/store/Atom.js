@@ -24,7 +24,7 @@ export const tokenState = atom({
     key: 'tokenState',
     default: {
         access: '',
-        expirationTime: ''
+        expireTime: ''
     }
 })
 
