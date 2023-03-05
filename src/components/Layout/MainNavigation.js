@@ -9,19 +9,20 @@ const MainNavigation = () => {
     const loginUser = useRecoilValue(userState);
     const loginUserReset = useResetRecoilState(userState);
     const [token, setToken] = useRecoilState(tokenState);
-    const accessToken = getCookie("accessToken");
+    const refreshToken = getCookie("refreshToken");
 
 
     const logout = (event) => {
         event.preventDefault();
         alert("logout 클릭");
+        console.log("logout===============>")
 
         setToken(null);
         localStorage.removeItem("token");
-
+        console.log("[ logout ] refreshToken :" + refreshToken);
+        console.log("[ logout ] localStorage token : " + localStorage.getItem("token"))
         loginUserReset();
-
-        console.log("accessToken :" + accessToken);
+        console.log("[ logout ] loginUser : " + loginUser);
         LogoutApi();
     }
 

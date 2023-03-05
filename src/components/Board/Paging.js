@@ -1,6 +1,6 @@
 import Pagination from "react-js-pagination";
 import {useState} from "react";
-import {useRecoilState, useRecoilValue} from "recoil";
+import {useRecoilState} from "recoil";
 import {pageInfo} from "../../store/Atom";
 
 const Paging = () => {

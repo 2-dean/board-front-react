@@ -1,16 +1,14 @@
 import classes from "../../page/style/LoginPage.module.css";
 import {useRef} from "react";
-import {Api} from "../../api/axiosProvider";
-import {useRecoilState, useSetRecoilState} from "recoil";
-import {tokenState, userState} from "../../store/Atom";
+import {useRecoilState} from "recoil";
+import {userState} from "../../store/Atom";
 import {useNavigate} from "react-router";
-import {refreshErrorHandler} from "../../api/Refresh";
-import axios from "axios";
+import {onLogin} from "../../api/RefreshToken";
+
 
 const LoginForm = () => {
     console.log("===================== LoginForm =====================");
     const [loginUser, setLoginUser] = useRecoilState(userState);
-    const setAccessToken = useSetRecoilState(tokenState);
     console.log("[ LoginForm ] loginUser :" + loginUser.id + ", isLogin : " + loginUser.isLogin);
     const navigate = useNavigate();
 
@@ -25,55 +23,29 @@ const LoginForm = () => {
         const inputId = idInputRef.current.value;
         const inputPassword = passwordInputRef.current.value;
 
-        console.log("입력받은 ID : " + inputId + ", PW : " + inputPassword);
+        console.log("[ LoginForm ] ID : " + inputId + ", PW : " + inputPassword);
 
         const user = {
             id: inputId,
             password: inputPassword
         }
 
-        // 백엔드 서버로 login 요청z
-        // LoginApi();
+        //login 요청
+        console.log("[ LoginForm ] /login API 요청 =================")
+        onLogin(user);
 
-        axios.post("http://localhost:8080/login", user, {
-            withCredentials: true
+        //recoil Atom 에 로그인 상태 반영
+        setLoginUser({
+            id: user.id,
+            password: user.password,
+            name: null,
+            isLogin: true,
         })
-            .then((response) => {
-                console.log(response);
 
-                if (response.status === 200) {
-                    const token = response.headers.get('Authorization');
-                    const expireTime = response.headers.get('expireTime');
+        console.log("[ LoginForm - 로그인완료 ] loginUser :" + loginUser.id + ", isLogin : " + loginUser.isLogin);
 
-                    console.log("Header access 토큰 :" + token);
-                    console.log("AccessToken expireTime :" + expireTime);
-                    setLoginUser({
-                        id: user.id,
-                        password: user.password,
-                        name: null,
-                        isLogin: true,
-                    })
-                    //localStorage 에 저장
-                    localStorage.setItem("token", token);
-                    localStorage.setItem("expireTime", expireTime);
-                    setAccessToken({
-                        token: token,
-                        expireTime: expireTime
-                    })
-                    console.log(">>>>>>>>>>>>>>로그인 성공")
-                    //navigate("/board");
-
-                    }
-
-            }).catch((error) => {
-                alert("로그인 정보를 확인하세요.");
-                //console.log(error);
-            });
-
-    };
-
-
-
+        navigate("/board")
+    }; //login
 
 
         return (

@@ -1,17 +1,31 @@
+import BoardList from "./BoardList";
+
 const Board = (props) => {
-    const boardDetail = () => {
-        alert("게시글 클릭");
-    }
-//TODO boardListItem 으로바꾸ㅜㅜ
+
+        alert("게시글 상세페이지");
+
     return (
-        <li>
-            <a onClick={boardDetail}>
-                <span>{props.idx}</span> ||
-                <span>{props.title}</span> ||
-                <span>{props.name}</span> ||
-                <span>{props.saveDate}</span>
-            </a>₩
-        </li>
+        <div>
+        <h2>게시글 상세</h2>
+        <table>
+            <thead>
+            <tr>
+                <td>글번호</td>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>시간</td>
+            </tr>
+            </thead>
+            <tbody>
+            <BoardList />
+            </tbody>
+            <tfoot>
+            <tr>
+                게시판 아래
+            </tr>
+            </tfoot>
+        </table>
+        </div>
     );
 };
 

@@ -1,5 +1,4 @@
-import Board from "./Board";
-import {useRecoilState, useRecoilValue} from "recoil";
+import {useRecoilState} from "recoil";
 import {boardList} from "../../store/Atom";
 import {useEffect} from "react";
 import {BoardsApi} from "../../api/BoardsApi";
@@ -19,11 +18,13 @@ const BoardList = () => {
 
     return (
         <>
-        <ul>
-            <li>
-                글번호 / 제목 / 작성자 / 시간
-            </li>
-            {boards.map((board) => (
+            <tr>
+                <td>글번호가져오기</td>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>시간</td>
+            </tr>
+          {/*  {boards.map((board) => (
                 <Board
                     key={board.idx}
                     idx={board.idx}
@@ -31,8 +32,8 @@ const BoardList = () => {
                     name={board.name}
                     saveDate={board.saveDate}
                 />
-            ))}
-        </ul>
+            ))}*/}
+
         {/*<Paging/>*/}
         </>
     );

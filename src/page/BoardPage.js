@@ -1,24 +1,16 @@
-import {useRecoilState, useRecoilValue, useSetRecoilState} from "recoil";
-import {boardList, userState} from "../store/Atom";
-import {useNavigate} from "react-router";
+import {useRecoilValue} from "recoil";
+import {userState} from "../store/Atom";
 
 import classes from './style/BoardPage.module.css'
 import {getCookie} from "../common/getAccessToken";
 import BoardList from "../components/Board/BoardList";
-import {BoardsApi} from "../api/BoardsApi";
-import {useEffect, useState} from "react";
-import {Api} from "../api/axiosProvider";
-import {refresh} from "../api/Refresh";
+import {useState} from "react";
 
 const BoardPage = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     // User 관련
     const loginUser = useRecoilValue(userState);
-
-    // BoardList
-
-
     // Token 관련
     const refreshToken = getCookie("refreshToken");
 
@@ -27,15 +19,28 @@ const BoardPage = () => {
 
     console.log("refreshToken :" + refreshToken);
 
-    //BoardsApi();
-
-
-
 
     return(
         <div className={classes.container}>
             <h1>게시판</h1>
-              <BoardList />
+            <table>
+                <thead>
+                    <tr>
+                        <td>글번호</td>
+                        <td>제목</td>
+                        <td>작성자</td>
+                        <td>시간</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <BoardList />
+                </tbody>
+                <tfoot>
+                <tr>
+                   게시판 아래
+                </tr>
+                </tfoot>
+            </table>
         </div>
     );
 }

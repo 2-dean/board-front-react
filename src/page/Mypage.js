@@ -4,8 +4,6 @@ import {useNavigate} from "react-router";
 import {LogoutApi} from "../api/LogoutApi";
 import {UserApi} from "../api/UserApi";
 import {getCookie} from "../common/getAccessToken";
-import {useEffect} from "react";
-import {LoginApi} from "../api/LoginApi";
 
 const Mypage = () => {
     console.log("===================== MyPage =====================");
