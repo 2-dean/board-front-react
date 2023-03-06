@@ -1,47 +1,67 @@
-import {useRecoilValue} from "recoil";
-import {userState} from "../store/Atom";
+import {useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState} from "recoil";
+import {activePageState, boardList, boardPageListState, userState} from "../store/Atom";
 
 import classes from './style/BoardPage.module.css'
 import {getCookie} from "../common/getAccessToken";
 import BoardList from "../components/Board/BoardList";
-import {useState} from "react";
+import {useEffect} from "react";
+import {Api} from "../api/axiosProvider";
+import Paging from "../components/Board/Paging";
 
 const BoardPage = () => {
-    const [isLoading, setIsLoading] = useState(true);
 
+    const [boards, setBoards] = useRecoilState(boardList);
+    const activePage= useRecoilValue(activePageState);
+    const [boardPageList, setBoardPageList] = useRecoilState(boardPageListState);
+    const itemsCountPerPage = 5;
+    console.log("현재 페이지 번호 : " + activePage);
     // User 관련
     const loginUser = useRecoilValue(userState);
-    // Token 관련
-    const refreshToken = getCookie("refreshToken");
+
+    const beginBoard = (activePage - 1)  * itemsCountPerPage;
+    const endBoard = beginBoard + (itemsCountPerPage);
 
     console.log("===================== BoardPage =====================");
-    console.log("[ BoardPage ] loginUser ID: " + loginUser.id + ", NAME: " + loginUser.name + ", isLogin: " + loginUser.isLogin);
 
-    console.log("refreshToken :" + refreshToken);
+    console.log("[ BoardPage ] loginUser ID: " + loginUser.id + ", NAME: " + loginUser.name + ", isLogin: " + loginUser.isLogin);
+    let boardListCount = 0;
+
+    console.log("BoardApi 요청>>>>>>>")
+    useEffect(() => {
+        Api.get("/boards")
+            .then((response) => {
+                console.log("[ Axios - BoardsApi ] 시작");
+                console.log(response);
+                console.log(response.data); // 게시글 목록
+
+                const boardListAll = response.data;
+                boardListCount = response.data.length; // 전체 게시글 갯수
+                console.log("boardsCount:" + boardListCount);
+
+                console.log("[ Axios - BoardsApi ] 데이터 목록에 담기");
+                setBoards(boardListAll);
+            })
+            .catch((error) => {
+                console.log("[ Axios - BoardsApi ] error 발생");
+                console.log(error)
+                return  alert("Axios error");
+            });
+    }, [])
+
+    console.log("[boardPage] 처음 열림페이지번호 : " + activePage);
+
+
 
 
     return(
         <div className={classes.container}>
             <h1>게시판</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <td>글번호</td>
-                        <td>제목</td>
-                        <td>작성자</td>
-                        <td>시간</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <BoardList />
-                </tbody>
-                <tfoot>
-                <tr>
-                   게시판 아래
-                </tr>
-                </tfoot>
-            </table>
+            <BoardList />
+            <div>
+                <Paging totaItemCount={boardListCount}/>
+            </div>
         </div>
+
     );
 }
 

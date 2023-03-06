@@ -1,32 +1,25 @@
-import BoardList from "./BoardList";
+import {Link} from "react-router-dom";
+
 
 const Board = (props) => {
 
-        alert("게시글 상세페이지");
+    console.log("게시글 줄");
 
     return (
-        <div>
-        <h2>게시글 상세</h2>
-        <table>
-            <thead>
-            <tr>
-                <td>글번호</td>
-                <td>제목</td>
-                <td>작성자</td>
-                <td>시간</td>
-            </tr>
-            </thead>
-            <tbody>
-            <BoardList />
-            </tbody>
-            <tfoot>
-            <tr>
-                게시판 아래
-            </tr>
-            </tfoot>
-        </table>
-        </div>
-    );
+
+       // <Link to={"/board/"+props.idx}>/**/
+       <tr>
+
+            <td>{props.idx}</td>
+            <td>{props.title}</td>
+            <td>{props.name}</td>
+            <td>{props.saveDate}</td>
+
+       </tr>
+       // </Link>
+
+
+);
 };
 
 export default Board;

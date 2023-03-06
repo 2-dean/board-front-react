@@ -16,7 +16,7 @@ export const userState = atom({
             name: null,
             isLogin: false,
         },
-        //effects_UNSTABLE: [persistAtom],// api를 한번 더 호출하는게 나음ㅎ
+        effects_UNSTABLE: [persistAtom],// api를 한번 더 호출하는게 나음ㅎ
     }
 );
 
@@ -35,6 +35,32 @@ export const boardList = atom({
         // effects_UNSTABLE: [persistAtom],
     }
 );
+
+export const boardPageListState = atom({
+    key: 'boardPageList',
+    default: [],
+})
+
+export const activePageState = atom({
+    key: 'activePageState',
+    default: 1,
+})
+
+
+
+export const pageState = atom({
+    key: 'pageState',
+    default: {
+        activePage: '',     // 현재 페이지
+        itemsCountPerPage: 5,   // 한 페이지랑 보여줄 아이템 갯수
+        totalItemsCount: '',   // 총 아이템 갯수
+        pageRangeDisplayed: 3,  // paginator의 페이지 범위
+        prevPageText: '<',        // "이전"을 나타낼 텍스트
+        nextPageText: '>',      // "다음"을 나타낼 텍스트
+        onChange: '',
+    }
+});
+
 
 
 export const pageInfo = atom({

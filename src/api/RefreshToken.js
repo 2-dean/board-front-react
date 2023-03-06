@@ -1,8 +1,7 @@
 import {getCookie} from "../common/getAccessToken";
-import {Api} from "./axiosProvider";
-import axios, {Axios, AxiosRequestConfig} from "axios";
+import axios from "axios";
 
-const ACCESS_EXPIRATION_TIME = 1000 * 30;
+const ACCESS_EXPIRATION_TIME = 1000 * 60 * 60;
 
 const onLoginSuccess = (response) => {
     console.log("[onLoginSuccess 실행]-------")

@@ -5,7 +5,7 @@ import {Api} from "./axiosProvider";
 export function BoardsApi() {
     console.log("BoardsApi 시작===================")
 
-    return Api.get("/boards/1")
+    return Api.get("/boards")
         .then((response) => {
             console.log("[ Axios - BoardsApi ] 시작");
             console.log(response);
