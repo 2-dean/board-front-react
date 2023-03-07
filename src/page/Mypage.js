@@ -8,10 +8,8 @@ import {getCookie} from "../common/getAccessToken";
 const Mypage = () => {
     console.log("===================== MyPage =====================");
     const [loginUser, setLoginUser] = useRecoilState(userState);
-    const userLogout = useResetRecoilState(userState);
+
     const navigate = useNavigate();
-    const accessToken = getCookie("accessToken");
-    const refreshToken = getCookie("refreshToken");
 
 
     console.log("[ MyPage ] user 정보 가져오기 요청 id : " + loginUser.id);
@@ -24,9 +22,6 @@ const Mypage = () => {
 
         console.log("[ logoutAPI ] 요청");
         LogoutApi();
-
-        console.log("[ userState ] 초기화");
-        userLogout();
 
         console.log("[ navigate ] 실행")
         navigate("/");

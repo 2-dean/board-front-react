@@ -39,6 +39,7 @@ export const boardList = atom({
 export const boardPageListState = atom({
     key: 'boardPageList',
     default: [],
+    effects_UNSTABLE: [persistAtom],
 })
 
 export const activePageState = atom({

@@ -19,12 +19,15 @@ const Paging = () => {
     console.log("총 게시글 수: " + boards.length);
     console.log("beginBoard : " + beginBoard + ", endBoard : " + endBoard);
 
-    setBoardPageList(boards.slice(beginBoard,endBoard))
+    console.log(boardPageList);
 
-
+/*    useEffect(()=> {
+        console.log("beginBoard : " + beginBoard + ", endBoard : " + endBoard);
+        setBoardPageList(boards.slice(beginBoard, endBoard));
+    },[])*/
 
     const handlePageChange = (activePage) => {
-        alert("페이지 변겅 : " + activePage);
+        alert("페이지 변경 : " + activePage);
         setActivePage(activePage);
 
         console.log("beginBoard : " + beginBoard + ", endBoard : " + endBoard);

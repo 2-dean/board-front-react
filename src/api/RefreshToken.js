@@ -1,9 +1,9 @@
 import {getCookie} from "../common/getAccessToken";
 import axios from "axios";
 
-const ACCESS_EXPIRATION_TIME = 1000 * 60 * 60;
-
-const onLoginSuccess = (response) => {
+const ACCESS_EXPIRATION_TIME = 1000 * 10;
+//1000 * 10 * 60; 1시간
+export const onLoginSuccess = (response) => {
     console.log("[onLoginSuccess 실행]-------")
     const token = response.headers.get('Authorization');
 
@@ -21,7 +21,7 @@ export const onSilentRefresh = () => {
         refreshToken: getCookie("refreshToken")
     }
 
-    axios.post("http://localhost:8080/refresh",data,
+    axios.post("http://localhost:8080/login",data,
         {
             headers: {
                 Authorization: localStorage.getItem('token'),
@@ -30,13 +30,13 @@ export const onSilentRefresh = () => {
         })
         .then(onLoginSuccess)
         .catch(error => {
-            alert("onSilentRefresh Arr");
+            alert("onSilentRefresh err");
             console.log(error);
         })
 }
 
 
-export const onLogin = (user) => {
+ const onLogin = (user) => {
     axios.post("http://localhost:8080/login",
                     user,
             { withCredentials: true })

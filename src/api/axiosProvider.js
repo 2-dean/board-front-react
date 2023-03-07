@@ -10,3 +10,14 @@ export const Api = axios.create({
 
 Api.defaults.withCredentials = true;
 
+Api.interceptors.response.use((config) => {
+    console.log("[ Axios - interceptors 실행]");
+    console.log(config);
+
+}, (error) => {
+    console.log("[ Axios - error interceptors 실행 ]");
+    console.log(error);
+        if(error.status === 406) {
+        console.log("[ACCESS 토큰 만료]=========")
+        }
+})

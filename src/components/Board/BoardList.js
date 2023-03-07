@@ -1,46 +1,18 @@
-import Board from "./Board";
-import {boardPageListState} from "../../store/Atom";
-import {useRecoilValue} from "recoil";
+import { Link } from "react-router-dom";
 
-const BoardList = () => {
-    console.log("================= BoardList-============")
-    const boardPageList = useRecoilValue(boardPageListState);
-    console.log("게시글 전체 목록=====================");
+const BoardList = (props) => {
+  console.log("게시글 줄");
 
-
-
-   return (
-        <>
-            <table>
-                <thead>
-                <tr>
-                    <td>글번호</td>
-                    <td>제목</td>
-                    <td>작성자</td>
-                    <td>시간</td>
-                </tr>
-                </thead>
-                <tbody>
-                {boardPageList.map((board) => (
-                    <Board
-                        key={board.idx}
-                        idx={board.idx}
-                        title={board.title}
-                        name={board.name}
-                        saveDate={board.saveDate}
-                    />
-
-                ))}
-                </tbody>
-                <tfoot>
-                <tr>
-                    <td>게시판 아래</td>
-                </tr>
-                </tfoot>
-            </table>
-
-        </>
-    );
-}
+  return (
+    <tr>
+      <td>{props.idx}</td>
+      <td>
+        <Link to={"/boards/" + props.idx}>{props.title}</Link>
+      </td>
+      <td>{props.name}</td>
+      <td>{props.saveDate}</td>
+    </tr>
+  );
+};
 
 export default BoardList;
