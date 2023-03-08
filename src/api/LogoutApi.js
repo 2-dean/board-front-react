@@ -1,20 +1,12 @@
-import {Api} from "./axiosProvider";
-import {useResetRecoilState} from "recoil";
-import {userState} from "../store/Atom";
+import { Api } from "./axiosProvider";
 
 export function LogoutApi() {
-    const userLogout = useResetRecoilState(userState);
-    Api.post("/logout")
-        .then((response) => {
-            console.log("[ /logout API 요청 ]===========")
-            console.log(response);
-
-            console.log("[ userState ] 초기화");
-
-            userLogout();
-        })
-        .catch((error) => {
-            alert(error);
-        });
-
+  Api.post("/logout")
+    .then((response) => {
+      console.log("[ LogoutApi ] /logout API 응답 옴 ");
+      console.log(response);
+    })
+    .catch((error) => {
+      alert("[ LogoutApi ERROR ]\n" + error);
+    });
 }

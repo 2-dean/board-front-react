@@ -47,12 +47,14 @@ const LoginForm = () => {
       .post("http://localhost:8080/login", user, { withCredentials: true })
       .then((response) => {
         console.log("[ LoginForm ] 5. /login API 응답 옴  ");
-
         console.log(response);
-        onLoginSuccess(response);
-        //navigate("/board");
 
-        console.log("[ LoginForm ] 6. recoil 에 로그인 상태 반영 ");
+        console.log("[ LoginForm ] 6. AccessToken LocalStorage 저장 ");
+        const token = response.headers.get('Authorization');
+        localStorage.setItem("token", token);
+        console.log("[ LoginForm ] LocalStorage Token : " + localStorage.getItem("token"));
+
+        console.log("[ LoginForm ] 7. recoil 에 로그인 상태 반영 ");
         setLoginUser({
           id: user.id,
           password: user.password,
@@ -61,14 +63,14 @@ const LoginForm = () => {
         });
 
         console.log(
-          "[ LoginForm ] 7 로그인 상태 확인 loginUser :" +
+          "[ LoginForm ] 8. 로그인 상태 확인 loginUser : " +
             loginUser.id +
             ", isLogin : " +
             loginUser.isLogin
         );
 
-        console.log("[ LoginForm ] 8. 페이지 이동 ");
-        navigate("/boards");
+        console.log("[ LoginForm ] 9. 페이지 이동 ");
+        //navigate("/boards");
       })
       .catch((error) => {
         alert("로그인 정보를 확인하세요.");
