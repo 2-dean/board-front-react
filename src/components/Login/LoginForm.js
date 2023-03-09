@@ -73,8 +73,11 @@ const LoginForm = () => {
         //navigate("/boards");
       })
       .catch((error) => {
-        alert("로그인 정보를 확인하세요.");
-        console.log(error);
+          console.log(error);
+          switch (error.response.status) {
+              case(500) : alert("로그인 정보를 확인하세요.");
+              //TODO id/pw 폼 지워주기
+          }
       });
   }; //login
 

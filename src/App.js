@@ -26,7 +26,7 @@ function App () {
                 { path: "/", element: <MainPage/> },
                 { path: "/login", element: <LoginPage/>},
                 { path: "/boards", element: <BoardPage /> },
-                { path: "/boards/:boardIdx", element: <BoardDetail /> },
+                { path: "/board/:boardIdx", element: <BoardDetail /> },
             ],
         },
     ]);

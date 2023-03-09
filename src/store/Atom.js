@@ -48,6 +48,10 @@ export const activePageState = atom({
 })
 
 
+export const boardState = atom({
+    key: 'boardState',
+    default: [],
+})
 
 export const pageState = atom({
     key: 'pageState',
