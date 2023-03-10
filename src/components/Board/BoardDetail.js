@@ -1,32 +1,62 @@
 import { useParams } from "react-router";
-import { useRecoilValue } from "recoil";
-import { boardState } from "../../store/Atom";
+import { Api } from "../../api/axiosProvider";
+import { useRef } from "react";
 
 const BoardDetail = () => {
   console.log("============ [BoardDetail] ===============");
-  const params = useParams();
-  const board = useRecoilValue(boardState);
-  console.log("[ BoardDetail ] boardAndComment 데이터 : " + board);
+  const { boardIdx } = useParams();
+  console.log("[ BoardDetail ] : " + boardIdx);
+  const boardInfo = useRef();
+  const comments = useRef();
+
+  console.log("[ BoardDetail ] 0. /board/idx 요청 ===============");
+  Api.get("/board/" + boardIdx)
+    .then((response) => {
+      console.log("[ BoardList ] 1. /board/idx 응답 옴");
+      console.log(response);
+      console.log(response.data);
+      console.log(response.data.board);
+      console.log(response.data.comment);
+
+      boardInfo.current = response.data.board;
+      comments.current = response.data.comment;
+
+      console.log("===== [ boardAndComments 확인 ] =====");
+      console.log("board");
+      console.log(boardInfo.current);
+      console.log("comments");
+      console.log(comments.current);
+    })
+    .catch((error) => {
+      console.log("[ BoardDetail ] /board/idx  error!!!");
+      console.log(error);
+    });
+
   return (
     <div>
       <h1>Board Detail</h1>
-      <p>{params.boardIdx}</p>
+      <p>{boardIdx}</p>
       <table>
         <thead>
           <tr>
-            <td>{board.idx}</td>
-            <td>{board.title}</td>
-            <td>{board.name}</td>
-            <td>{board.saveDate}</td>
-            {/* <td>IDX</td>
-            <td>board.title</td>
-            <td>board.name</td>
-            <td>board.saveDate</td>*/}
+            <td>게시글번</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>작성일자</td>
           </tr>
         </thead>
         <tbody>
-          <tr aria-rowspan={4}>
-            <td>board.content</td>
+        {boardInfo.current ? console.log("boarInfo 들어옴") : console.log("boarInfo 로딩중ㅌㅋ")}
+          <tr aria-rowspan={4} >
+            <td>{boardInfo.current.idx}</td>
+            <td>{boardInfo.current.title}</td>
+            <td>{boardInfo.current.name}</td>
+            <td>{boardInfo.current.saveDate}</td>
+          </tr>
+          <tr>
+            {/*
+            <td>{boardInfo.current.content}</td>
+*/}
           </tr>
         </tbody>
         <tfoot>

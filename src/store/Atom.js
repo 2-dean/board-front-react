@@ -20,17 +20,11 @@ export const userState = atom({
     }
 );
 
-export const tokenState = atom({
-    key: 'tokenState',
-    default: {
-        access: '',
-        expireTime: ''
-    }
-})
 
 
-export const boardList = atom({
-        key: 'boardList',
+
+export const boardListState = atom({
+        key: 'boardListState',
         default: [],
         // effects_UNSTABLE: [persistAtom],
     }

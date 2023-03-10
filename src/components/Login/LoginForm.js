@@ -70,7 +70,7 @@ const LoginForm = () => {
         );
 
         console.log("[ LoginForm ] 9. 페이지 이동 ");
-        //navigate("/boards");
+        navigate("/boards");
       })
       .catch((error) => {
           console.log(error);
