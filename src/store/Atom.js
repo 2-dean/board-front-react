@@ -2,7 +2,7 @@
 // atom의 값을 읽는 컴포넌트들은 암묵적으로 atom을 구독한다.
 // 그래서 atom에 어떤 변화가 있으면 그 atom을 구독하는 모든 컴포넌트들이 재 렌더링 되는 결과가 발생할 것이다.
 
-import {atom} from "recoil";
+import {atom, selector} from "recoil";
 import {recoilPersist} from "recoil-persist";
 
 const { persistAtom } = recoilPersist();
@@ -22,13 +22,15 @@ export const userState = atom({
 
 
 
-
+//게시글 전체
 export const boardListState = atom({
         key: 'boardListState',
         default: [],
         // effects_UNSTABLE: [persistAtom],
     }
 );
+
+
 
 export const boardPageListState = atom({
     key: 'boardPageList',
@@ -41,7 +43,7 @@ export const activePageState = atom({
     default: 1,
 })
 
-
+// 게시글 1개
 export const boardState = atom({
     key: 'boardState',
     default: [],

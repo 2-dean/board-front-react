@@ -5,6 +5,8 @@ import {
   boardListState,
   boardPageListState,
 } from "../../store/Atom";
+import {useEffect} from "react";
+import {Api} from "../../api/axiosProvider";
 
 
 
@@ -26,7 +28,44 @@ const Paging = () => {
     "[ Paging ] 1. beginBoard : " + beginBoard + ", endBoard : " + endBoard
   );
 
-  const pageChangeHandler = (activePage) => {
+  useEffect(() => {
+    console.log("[ Paging ] 2. componentDidMount !");
+    console.log("[ Paging ] 3. BoardApi 요청");
+
+    Api.get("/boards")
+        .then((response) => {
+          console.log("[ Paging ] 4. BoardApi 응답옴");
+          console.log(response);
+          console.log("[ Paging ] 5. 게시글 목록 확인");
+          console.log(response.data); // 게시글 목록
+
+          const boardListAll = response.data;
+          const boardListCount = response.data.length; // 전체 게시글 갯수
+          console.log("[ Paging ] 6. 게시글 전체 갯수 확인");
+          console.log("[ Paging ] boardsCount : " + boardListCount);
+
+            console.log("[ Paging ] 7. BoardList 전체 담기 >> 확인");
+            setBoards(boardListAll);
+            console.log(boards);
+
+            console.log("[ Paging ] beginBoard, endBoard 확인 : " + beginBoard + ", " + endBoard);
+
+            pageChangeHandler(activePage);
+        })
+        .catch((error) => {
+          console.log("[ Paging ] 4. !!! error 발생");
+          console.log(error);
+          return alert("[ Paging ] Axios [ /boards ] 요청 error");
+        });
+
+    return () => {
+      console.log("[ Paging ] --- 컴포넌트 사라짐");
+    };
+  }, []);
+
+
+
+ const pageChangeHandler = (activePage) => {
     setActivePage(activePage);
     console.log(
       "[ Paging - pageChangeHandler ] 4. 페이지 변경! [ 페이지 : " +

@@ -8,6 +8,8 @@ import {onSilentRefresh} from "./api/RefreshToken";
 import BoardDetail from "./components/Board/BoardDetail";
 import BoardPage from "./page/BoardPage";
 import ErrorPage from "./page/ErrorPage";
+import {Suspense} from "react";
+import BoardWrite from "./components/Board/BoardWrite";
 
 
 //로그인 여부에 따라 메뉴 보이는 거 다르게
@@ -27,6 +29,8 @@ function App () {
                 { path: "/login", element: <LoginPage/>},
                 { path: "/boards", element: <BoardPage /> },
                 { path: "/board/:boardIdx", element: <BoardDetail /> },
+                { path: "/write", element: <BoardWrite /> },
+
             ],
         },
     ]);
@@ -35,6 +39,7 @@ function App () {
         <RecoilRoot>
           <RouterProvider router={router} />
         </RecoilRoot>
+
     );
 }
 

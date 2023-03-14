@@ -3,7 +3,6 @@ import { useRef } from "react";
 import { useRecoilState } from "recoil";
 import { userState } from "../../store/Atom";
 import { useNavigate } from "react-router";
-import { onLoginSuccess } from "../../api/RefreshToken";
 import axios from "axios";
 
 const LoginForm = () => {
@@ -50,9 +49,11 @@ const LoginForm = () => {
         console.log(response);
 
         console.log("[ LoginForm ] 6. AccessToken LocalStorage 저장 ");
-        const token = response.headers.get('Authorization');
+        const token = response.headers.get("Authorization");
         localStorage.setItem("token", token);
-        console.log("[ LoginForm ] LocalStorage Token : " + localStorage.getItem("token"));
+        console.log(
+          "[ LoginForm ] LocalStorage Token : " + localStorage.getItem("token")
+        );
 
         console.log("[ LoginForm ] 7. recoil 에 로그인 상태 반영 ");
         setLoginUser({
@@ -73,11 +74,12 @@ const LoginForm = () => {
         navigate("/boards");
       })
       .catch((error) => {
-          console.log(error);
-          switch (error.response.status) {
-              case(500) : alert("로그인 정보를 확인하세요.");
-              //TODO id/pw 폼 지워주기
-          }
+        console.log(error);
+        switch (error.response.status) {
+          case 500:
+            alert("로그인 정보를 확인하세요.");
+          //TODO id/pw 폼 지워주기
+        }
       });
   }; //login
 
