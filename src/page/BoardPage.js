@@ -6,6 +6,7 @@ import Boards from "../components/Board/Boards";
 import Paging from "../components/Board/Paging";
 import {Api} from "../api/axiosProvider";
 import {useEffect} from "react";
+import {Link} from "react-router-dom";
 
 const BoardPage = () => {
   const loginUser = useRecoilValue(userState);
@@ -32,9 +33,8 @@ const BoardPage = () => {
     <div className={classes.container}>
       <h1>게시판</h1>
         <Boards />
-      <div>
-        <Paging  />
-      </div>
+        <Paging />
+      <Link to={"/board/write"}><p>글쓰기</p></Link>
     </div>
   );
 };

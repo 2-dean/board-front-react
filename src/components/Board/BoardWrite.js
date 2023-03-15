@@ -1,11 +1,19 @@
 import {useRef} from "react";
+import {Api} from "../../api/axiosProvider";
 
 const BoardWrite = () => {
     const inputRef = useRef();
 
+    console.log("[ BoardWrite ] 실행 ")
     const userImageSubmitHandler = () => {
         alert("제출");
         console.log("userIdCardSubmitHandler 실행");
+
+        Api.post("/boards/new")
+            .then((response) => {
+                console.log("/boards/new 응답 옴");
+                console.log(response)
+            })
     }
 
     return (

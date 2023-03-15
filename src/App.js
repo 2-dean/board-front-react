@@ -29,6 +29,7 @@ function App () {
                 { path: "/login", element: <LoginPage/>},
                 { path: "/boards", element: <BoardPage /> },
                 { path: "/board/:boardIdx", element: <BoardDetail /> },
+                { path: "/board/write", element: <BoardWrite /> },
                 { path: "/write", element: <BoardWrite /> },
 
             ],
