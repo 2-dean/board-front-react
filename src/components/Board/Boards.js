@@ -1,9 +1,9 @@
 import {
   activePageState,
   boardListState,
-  boardPageListState,
+  boardPageListState, modeState,
 } from "../../store/Atom";
-import { useRecoilState, useRecoilValue } from "recoil";
+import {useRecoilState, useRecoilValue, useSetRecoilState} from "recoil";
 import BoardList from "./BoardList";
 import {useEffect} from "react";
 
@@ -12,6 +12,7 @@ const Boards = (props) => {
   const [boards, setBoards] = useRecoilState(boardListState);
   const [boardPageList, setBoardPageList] = useRecoilState(boardPageListState);
   const activePage = useRecoilValue(activePageState);
+
 
   // 페이징 관련
   const itemsCountPerPage = 5;

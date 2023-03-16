@@ -51,9 +51,7 @@ Api.interceptors.response.use(
     console.log(error.response);
 
     if (error.response.status === 406) {
-        const { config,
-                response: {status},
-        } = error;
+     //const { config, response: {status},} = error;
 
       console.log(
         "[ interceptors.response ] !!!! 406 ERROR  ======> 리프레시 토큰 발급"
@@ -82,6 +80,9 @@ Api.interceptors.response.use(
       );
 
       //return axios(origi)
+    } else {
+        console.log("그 외 오류발생");
+        console.log(error);
     }
 
     return Promise.reject(error);

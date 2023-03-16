@@ -31,6 +31,10 @@ export const boardListState = atom({
 );
 
 
+export const modeState = atom({
+    key: 'modeState',
+    default: "board",
+})
 
 export const boardPageListState = atom({
     key: 'boardPageList',
