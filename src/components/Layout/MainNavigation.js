@@ -4,6 +4,7 @@ import { useRecoilValue, useResetRecoilState } from "recoil";
 import {boardListState, boardPageListState, userState} from "../../store/Atom";
 import { getCookie } from "../../common/getAccessToken";
 import { Api } from "../../api/axiosProvider";
+import {useNavigate} from "react-router";
 
 const MainNavigation = () => {
   //로그인 사용자 관련
@@ -20,8 +21,13 @@ const MainNavigation = () => {
   // Cookie 의 refreshToken 확인용
   const refreshToken = getCookie("refreshToken");
 
+
+  // 페이지 이동
+  const navigate = useNavigate();
+
   const logout = async (event) => {
     event.preventDefault();
+
     alert("logout 클릭");
     console.log("[ MainNavigation ] logout ===============>");
 
@@ -54,6 +60,9 @@ const MainNavigation = () => {
         );
         console.log("[ MainNavigation ] 8. boardList : " + boardList);
         console.log("[ MainNavigation ] 9. boardPageList : " + boardPageList);
+
+        navigate("/")
+
       });
     } catch (error) {
       console.log(error);

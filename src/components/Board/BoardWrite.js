@@ -1,40 +1,89 @@
-import { useRef } from "react";
+import {useEffect, useRef, useState} from "react";
 
 import classes from "./BoardWrite.module.css";
 import axios from "axios";
-import {getCookie} from "../../common/getAccessToken";
+import { getCookie } from "../../common/getAccessToken";
+import {useRecoilState, useRecoilValue} from "recoil";
+import { userState } from "../../store/Atom";
 import {Api} from "../../api/axiosProvider";
 
 const BoardWrite = () => {
   console.log("[ BoardWrite ] 실행 ");
+  const [loginUser, setLoginUser] = useRecoilState(userState);
+  const [imageSrc, setImageSrc]: any = useState(null);
 
-  const inputTitle = useRef();
-  const inputContent = useRef();
-  const inputName = useRef();
-  const inputFile = useRef();
+
+  console.log(
+    "[ BoardWrite ] LOGIN USER : " +
+      loginUser.id +
+      " | " +
+      loginUser.name +
+      " | "
+  );
+
+  useEffect(()=>{
+    console.log("[ BoardWrite ] /user (loginUser 정보) API 요청 ID 보내서 user 정보 가져옴  ");
+
+    Api.post("/user/"+loginUser.id)
+        .then((response)=>{
+          console.log("[ BoardWrite ] /user (loginUser 정보) API 응답 옴  ");
+          console.log(response);
+          const name = response.data.name;
+          setLoginUser({
+            id: loginUser.id,
+            password: loginUser.password,
+            name: name,
+            isLogin: true,
+          });
+        }).catch((error) =>{
+      console.log("[ BoardWrite ] 9. /user ERROR 발생 ");
+      console.log(error);
+    })
+  }, [])
+
 
   const formData = new FormData(); // formData 생성
 
-  const fileChange = event => {
-    console.log("[ BoardWrite ] ")
+  const inputTitle = useRef();
+  const inputContent = useRef();
+  const inputFile = useRef();
+
+  const fileChange = (event) => {
+    console.log("[ BoardWrite - fileChange ] 파일 첨부 됨 ");
     console.log(event);
     console.log(event.target);
     console.log(event.target.files);
 
+    const file = event.target.files[0];
     formData.append("file", event.target.files[0]); // 이미지 파일 값 할당
-    console.log("[fileChange] formData 확인")
+    console.log("[fileChange] formData 확인");
     console.log(formData);
-  }
+
+  // 첨부파일 미리보기
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    return new Promise((resolve) => {
+      reader.onload = () => {
+        setImageSrc(reader.result || null); // 파일의 컨텐츠
+        resolve();
+      };
+    });
+
+  };
 
   const userImageSubmitHandler = (event) => {
     event.preventDefault();
     console.log("userImageSubmitHandler 실행");
+    console.log("title : " + inputTitle.current.value);
+    console.log("content : " + inputContent.current.value);
+
     alert("제출");
     formData.append("title", inputTitle.current.value);
     formData.append("content", inputContent.current.value);
-    formData.append("name", inputName.current.value);
+    formData.append("name", loginUser.name);
 
-    console.log("formData 확인")
+    console.log("formData 확인");
     console.log(formData);
 
     const config = {
@@ -45,14 +94,17 @@ const BoardWrite = () => {
         "Content-Type": "multipart/form-data", // 데이터 형식 지정
       },
     };
-  /// api 통신
+
+    /// api 통신
     axios
       .post("/board/new", formData, config)
       .then((response) => {
         console.log("/board/new  응답옴");
+        console.log(response);
       })
-      .catch((err) => {
+      .catch((error) => {
         console.log("ERROR 발생");
+        console.log(error)
       });
   };
 
@@ -66,9 +118,17 @@ const BoardWrite = () => {
         <br />
         <textarea name="content" placeholder="내용" ref={inputContent} />
         <br />
-        <input type="text" name="name" placeholder="작성자" ref={inputName} disabled />
+        <input type="hidden" value={loginUser.id} />
+        <input
+          type="text"
+          name="name"
+          placeholder={loginUser.name}
+          disabled
+        />
         <br />
-        <input type="file" name="file" ref={inputFile} onChange={fileChange}/>
+        <img src={imageSrc}  alt="첨부파일" />
+        <br />
+        <input type="file" name="file" ref={inputFile} onChange={fileChange} />
         <br />
         <button onClick={userImageSubmitHandler}>제출하기</button>
       </form>

@@ -1,30 +1,18 @@
-import {
-  activePageState,
-  boardListState,
-  boardPageListState, modeState,
-} from "../../store/Atom";
-import {useRecoilState, useRecoilValue, useSetRecoilState} from "recoil";
-import BoardList from "./BoardList";
-import {useEffect} from "react";
+import { boardListState, boardPageListState } from "../../store/Atom";
+import { useRecoilValue } from "recoil";
+import { Link } from "react-router-dom";
 
 const Boards = (props) => {
   console.log("================= Boards =====================");
-  const [boards, setBoards] = useRecoilState(boardListState);
-  const [boardPageList, setBoardPageList] = useRecoilState(boardPageListState);
-  const activePage = useRecoilValue(activePageState);
+  const boards = useRecoilValue(boardListState);
+  const boardPageList = useRecoilValue(boardPageListState);
 
-
-  // 페이징 관련
-  const itemsCountPerPage = 5;
-  const beginBoard = (activePage - 1) * itemsCountPerPage;
-  const endBoard = beginBoard + itemsCountPerPage;
+  console.log("[ Boards ] boards 확인");
+  console.log(boards);
 
   console.log("[ Boards ] boardPageList 확인");
   console.log(boardPageList);
 
-  useEffect((pageCHa) => {
-
-  },[])
   return (
     <>
       <table>
@@ -38,18 +26,19 @@ const Boards = (props) => {
         </thead>
         <tbody>
           {boardPageList.map((board) => (
-            <BoardList
-              key={board.idx}
-              idx={board.idx}
-              title={board.title}
-              name={board.name}
-              saveDate={board.saveDate}
-            />
+            <tr key={board.idx}>
+              <td>{board.idx}</td>
+              <td>
+                <Link to={`/board/${board.idx}`}>{board.title}</Link>
+              </td>
+              <td>{board.name}</td>
+              <td>{board.saveDate}</td>
+            </tr>
           ))}
         </tbody>
         <tfoot>
           <tr>
-            <td>게시판 아래</td>
+            <td colSpan={4}>게시판 아래</td>
           </tr>
         </tfoot>
       </table>

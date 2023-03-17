@@ -4,6 +4,7 @@ import { useRecoilState } from "recoil";
 import { userState } from "../../store/Atom";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import {Api} from "../../api/axiosProvider";
 
 const LoginForm = () => {
   console.log("===================== LoginForm =====================");
@@ -49,7 +50,7 @@ const LoginForm = () => {
         console.log(response);
 
         console.log("[ LoginForm ] 6. AccessToken LocalStorage 저장 ");
-        const token = response.headers.get("Authorization");
+        const token = response.headers.get("authorization");
         localStorage.setItem("token", token);
         console.log(
           "[ LoginForm ] LocalStorage Token : " + localStorage.getItem("token")
@@ -59,7 +60,7 @@ const LoginForm = () => {
         setLoginUser({
           id: user.id,
           password: user.password,
-          name: null,
+          name: user.name,
           isLogin: true,
         });
 
@@ -69,18 +70,16 @@ const LoginForm = () => {
             ", isLogin : " +
             loginUser.isLogin
         );
-
-        console.log("[ LoginForm ] 9. 페이지 이동 ");
-        navigate("/boards");
+          console.log("[ LoginForm ] 10. 페이지 이동 ");
+          navigate("/boards");
       })
       .catch((error) => {
         console.log(error);
-        switch (error.response.status) {
-          case 500:
-            alert("로그인 정보를 확인하세요.");
           //TODO id/pw 폼 지워주기
-        }
       });
+
+
+
   }; //login
 
   return (
@@ -115,4 +114,22 @@ const LoginForm = () => {
   );
 };
 
+
 export default LoginForm;
+
+
+axios.interceptors.response.use((response) => {
+    console.log(
+        "[ LoginForm interceptors.response 실행 ] 0. http status === 200, 응답 "
+    );
+    return response;
+},(error) => {
+    console.log(
+        "[ LoginForm interceptors.response 실행 ] 에러발생 "
+    );
+    console.log(error);
+
+    switch (error.response.status) {
+        case 500 : alert("비밀번호가 일치하지 않습니다.")
+    }
+})

@@ -2,12 +2,12 @@
 // atom의 값을 읽는 컴포넌트들은 암묵적으로 atom을 구독한다.
 // 그래서 atom에 어떤 변화가 있으면 그 atom을 구독하는 모든 컴포넌트들이 재 렌더링 되는 결과가 발생할 것이다.
 
-import {atom, selector} from "recoil";
-import {recoilPersist} from "recoil-persist";
+import { atom } from "recoil";
+import { recoilPersist } from "recoil-persist";
 
 const { persistAtom } = recoilPersist();
 
-
+// 로그인 사용자 
 export const userState = atom({
         key: 'userState',
         default: {
@@ -20,9 +20,7 @@ export const userState = atom({
     }
 );
 
-
-
-//게시글 전체
+// 게시글 전체
 export const boardListState = atom({
         key: 'boardListState',
         default: [],
@@ -30,53 +28,37 @@ export const boardListState = atom({
     }
 );
 
-
-export const modeState = atom({
-    key: 'modeState',
-    default: "board",
-})
-
+// 게시글 페이지별 
 export const boardPageListState = atom({
     key: 'boardPageList',
     default: [],
-    effects_UNSTABLE: [persistAtom],
+    //effects_UNSTABLE: [persistAtom],
 })
 
-export const activePageState = atom({
-    key: 'activePageState',
-    default: 1,
-})
-
-// 게시글 1개
+// 게시글 상세
 export const boardState = atom({
     key: 'boardState',
     default: [],
 })
 
-export const pageState = atom({
-    key: 'pageState',
-    default: {
-        activePage: '',     // 현재 페이지
-        itemsCountPerPage: 5,   // 한 페이지랑 보여줄 아이템 갯수
-        totalItemsCount: '',   // 총 아이템 갯수
-        pageRangeDisplayed: 3,  // paginator의 페이지 범위
-        prevPageText: '<',        // "이전"을 나타낼 텍스트
-        nextPageText: '>',      // "다음"을 나타낼 텍스트
-        onChange: '',
-    }
-});
+// 페이징 현재 페이지
+export const activePageState = atom({
+    key: 'activePageState',
+    default: 1,
+})
 
 
-
-export const pageInfo = atom({
-        key: 'pageInfo',
-        default: {
-            pageNum: 1,    //현재페이지
-            pageSize: '',   //페이지 범위
-            total: '',      //총아이템 갯수
-            hasNextPage: '',     //첫번째 페이지 여부 (이전페이지 노출에사용)
-            hasPreviousPage: '', //마지막 페이지 여부
-        },
-        effects_UNSTABLE: [persistAtom],
+// 댓글 전체
+export const commentListState = atom({
+        key: 'commentListState',
+        default: [],
+        // effects_UNSTABLE: [persistAtom],
     }
 );
+
+// 댓글 페이지별 
+export const commentPageListState = atom({
+    key: 'commentPageListState',
+    default: [],
+    //effects_UNSTABLE: [persistAtom],
+})

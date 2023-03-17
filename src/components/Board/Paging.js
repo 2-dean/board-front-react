@@ -5,10 +5,8 @@ import {
   boardListState,
   boardPageListState,
 } from "../../store/Atom";
-import {useEffect} from "react";
-import {Api} from "../../api/axiosProvider";
-
-
+import { useEffect } from "react";
+import { Api } from "../../api/axiosProvider";
 
 const Paging = () => {
   // const [pageContent, setPageContent] = useRecoilState(pageInfo);
@@ -31,41 +29,51 @@ const Paging = () => {
   useEffect(() => {
     console.log("[ Paging ] 2. componentDidMount !");
     console.log("[ Paging ] 3. BoardApi 요청");
-
+    pageChangeHandler(1);
     Api.get("/boards")
-        .then((response) => {
-          console.log("[ Paging ] 4. BoardApi 응답옴");
-          console.log(response);
-          console.log("[ Paging ] 5. 게시글 목록 확인");
-          console.log(response.data); // 게시글 목록
+      .then((response) => {
+        console.log("[ Paging ] 4. BoardApi 응답옴");
+        console.log(response);
 
-          const boardListAll = response.data;
-          const boardListCount = response.data.length; // 전체 게시글 갯수
-          console.log("[ Paging ] 6. 게시글 전체 갯수 확인");
-          console.log("[ Paging ] boardsCount : " + boardListCount);
+        const boardListAll = response.data;
+        console.log("[ Paging ] 5. 게시글 목록 확인");
+        console.log(response.data); // 게시글 목록
 
-            console.log("[ Paging ] 7. BoardList 전체 담기 >> 확인");
-            setBoards(boardListAll);
-            console.log(boards);
+        const boardListCount = response.data.length; // 전체 게시글 갯수
+        console.log("[ Paging ] 6. 게시글 전체 갯수 확인");
+        console.log("[ Paging ] boardsCount : " + boardListCount);
 
-            console.log("[ Paging ] beginBoard, endBoard 확인 : " + beginBoard + ", " + endBoard);
+        console.log(
+          "[ Paging ] beginBoard, endBoard 확인 : " +
+            beginBoard +
+            ", " +
+            endBoard
+        );
+        setBoards(boardListAll);
+        setBoardPageList(boardListAll.slice(beginBoard, endBoard));
+      })
+      .catch((error) => {
+        console.log("[ Paging ] 4. !!! error 발생");
+        console.log(error);
+        return alert("[ Paging ] Axios [ /boards ] 요청 error");
+      });
 
-            pageChangeHandler(activePage);
-        })
-        .catch((error) => {
-          console.log("[ Paging ] 4. !!! error 발생");
-          console.log(error);
-          return alert("[ Paging ] Axios [ /boards ] 요청 error");
-        });
+    console.log("[ Paging ] 1 boards : " + boards);
+    console.log("[ Paging ] 1 boardPageList : " + boardPageList);
 
     return () => {
       console.log("[ Paging ] --- 컴포넌트 사라짐");
     };
   }, []);
 
+  console.log("[ Paging ] 2 boards : ");
+  console.log(boards);
+  console.log("[ Paging ] 2 boardPageList Recoil: ");
 
+  console.log(boardPageList);
 
- const pageChangeHandler = (activePage) => {
+  const pageChangeHandler = (activePage) => {
+    console.log("[ Paging - pageChangeHandler ] 실행");
     setActivePage(activePage);
     console.log(
       "[ Paging - pageChangeHandler ] 4. 페이지 변경! [ 페이지 : " +
