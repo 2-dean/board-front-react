@@ -4,7 +4,6 @@ import { useRecoilState } from "recoil";
 import { userState } from "../../store/Atom";
 import { useNavigate } from "react-router";
 import axios from "axios";
-import {Api} from "../../api/axiosProvider";
 
 const LoginForm = () => {
   console.log("===================== LoginForm =====================");
@@ -70,16 +69,13 @@ const LoginForm = () => {
             ", isLogin : " +
             loginUser.isLogin
         );
-          console.log("[ LoginForm ] 10. 페이지 이동 ");
-          navigate("/boards");
+        console.log("[ LoginForm ] 10. 페이지 이동 ");
+        navigate("/boards");
       })
       .catch((error) => {
         console.log(error);
-          //TODO id/pw 폼 지워주기
+        //TODO id/pw 폼 지워주기
       });
-
-
-
   }; //login
 
   return (

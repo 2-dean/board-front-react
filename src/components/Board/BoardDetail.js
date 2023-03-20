@@ -6,7 +6,7 @@ import {
   commentListState,
   commentPageListState,
 } from "../../store/Atom";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 const BoardDetail = (props) => {
   console.log("============ [BoardDetail] ===============");
@@ -19,6 +19,7 @@ const BoardDetail = (props) => {
   const [board, setBoard] = useRecoilState(boardState);
   const [commentList, setCommentList] = useRecoilState(commentListState);
   const [commentPageList, setCommentPageList] = useRecoilState(commentPageListState)
+    const [imgSrc, setImgSrc] = useState('');
 
     useEffect(()=>{
         console.log("[ BoardDetail ] boardIdx : " + boardIdx)
@@ -48,7 +49,11 @@ const BoardDetail = (props) => {
                 console.log("[ BoardDetail ] /board/idx  error!!!");
                 console.log(error);
             });
+
+
+
     },[])
+
 
 
 
@@ -72,7 +77,7 @@ const BoardDetail = (props) => {
             <td>{board.saveDate}</td>
           </tr>
           <tr>
-              <td>{board.savePath}</td>
+              <td colSpan={4}><img src={board.savePath}  alt={board.oriFileName}/></td>
           </tr>
           <tr>
             <td colSpan={4}>{board.content}</td>
