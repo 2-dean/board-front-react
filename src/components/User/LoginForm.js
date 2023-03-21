@@ -114,6 +114,7 @@ const LoginForm = () => {
 export default LoginForm;
 
 
+/*
 axios.interceptors.response.use((response) => {
     console.log(
         "[ LoginForm interceptors.response 실행 ] 0. http status === 200, 응답 "
@@ -126,6 +127,6 @@ axios.interceptors.response.use((response) => {
     console.log(error);
 
     switch (error.response.status) {
-        case 500 : alert("비밀번호가 일치하지 않습니다.")
+        case 500 : alert("[LoginForm interceptors]비밀번호가 일치하지 않습니다.")
     }
-})
+})*/

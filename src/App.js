@@ -10,6 +10,7 @@ import BoardPage from "./page/BoardPage";
 import ErrorPage from "./page/ErrorPage";
 import {Suspense} from "react";
 import BoardWrite from "./components/Board/BoardWrite";
+import UserJoin from "./page/UserJoin";
 
 
 //로그인 여부에 따라 메뉴 보이는 거 다르게
@@ -26,7 +27,9 @@ function App () {
             errorElement: <ErrorPage />,
             children: [
                 { path: "/", element: <MainPage/> },
-                { path: "/login", element: <LoginPage/>},
+                { path: "/login", element: <LoginPage />},
+                { path: "/join", element: <UserJoin />},
+
                 { path: "/boards", element: <BoardPage /> },
                 { path: "/board/:boardIdx", element: <BoardDetail /> },
                 { path: "/board/write", element: <BoardWrite /> },

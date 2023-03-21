@@ -56,7 +56,7 @@ const BoardWrite = () => {
   // 파일선택 클릭시 마다
   const fileChange = (event) => {
     event.preventDefault();
-    console.log("[ BoardWrite - fileChange ] 파일 첨부 됨 ");
+    console.log("[ BoardWrite ] fileChange() 파일 첨부 됨 ");
     console.log(event);
     console.log(event.target);
     console.log(event.target.files);
@@ -80,7 +80,7 @@ const BoardWrite = () => {
   const userImageSubmitHandler = (event) => {
     event.preventDefault();
     alert("제출");
-    console.log("userImageSubmitHandler 실행 ==== 입력값 확인 ");
+    console.log("[ BoardWrite ] userImageSubmitHandler 실행 ==== 입력값 확인 ");
     console.log("title : " + inputTitleRef.current.value);
     console.log("content : " + inputContentRef.current.value);
     console.log("loginUser.idx : " + loginUser.idx);
@@ -96,7 +96,7 @@ const BoardWrite = () => {
     formData.append("file", uploadFile);
 
     console.log(formData);
-    console.log("[ userImageSubmitHandler ] formData.entries 확인 ");
+    console.log("[ BoardWrite ] userImageSubmitHandler --  formData.entries 확인 ");
     console.log(formData.entries());
 
 
@@ -113,14 +113,15 @@ const BoardWrite = () => {
     axios
       .post("/board/new", formData, config)
       .then((response) => {
-        console.log("/board/new  응답옴");
+        console.log("[ BoardWrite ] /board/new  응답옴");
         console.log(response);
         if(response.status === 200) {
-          navigate("/board")
+          console.log("[ BoardWrite ] boards 목록으로 이동");
+          navigate("/boards")
         }
       })
       .catch((error) => {
-        console.log("/board/new  ERROR 발생");
+        console.log("[ BoardWrite ] /board/new  ERROR 발생");
         console.log(error);
       });
   };
