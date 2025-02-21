@@ -1,9 +1,8 @@
-import {useRecoilState, useResetRecoilState} from "recoil";
+import {useRecoilState} from "recoil";
 import {userState} from "../store/Atom";
 import {useNavigate} from "react-router";
 import {LogoutApi} from "../api/LogoutApi";
 import {UserApi} from "../api/UserApi";
-import {getCookie} from "../common/getAccessToken";
 
 const Mypage = () => {
     console.log("===================== MyPage =====================");

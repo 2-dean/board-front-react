@@ -1,4 +1,4 @@
-import classes from "../../page/style/LoginPage.module.css";
+import classes from "../../style/style/LoginPage.module.css";
 import { useRef } from "react";
 import { useRecoilState } from "recoil";
 import { userState } from "../../store/Atom";

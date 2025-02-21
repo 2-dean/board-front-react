@@ -1,14 +1,27 @@
-import classes from "./style/LoginPage.module.css";
+import classes from "../style/style/LoginPage.module.css";
 import LoginForm from "../components/User/LoginForm";
+import {Link} from "react-router-dom";
+import {useRecoilValue} from "recoil";
+import {userState} from "../store/Atom";
+import Dashboard from "./Dashboard";
 
 const LoginPage = () => {
     console.log("===================== LoginPage =====================");
-
+    const loginUser = useRecoilValue(userState);
+    console.log("loginUser ",loginUser)
         return (
+            <>
+            {loginUser.id !== null ?
             <section className={classes.login}>
-               <LoginForm />
-            </section>
+                <Dashboard/>
+            </section> : (
+                <section className={classes.login}>
+                    <LoginForm/>
+                </section>
+            )}
+            </>
         );
-    }
 
-    export default LoginPage;
+}
+
+export default LoginPage;

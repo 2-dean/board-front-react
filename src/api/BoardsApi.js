@@ -16,7 +16,7 @@ export function BoardsApi() {
     const beginBoard = (activePage - 1) * itemsCountPerPage;
     const endBoard = beginBoard + itemsCountPerPage;
 
-   const suspender = Api.get("/boards")
+   const suspender = Api.get("/task/bm/BmVhcl/retrieve.do")
         .then((response) => {
 
             console.log("[ Boards ] 4. BoardApi 응답옴");

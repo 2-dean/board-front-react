@@ -1,0 +1,16 @@
+/* 📌 src/styles/sidebar.css */
+
+/* 왼쪽 트리 메뉴 스타일 */
+.sidebar {
+    width: 10%;
+    height: 100vh;
+    background-color: #a50e48; /* 연한 회색 */
+    border-right: 1px solid #ccc;
+    padding: 16px;
+    padding-top: 20px;
+    overflow-y: auto; /* 스크롤 가능 */
+}
+
+.sidebar-header {
+    background-color: #a50e48; /* 연한 회색 */
+}

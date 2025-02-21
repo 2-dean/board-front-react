@@ -34,7 +34,7 @@ const MainNavigation = () => {
     console.log("[ MainNavigation ] 1. LogoutApi 호출");
 
     try {
-      await Api.post("/logout").then((response) => {
+      await Api.post("/session/Login/actionLogin.do").then((response) => {
         console.log("[ MainNavigation ] 2. LogoutApi 응답옴");
         console.log(response);
 
@@ -72,7 +72,7 @@ const MainNavigation = () => {
   return (
     <header className={classes.header}>
       <Link to="/">
-        <div className={classes.logo}>ElasticWorks 2dean</div>
+        <div className={classes.logo}>TEST</div>
       </Link>
       <nav>
         <ul>

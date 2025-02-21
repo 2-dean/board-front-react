@@ -7,9 +7,9 @@ import {
   userState,
 } from "../store/Atom";
 
-import classes from "./style/BoardPage.module.css";
-import Boards from "../components/Board/Boards";
-import Paging from "../components/Board/Paging";
+import classes from "../style/style/BoardPage.module.css";
+import Boards from "../components/board/Boards";
+import Paging from "../components/board/Paging";
 import { Link } from "react-router-dom";
 
 const BoardPage = () => {
