@@ -1,22 +1,17 @@
 import { Navigate, useLocation } from "react-router-dom";
-import {useRecoilValue} from "recoil";
-import {userState} from "../../store/Atom";
-
-
-/**
- * 1. 인증 체크하는 RequireAuth HOC(Component) 만들기
- * @param children
- * @returns {*|JSX.Element}
- * @constructor
- */
+import { useRecoilValue } from "recoil";
+import { userState } from "../../store/Atom";
 
 const RequireAuth = ({ children }) => {
-    const token = localStorage.getItem("authToken"); // 예제: 로그인 여부 확인
-    const location = useLocation();
     const loginUser = useRecoilValue(userState);
+    const location = useLocation();
 
-    if (loginUser.id === null) {
-        return <Navigate to="/" state={{ from: location }} replace />;
+    //console.log("[RequireAuth] loginUser :: ", loginUser); // ✅ 상태 확인 로그
+
+    // 🔹 loginUser가 존재하지 않거나 id가 없으면 로그인 페이지로 이동
+    if (!loginUser || !loginUser.id) {
+        console.log("[RequireAuth] 인증되지 않은 사용자, 로그인 페이지로 이동");
+        return <Navigate to="/login" state={{ from: location }} replace />;
     }
 
     return children;
