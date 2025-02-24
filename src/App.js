@@ -26,6 +26,7 @@ export default function App() {
                 { path: "/dashboard", element: <Dashboard /> },
                 { path: "/bm/vhcl", element: <BmVhc /> },
                 { path: "/bm/drv", element: <BmDrv /> },
+
                 { path: "/boards", element: <BoardPage /> },
                 { path: "/board/:boardIdx", element: <BoardDetail /> },
                 { path: "/board/write", element: <BoardWrite /> },
