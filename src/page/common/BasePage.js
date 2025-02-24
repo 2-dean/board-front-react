@@ -21,14 +21,27 @@ import Grid from "../../components/common/Grid";
  * 개별적인 ***Page.js는 BasePage를 재사용하면서 특정 API 호출 로직만 정의
  */
 export default function BasePage({ title, searchFields, gridConfig }) {
+
+    console.log("BASE PAGE")
+    console.log("TITLE : ", title)
+    console.log("SEARCH_FIELDS : ", searchFields)
+    console.log("GRID_CONFIG : ",gridConfig )
     return (
         <div className="p-4">
             <h1 className="text-xl font-bold">{title}</h1>
-            <SearchBar fields={searchFields} />
+            {/* ✅ searchFields가 존재하면 SearchBar 렌더링 */}
+            {searchFields.length > 0 && <SearchBar fields={searchFields}     values={{}} // 🔹 기본값 추가 (실제 검색 값이 필요하면 변경해야 함)
+                                                   onChange={() => {}} // 🔹 빈 함수 전달 (실제 로직 추가 필요)
+                                                   onSearch={() => {}} // 🔹 빈 함수 전달 (검색 기능 추가 필요)
+                />}
             <div className="mt-4">
-                {gridConfig.map((grid, index) => (
-                    <Grid key={index} columns={grid.columns} data={grid.data} />
-                ))}
+                {gridConfig.length > 0 ? (
+                    gridConfig.map((grid, index) => (
+                        <Grid key={index} columns={grid.columns} data={grid.data}/>
+                    ))
+                ) : (
+                    <p>표시할 데이터가 없습니다.</p> // ✅ 데이터가 없을 때 예외 처리
+                )}
             </div>
         </div>
     );

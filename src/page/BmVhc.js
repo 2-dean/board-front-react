@@ -14,12 +14,28 @@ export default function BmVhc() {
         { id: 2, name: "싼타페", type: "SUV" },
         { id: 3, name: "모닝", type: "경차" },
     ];
+    // ✅ BasePage에 gridConfig 전달
+    const gridConfig = [{ columns, data }];
 
+    const searchFields = [
+        { label: "차량명", name: "name", type: "input", placeholder: "차량명을 입력하세요" },
+        {
+            label: "타입",
+            name: "type",
+            type: "select",
+            options: [
+                { label: "전체", value: "" },  // ✅ 선택 안 함 옵션 추가
+                { label: "세단", value: "세단" },
+                { label: "SUV", value: "SUV" },
+                { label: "경차", value: "경차" }
+            ]
+        },
+    ];
     return (
-        <BasePage title="차량 관리">
+        <BasePage title="차량 관리" searchFields={searchFields} gridConfig={gridConfig}>
             <div className="p-4">
                 <h2 className="text-lg font-bold">차량 목록</h2>
-                <Grid columns={columns} data={data} />
+                <Grid key={"test"} columns={columns} data={data} />
             </div>
         </BasePage>
     );

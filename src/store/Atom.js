@@ -20,6 +20,19 @@ export const userState = atom({
     }
 );
 
+
+
+// ✅ 사이드바 상태를 전역으로 관리
+export const sidebarState = atom({
+    key: "sidebarState",
+    default: true, //사이드바 열림
+});
+
+
+
+
+
+
 // 게시글 전체
 export const boardListState = atom({
         key: 'boardListState',

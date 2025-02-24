@@ -6,10 +6,11 @@ import { Select } from "../ui/Select";
 
 // 🔍 공통 검색 컴포넌트
 export default function SearchForm({ fields, values, onChange, onSearch }) {
+    console.log("SearchForm fields:", fields);  // ✅ fields 값 확인
     return (
         <div className="p-4 border-b flex flex-wrap gap-4">
             {fields.map((field) => (
-                <div key={field.name}>
+                <div key={field.name}>  {/* ✅ key 추가 */}
                     {field.type === "input" && (
                         <Input
                             name={field.name}
@@ -27,7 +28,7 @@ export default function SearchForm({ fields, values, onChange, onSearch }) {
                             className="w-40"
                         >
                             {field.options.map((option) => (
-                                <option key={option.value} value={option.value}>
+                                <option key={option.value} value={option.value}>  {/* ✅ key 추가 */}
                                     {option.label}
                                 </option>
                             ))}
