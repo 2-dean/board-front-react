@@ -1,12 +1,11 @@
-import {useNavigate} from "react-router-dom";
 
-const Logo = ()=> {
-    const navigate = useNavigate();
-    return(
-    <div className="sidebar-header" onClick={() => {navigate("/");}/* setCollapsed(!collapsed)*/}>
-        <img src={""} alt="Logo" className="sidebar-logo"/>
-    </div>
+
+const Logo = ({ onClick }) => {  // ✅ 부모에서 전달한 onClick을 받음
+    return (
+        <div className="sidebar-header" onClick={onClick}>
+            <img src={""} alt="Logo" className="sidebar-logo"/>
+        </div>
     );
 };
 
-export default Logo
+export default Logo;

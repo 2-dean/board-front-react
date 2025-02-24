@@ -7,7 +7,7 @@ import Logo from "./Logo";
 import LeftMenu from "../common/LeftMenu";
 import LogoutArea from "./LogoutArea";
 import Tabs from "../common/Tabs";
-import RequireAuth from "../common/RequireAuth"; // ✅ 추가: 탭 컴포넌트
+
 
 const Layout = () => {
     const [loginUser] = useRecoilState(userState);
@@ -42,6 +42,7 @@ const Layout = () => {
 
     // 🔹 탭 닫기
     const handleCloseTab = (path) => {
+        console.log("탭닫음 ", path)
         setTabs((prevTabs) => prevTabs.filter((tab) => tab.path !== path));
 
         if (activeTab === path) {
@@ -50,20 +51,31 @@ const Layout = () => {
                 setActiveTab(remainingTabs[remainingTabs.length - 1].path);
                 navigate(remainingTabs[remainingTabs.length - 1].path);
             } else {
-                setActiveTab("/dashboard"); // ✅ 기본 탭(대시보드)로 이동
-                navigate("/dashboard");
+                setActiveTab("/"); // 대시보드 탭까지 닫았을경우
+                navigate("/"); // 아무 화면없음
             }
         }
     };
 
-    // 🔹 로고 클릭 시 대시보드 활성화
     const handleLogoClick = () => {
-        if (!tabs.some((tab) => tab.path === "/dashboard")) {
-            setTabs((prevTabs) => [...prevTabs, { name: "대시보드", path: "/dashboard" }]);
-        }
+        console.log('로고클릭')
+        setTabs((prevTabs) => {
+            // 대시보드 탭이 없으면 추가
+            if (!prevTabs.some((tab) => tab.path === "/dashboard")) {
+                return [...prevTabs, { name: "대시보드", path: "/dashboard" }];
+            }
+            return prevTabs;
+        });
+
         setActiveTab("/dashboard");
-        navigate("/dashboard");
+        console.log('로고클릭2');
+        // 현재 경로가 대시보드가 아니면 이동
+        if (activeTab !== "/dashboard") {
+            navigate("/dashboard");
+        }
+        console.log('로고클릭3')
     };
+
 
     return (
         <Fragment>
