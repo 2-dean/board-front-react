@@ -1,16 +1,67 @@
-/* 📌 src/styles/sidebar.css */
-
-/* 왼쪽 트리 메뉴 스타일 */
-.pro-sidebar {
-    width: 10%;
+/* ✅ 부모 요소를 기준으로 absolute 배치 */
+.sidebarContainer {
+    position: relative; /* 🔹 버튼 위치 기준 */
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    background-color: #a50e48 !important; /* 연한 회색 */
-    border-right: 1px solid #ccc;
-    padding: 16px;
-    padding-top: 20px;
-    overflow-y: auto; /* 스크롤 가능 */
+    transition: width 0.3s ease-in-out;
+    width: 130px; /* 기본 사이드바 크기 */
 }
 
-.sidebar-header {
-    background-color: #a50e48; /* 연한 회색 */
+
+.sidebarContainer.collapsed {
+    width: 40px; /* 접힌 상태 */
 }
+
+/* ✅ 사이드바 스타일 */
+.sidebar {
+    background-color: chartreuse;
+    height: 100vh;
+    transition: width 0.3s ease-in-out;
+    font-size: small;
+}
+
+/* > 열림 | 토글 버튼 스타일 */
+.toggleButton {
+    position: absolute;
+    height: 40px;
+    width: 10px;
+    right: -73px; /* 🔹 사이드바 오른쪽 바깥으로 조금 이동 */
+    background: #555;
+    color: white;
+    border-right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 10px;
+    border-radius: 0 5px 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+/* < 접힘 | 토글 버튼 스타일 */
+.toggleButton.collapsed {
+    position: absolute;
+    height: 40px;
+    width: 10px;
+    right: -62px; /* 🔹 사이드바 오른쪽 바깥으로 조금 이동 */
+    background: #555;
+    color: white;
+    border-right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 10px;
+    border-radius: 0 5px 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+/* 🔹 메뉴 아이템 스타일 */
+.menuItem {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 아이콘과 텍스트 사이 간격 */
+    transition: all 0.3s ease-in-out;
+}
+/* 🔹 접혔을 때 글자 완전 삭제 */
+.sidebarContainer.collapsed .menuItem {
+    display: none; /* ✅ 완전히 숨기기 */
+}
+

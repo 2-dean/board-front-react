@@ -1,7 +1,10 @@
+import React, {useEffect, useState} from "react";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { useNavigate } from "react-router-dom";
-import { useRecoilValue } from "recoil";
-import { sidebarState } from "../../store/Atom";
+import {useRecoilState, useRecoilValue, useResetRecoilState} from "recoil";
+import {sidebarState, userState} from "../../store/Atom";
+import styles from "./LeftMenu.module.css";
+import Logo from "../layout/Logo";
 
 const menuData = [
     { id: 1, name: "기준정보", path: "", menu_level: 1, sort_seq: 1 },
@@ -14,7 +17,7 @@ const menuData = [
     { id: 8, name: "메뉴권한", path: "/em/auth-menu", menu_level: 3, sort_seq: 2, parent_id: 6 },
 ];
 
-// 트리 구조 생성 함수
+// 🔹 트리 구조 생성 함수
 const buildTree = (menuList, parentId = undefined) => {
     return menuList
         .filter((item) => item.parent_id === parentId)
@@ -26,49 +29,72 @@ const buildTree = (menuList, parentId = undefined) => {
 
 const treeMenu = buildTree(menuData);
 
-const LeftMenu = ({ onMenuClick }) => { // ✅ props 구조 분해 할당으로 수정
+const LeftMenu = ({ onMenuClick, onLogoClick, onLogout}) => {
     const navigate = useNavigate();
-    const sidebar = useRecoilValue(sidebarState);
+    const [collapsed, setCollapsed] = useRecoilState(sidebarState);
+    
+    // ✅ 로그인 상태 관련
+    const loginUser = useRecoilValue(userState);
+    const loginUserReset = useResetRecoilState(userState);
 
+ 
     return (
-        <Sidebar collapsed={false}>
-            <Menu>
-                {treeMenu.map((menu) =>
-                    menu.children.length > 0 ? (
-                        <SubMenu key={menu.id} label={menu.name}>
-                            {menu.children.map((child) =>
-                                child.children.length > 0 ? (
-                                    <SubMenu key={child.id} label={child.name}>
-                                        {child.children.map((subChild) => (
-                                            <MenuItem key={subChild.id} onClick={() => {
-                                                onMenuClick(subChild); // ✅ 탭 추가
-                                                navigate(subChild.path);
-                                            }}>
-                                                {subChild.name}
-                                            </MenuItem>
-                                        ))}
-                                    </SubMenu>
-                                ) : (
-                                    <MenuItem key={child.id} onClick={() => {
-                                        onMenuClick(child); // ✅ 탭 추가
-                                        navigate(child.path);
-                                    }}>
-                                        {child.name}
-                                    </MenuItem>
-                                )
-                            )}
-                        </SubMenu>
-                    ) : (
-                        <MenuItem key={menu.id} onClick={() => {
-                            onMenuClick(menu); // ✅ 탭 추가
-                            navigate(menu.path);
-                        }}>
-                            {menu.name}
-                        </MenuItem>
-                    )
-                )}
-            </Menu>
-        </Sidebar>
+        <div className={`${styles.sidebarContainer} ${collapsed ? styles.collapsed : ""}`}>
+            {/* ✅ 사이드바 토글 버튼 */}
+            <button className={`${styles.toggleButton} ${collapsed ? styles.collapsed : styles.expanded}`}
+                    onClick={() => setCollapsed(!collapsed)}>
+                {collapsed ? "▶" : "◀"}
+            </button>
+
+            {/* 🔹 상단 로고 */}
+            <div className={""}>
+                <Logo small={collapsed} onClick={onLogoClick}/>
+            </div>
+
+            {/* ✅ 메뉴 렌더링 */}
+            <Sidebar collapsed={collapsed} className={styles.sidebar} width={collapsed ? "40px" : "180px"}>
+                <Menu className={styles.menu}>
+                    {treeMenu.map((menu) =>
+                        menu.children.length > 0 ? (
+                            <SubMenu key={menu.id} label={<div className={styles.menuItem}><span className={styles.menuItemText}>{menu.name}</span></div>}>
+                                {menu.children.map((child) =>
+                                    child.children.length > 0 ? (
+                                        <SubMenu key={child.id} label={<div className={styles.menuItem}><span className={styles.menuItemText}>{child.name}</span></div>}>
+                                            {child.children.map((subChild) => (
+                                                <MenuItem key={subChild.id} onClick={() => onMenuClick(subChild.name, subChild.path)}>
+                                                    <div className={styles.menuItem}>
+                                                        <span className={styles.menuItemText}>{subChild.name}</span>
+                                                    </div>
+                                                </MenuItem>
+                                            ))}
+                                        </SubMenu>
+                                    ) : (
+                                        <MenuItem key={child.id} onClick={() => onMenuClick(child.name, child.path)}>
+                                            <div className={styles.menuItem}>
+                                                <span className={styles.menuItemText}>{child.name}</span>
+                                            </div>
+                                        </MenuItem>
+                                    )
+                                )}
+                            </SubMenu>
+                        ) : (
+                            <MenuItem key={menu.id} onClick={() => onMenuClick(menu.name, menu.path)}>
+                                <div className={styles.menuItem}>
+                                    <span className={styles.menuItemText}>{menu.name}</span>
+                                </div>
+                            </MenuItem>
+                        )
+                    )}
+                </Menu>
+            </Sidebar>
+
+            {/* 🔹 하단 로그아웃 버튼 */}
+            <div className={styles.bottomContainer}>
+                <button className={styles.logoutButton} onClick={onLogout}>
+                    {collapsed ? "🔒" : "로그아웃"}
+                </button>
+            </div>
+        </div>
     );
 };
 

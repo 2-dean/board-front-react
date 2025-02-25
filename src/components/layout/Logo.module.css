@@ -1,0 +1,16 @@
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.full-logo {
+    width: 150px; /* ✅ 기본 로고 크기 */
+    height: auto;
+}
+
+.small-logo {
+    width: 40px; /* ✅ 접었을 때 작은 크기 */
+    height: auto;
+}
