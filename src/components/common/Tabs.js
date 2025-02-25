@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Tabs.module.css"; // ✅ CSS 모듈 임포트
 
 export default function Tabs({ tabs, activeTab, onTabClick, onCloseTab }) {
 
@@ -7,30 +8,16 @@ export default function Tabs({ tabs, activeTab, onTabClick, onCloseTab }) {
     return (
         <div style={{ display: "flex", borderBottom: "1px solid #ccc", padding: "5px" }}>
             {tabs.map((tab) => (
-
                 <div
                     key={tab.path}
-                    style={{
-                        padding: "10px",
-                        marginRight: "5px",
-                        cursor: "pointer",
-                        backgroundColor: activeTab === tab.path ? "#ddd" : "#f9f9f9",
-                        borderRadius: "5px",
-                        display: "flex",
-                        alignItems: "center",
-                    }}
+                    className={`${styles.tab} ${activeTab === tab.path ? styles.active : ""}`} // ✅ 클래스 적용
                     onClick={() => onTabClick(tab.path)}
                 >
                     {tab.name}
                     <button
-                        style={{
-                            marginLeft: "8px",
-                            background: "none",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
+                        className={styles.closeButton}
                         onClick={(e) => {
-                            e.stopPropagation(); // 탭 클릭 방지
+                            e.stopPropagation();
                             onCloseTab(tab.path);
                         }}
                     >

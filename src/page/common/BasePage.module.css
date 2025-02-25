@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 기본적으로 가로 정렬 */
+.gridContainer {
+    display: flex;
+    gap: 20px; /* 그리드 간격 */
+    flex-wrap: wrap;
+}
+
+/* 2개 배치 (1:1) */
+.layout-2 .gridItem {
+    flex: 1 1 50%;
+}
+
+/* 3개 배치 (2:1) */
+.layout-3 .gridItem:nth-child(1) {
+    flex: 2;
+}
+.layout-3 .gridItem:nth-child(2),
+.layout-3 .gridItem:nth-child(3) {
+    flex: 1;
+}
+
+/* 4개 배치 (2x2) */
+.layout-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}

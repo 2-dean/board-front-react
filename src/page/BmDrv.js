@@ -1,6 +1,6 @@
 import React from "react";
 import BasePage from "./common/BasePage";
-import Grid from "../components/common/Grid";
+import DataTable from "../components/common/DataTable";
 
 export default function BmDrv() {
     const columns = [
@@ -23,10 +23,6 @@ export default function BmDrv() {
     ];
     return (
         <BasePage title="기사관리" searchFields={searchFields} gridConfig={gridConfig}>
-            <div className="p-4">
-                <h2 className="text-lg font-bold">잉?</h2>
-                <Grid key={"test"} columns={columns} data={data} />
-            </div>
         </BasePage>
     );
 }

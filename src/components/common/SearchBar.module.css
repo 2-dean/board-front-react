@@ -1,0 +1,16 @@
+.search-bar {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(150px, 1fr)); /* 가로 4개 배치 */
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    border: 1px solid blue;
+    width: 100%; /* 부모 요소 크기 설정 */
+}
+
+.search-field {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
