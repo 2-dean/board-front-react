@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import {useRecoilState, useResetRecoilState} from "recoil";
-import {sidebarState, userState} from "../../store/Atom";
+import {sidebarState, userState} from "../../store/atom";
 import LeftMenu from "../common/LeftMenu";
 import Tabs from "../common/Tabs";
 import {Api} from "../../api/axiosProvider";
@@ -11,9 +11,8 @@ import {Api} from "../../api/axiosProvider";
 const Layout = () => {
     {/*
         - handle~ : 이벤트 핸들러 함수 정의
-        - on~ : rops로 자식 컴포넌트에 이벤트 핸들러 전달
+        - on~ : props로 자식 컴포넌트에 이벤트 핸들러 전달
     */}
-
 
     //로그인 사용자 관련
     const [loginUser] = useRecoilState(userState);
@@ -31,7 +30,7 @@ const Layout = () => {
     }, []);
 
     useEffect(() => {
-        console.log("📌 activeTab 변경됨:", activeTab);
+        console.log("[Layout] Outlet이 렌더링하는 컴포넌트:", activeTab);
         if (activeTab) {
             navigate(activeTab);
         }
@@ -64,7 +63,6 @@ const Layout = () => {
 
     // 🔹 탭 닫기
     const handleCloseTab = (path) => {
-        console.log("탭닫음 ", path)
         setTabs((prevTabs) => prevTabs.filter((tab) => tab.path !== path));
 
         if (activeTab === path) {
@@ -78,7 +76,11 @@ const Layout = () => {
             }
         }
     };
-
+    // 🔹 전체 탭 닫기
+    const handleCloseAllTab = () => {
+        setTabs([]);
+        setActiveTab("/"); // 대시보드 탭까지 닫았을경우
+    };
     // ** 상단 로고 클릭
     const handleLogoClick = () => {
         setTabs((prevTabs) => {
@@ -135,7 +137,7 @@ const Layout = () => {
                 {/* ✅ Outlet이 사이드바 크기에 맞게 자동 조절 */}
                 <div style={{ flex: 1, display: "flex", flexDirection: "column", marginLeft: collapsed ? "50px" : "60px", height: "100vh", transition: "margin-left 0.3s ease-in-out"}}>
                     {loginUser.id !== null && tabs.length > 0 && (
-                        <Tabs tabs={tabs} activeTab={activeTab} onTabClick={handleTabClick} onCloseTab={handleCloseTab} />
+                        <Tabs tabs={tabs} activeTab={activeTab} onTabClick={handleTabClick} onCloseTab={handleCloseTab}  onCloseAllTabs={handleCloseAllTab}/>
                     )}
                     <div style={{ flex: 1 }}>
                         <Outlet />

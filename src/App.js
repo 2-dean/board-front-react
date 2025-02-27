@@ -1,22 +1,33 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { RecoilRoot } from "recoil";
+import RequireAuth from "./components/common/RequireAuth";
 
 import Layout from "./components/layout/Layout";
-import LoginPage from "./page/LoginPage";
 
-import BoardDetail from "./components/board/BoardDetail";
-import BoardPage from "./page/BoardPage";
-import ErrorPage from "./page/ErrorPage";
-import BoardWrite from "./components/board/BoardWrite";
-import UserJoin from "./page/UserJoin";
 import Dashboard from "./page/Dashboard";
-import RequireAuth from "./components/common/RequireAuth";
+import LoginPage from "./page/LoginPage";
+import ErrorPage from "./page/ErrorPage";
 
 import BmVhc from "./page/BmVhc";
 import BmDrv from "./page/BmDrv";
 
-// 로그인 여부에 따라 접근 제한
+import BoardDetail from "./components/board/BoardDetail";
+import BoardWrite from "./components/board/BoardWrite";
+import UserJoin from "./page/UserJoin";
+import loader from "@ibsheet/loader";
+
+loader.config({
+    registry: [{
+        name: 'ibsheet',
+        baseUrl: '/ibsheet',
+        theme:"default"
+        //plugins: ['common', 'dialog', 'excel']
+    }]
+});
+
+
 export default function App() {
+/*    const loaderVersion = loader.version;*/
+
     const router = createBrowserRouter([
         {
             path: "/",
@@ -24,10 +35,10 @@ export default function App() {
             errorElement: <ErrorPage />,
             children: [
                 { path: "/dashboard", element: <Dashboard /> },
-                { path: "/bm/vhcl", element: <BmVhc /> },
                 { path: "/bm/drv", element: <BmDrv /> },
+                { path: "/bm/vhcl", element: <BmVhc /> },
 
-                { path: "/boards", element: <BoardPage /> },
+              /*  { path: "/boards", element: <BoardPage /> },*/
                 { path: "/board/:boardIdx", element: <BoardDetail /> },
                 { path: "/board/write", element: <BoardWrite /> },
                 { path: "/write", element: <BoardWrite /> },
@@ -39,8 +50,8 @@ export default function App() {
 
 
     return (
-        <RecoilRoot>
+        <>
             <RouterProvider router={router} />
-        </RecoilRoot>
+        </>
     );
 }

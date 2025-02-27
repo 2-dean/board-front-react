@@ -1,3 +1,4 @@
+
 /* ✅ 부모 요소를 기준으로 absolute 배치 */
 .sidebarContainer {
     position: relative; /* 🔹 버튼 위치 기준 */
@@ -7,7 +8,6 @@
     transition: width 0.3s ease-in-out;
     width: 130px; /* 기본 사이드바 크기 */
 }
-
 
 .sidebarContainer.collapsed {
     width: 40px; /* 접힌 상태 */
@@ -53,8 +53,13 @@
     border-radius: 0 5px 5px 0;
     transition: all 0.3s ease-in-out;
 }
+.menu{
+    border: 2px solid green;
+
+}
 /* 🔹 메뉴 아이템 스타일 */
 .menuItem {
+    border: 2px solid blueviolet;
     display: flex;
     align-items: center;
     gap: 10px; /* 아이콘과 텍스트 사이 간격 */

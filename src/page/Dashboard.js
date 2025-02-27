@@ -1,4 +1,4 @@
-import classes from "../style/style/MainPage.module.css";
+import classes from "../style/MainPage.module.css";
 
 const Dashboard = () => {
 

@@ -5,16 +5,20 @@ import {
   boardPageListState,
   modeState,
   userState,
-} from "../store/Atom";
+} from "../store/atom";
 
-import classes from "../style/style/BoardPage.module.css";
+//import classes from "../style/style/BoardPage.module.css";
 import Boards from "../components/board/Boards";
 import Paging from "../components/board/Paging";
 import { Link } from "react-router-dom";
+import {useEffect} from "react";
 
 const BoardPage = () => {
   const loginUser = useRecoilValue(userState);
   const boards = useRecoilValue(boardListState);
+    useEffect(() => {
+        console.log("[BoardPage] 렌더링됨");
+    }, []);
 
   console.log("===================== BoardPage =====================");
   console.log(
@@ -27,9 +31,8 @@ const BoardPage = () => {
   console.log("[ BoardPage ] boardList : " + boards);
 
   return (
-    <div className={classes.container}>
+    <div>
       <h1>게시판</h1>
-      <Boards />
       <Paging />
       <Link to={"/board/write"}>
         <p>글쓰기</p>

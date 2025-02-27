@@ -5,7 +5,7 @@ import {
   boardState,
   commentListState,
   commentPageListState,
-} from "../../store/Atom";
+} from "../../store/atom";
 import {useEffect, useState} from "react";
 
 const BoardDetail = (props) => {

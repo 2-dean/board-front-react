@@ -1,5 +1,5 @@
 import {useRecoilState} from "recoil";
-import {userState} from "../store/Atom";
+import {userState} from "../store/atom";
 import {useNavigate} from "react-router";
 import {LogoutApi} from "../api/LogoutApi";
 import {UserApi} from "../api/UserApi";

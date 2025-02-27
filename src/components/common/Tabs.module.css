@@ -1,29 +1,52 @@
-/* Tabs.module.css */
-.tab {
-    padding: 3px;
-    margin-right: 0px;
-    cursor: pointer;
-    background-color: #f9f9f9;
-    border-radius: 5px 5px 0 0;
+.tabsContainer {
     display: flex;
     align-items: center;
-    justify-content: center; /*space-between;*/
-    width: 100px; /* ✅ 일정한 너비 설정 */
-    max-width: 100px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: small;
-    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
 }
 
-.active {
-    background-color: #ddd;
+.tab {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    background: white;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 120px; /* 🔹 최소 너비 설정 */
+    position: relative;
+}
+
+.tab.active {
+    background: #ddd;
+}
+
+.tabContent {
+    flex-grow: 1; /* 🔹 남은 공간을 차지하여 중앙 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px; /* 🔹 X 버튼과 겹치지 않도록 여백 추가 */
 }
 
 .closeButton {
-    margin-left: 8px;
     background: none;
     border: none;
+    color: red;
     cursor: pointer;
+    margin-left: auto; /* 🔹 X 버튼을 오른쪽 끝으로 이동 */
+}
+
+.closeAllWrapper {
+    margin-left: auto; /* 🔹 전체 닫기 버튼을 오른쪽 끝으로 이동 */
+}
+
+.closeAllButton {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
 }

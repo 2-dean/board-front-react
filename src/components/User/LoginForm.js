@@ -1,7 +1,7 @@
-import classes from "../../style/style/LoginPage.module.css";
+import classes from "../../style/LoginPage.module.css";
 import { useRef } from "react";
 import { useRecoilState } from "recoil";
-import { userState } from "../../store/Atom";
+import { userState } from "../../store/atom";
 import { useNavigate } from "react-router";
 import axios from "axios";
 

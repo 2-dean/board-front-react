@@ -4,7 +4,7 @@ import {
   activePageState,
   boardListState,
   boardPageListState,
-} from "../../store/Atom";
+} from "../../store/atom";
 import { useEffect } from "react";
 import { Api } from "../../api/axiosProvider";
 

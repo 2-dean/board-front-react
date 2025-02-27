@@ -4,7 +4,7 @@ import classes from "./BoardWrite.module.css";
 import axios from "axios";
 import { getCookie } from "../../common/getAccessToken";
 import { useRecoilState } from "recoil";
-import { userState } from "../../store/Atom";
+import { userState } from "../../store/atom";
 import { Api } from "../../api/axiosProvider";
 import {useNavigate} from "react-router";
 

@@ -6,6 +6,7 @@
     "@amcharts/amcharts5": "^5.11.0",
     "@ibsheet/loader": "^1.1.25",
     "@js-joda/core": "^5.5.2",
+    "@reduxjs/toolkit": "^2.6.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -20,6 +21,7 @@
     "react-dom": "^18.2.0",
     "react-js-pagination": "^3.0.3",
     "react-pro-sidebar": "^1.1.0",
+    "react-redux": "^9.2.0",
     "react-router": "^6.8.1",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
@@ -27,6 +29,7 @@
     "react-webcam": "^7.0.1",
     "recoil": "^0.7.6",
     "recoil-persist": "^4.2.0",
+    "redux": "^5.0.1",
     "tabulator-tables": "^6.3.1",
     "web-vitals": "^2.1.4"
   },

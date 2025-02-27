@@ -1,4 +1,4 @@
-import classes from "../style/style/MainPage.module.css";
+import classes from "../style/MainPage.module.css";
 
 //로그인페이지 붙이기
 const MainPage = () => {

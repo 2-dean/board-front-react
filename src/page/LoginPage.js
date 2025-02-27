@@ -1,7 +1,7 @@
-import classes from "../style/style/LoginPage.module.css";
+import classes from "../style/LoginPage.module.css";
 import LoginForm from "../components/User/LoginForm";
 import {useRecoilValue} from "recoil";
-import {userState} from "../store/Atom";
+import {userState} from "../store/atom";
 import Dashboard from "./Dashboard";
 
 const LoginPage = () => {

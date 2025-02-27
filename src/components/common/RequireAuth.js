@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useRecoilValue } from "recoil";
-import { userState } from "../../store/Atom";
+import { userState } from "../../store/atom";
 
 const RequireAuth = ({ children }) => {
     const loginUser = useRecoilValue(userState);

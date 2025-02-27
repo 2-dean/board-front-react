@@ -1,0 +1,1515 @@
+/* IBSheet8 CSS definition, https://www.ibsheet.com */
+.CGMain *{-webkit-box-sizing:content-box!important;-moz-box-sizing:content-box!important;box-sizing:content-box!important}
+.CGMain button,.CGMain input{height:auto}
+.CGMain b,.CGMain .Bold{color:blue;font-weight:bold}
+.CGMain i,.CGMain .Blue{color:blue;font-style:normal}
+.CGMain em,.CGMain .Red{color:red;font-style:normal}
+.CGMain s,.CGMain .Gray{color:gray;text-decoration:none}
+.CGNone{display:none}
+.CGSection,.CGSectionFF3{table-layout:fixed;width:0px;font-size:0px;line-height:0px;contain:paint;border-collapse:separate}
+.CGSectionFF3{border-collapse:collapse}
+.CGSection img{vertical-align:top}
+.CGMainTable{border:1px solid black;border-collapse:separate;text-align:left;background:white;padding:1px}
+.CGRtl .CGMainTable{text-align:right}
+.CGBodyLeft,.CGBodyMid,.CGBodyRight{border-top:1px solid black}
+.CGFootLeft,.CGFootMid,.CGFootRight{border-top:1px solid black}
+.CGHeadLeft,.CGBodyLeft,.CGFootLeft{border-right:1px solid #c0c0ff}
+	.CGHeadRight,.CGBodyRight,.CGFootRight{border-left:1px solid #c0c0ff}
+.CGSectionScroll::-webkit-scrollbar{display:none}
+.CGLeftSplitter,.CGRightSplitter{width:5px;background:#E1F1FF;overflow:hidden;cursor:e-resize;font-size:0px}
+.CGTouch .CGLeftSplitter,.CGTouch .CGRightSplitter{width:15px}
+.CGLeftSplitter{border-right:1px solid #c0c0ff}
+.CGRightSplitter{border-left:1px solid #c0c0ff}
+.CGSplitterDisabled{background:white;cursor:default}
+.CGVScroll{padding-top:1px;padding-bottom:1px;border-left:1px solid #c0c0ff;overflow:hidden}
+ .CGHScrollLeft,.CGHScrollMid,.CGHScrollRight{padding-left:1px;padding-right:1px;overflow:hidden}
+.CGHScrollLeft{border-right:1px solid #c0c0ff}
+.CGHScrollRight{border-left:1px solid #c0c0ff}
+.CGHScrollLeftResize,.CGHScrollRightResize,.CGHScrollMidLeftResize,.CGHScrollMidRightResize{background:#F4F4F4;overflow:hidden}
+.CGHScrollLeftResize{border-right:2px solid black;padding-left:1px;padding-right:5px}
+.CGHScrollRightResize{border-left:2px solid black;padding-left:5px;padding-right:1px}
+.CGHScrollMidLeftResize{border-left:1px solid black;padding-left:5px}
+.CGHScrollMidRightResize{border-right:1px solid black;padding-right:5px}
+.CGTouch .CGHScrollLeftResize{padding-right:18px}
+.CGTouch .CGHScrollRightResize{padding-left:18px}
+.CGTouch .CGHScrollMidLeftResize{padding-left:19px}
+.CGTouch .CGHScrollMidRightResize{padding-right:19px}
+.CGHScrollWide{padding-left:1px;padding-right:1px;overflow:hidden}
+.CGHScrollHidden{overflow:visible!important;background:#F4F4F4}
+.CGXScroll{background:#F4F4F4;cursor:default}
+.SheetHiddenScroll > div::-webkit-scrollbar{-webkit-appearance:none;width:11px;height:11px}
+ .SheetHiddenScroll > div::-webkit-scrollbar-thumb{border-radius:8px;border:2px solid white;background-color:rgba(0,0,0,0.5)}
+ .CGRowHeight{height:18px}
+.CGTouch .CGRowHeight{height:22px}
+.CGSpaceRowHeight{height:21px}
+.CGSpaceMargin{margin:0px}
+.CGSpaceRow,.CGGroupRow,.CGSearchRow,.CGPagerRow,.CGToolbarRow,.CGToolbar1Row,.CGToolbar2Row,.CGToolbar3Row,.CGTopbarRow,.CGTopbar1Row,.CGTopbar2Row,.CGTopbar3Row,.CGTabberRow{background:url(./imgs/Backgrounds.gif?v120) repeat-x 0px -2px;padding:5px 3px 5px 3px;font-size:0px;overflow:hidden;white-space:nowrap;}
+.CGSpaceRow{background:#E8F4FF;padding:2px 0px 2px 0px}
+ .CGGroupRow{background-position:0px -1801px}
+ .CGSearchRow{background-position:0px -500px}
+ .CGPagerRow{background-position:0px -1801px}
+ .CGToolbarRow{background-position:0px -500px;border-top:1px solid black}
+ .CGToolbar1Row{background-position:0px -1801px;border-top:1px solid black}
+ .CGToolbar2Row{background-position:0px -500px}
+ .CGToolbar3Row{background:#D5E9FE}
+ .CGTopbarRow{background-position:0px -1801px;border-bottom:1px solid black}
+ .CGTopbar1Row{background-position:0px -1801px}
+ .CGTopbar2Row{background-position:0px -500px;border-bottom:1px solid black}
+ .CGTopbar3Row{background:#D5E9FE}
+ .CGTabberRow{background:#E8F4FF;padding:0px}
+ .CGFillRow{background:#E8F4FF}
+.CGNoDataRow{border-top:1px solid black;padding:5px 0px 5px 5px;overflow:hidden}
+.CGNoDataRow div{color:gray!important;font-style:italic!important}
+.CGRowAbove,.CGRowBelow{border-left:1px solid #9cb6c8;border-right:1px solid #9cb6c8;overflow:hidden}
+.CGRowAbove{background:url(./imgs/Backgrounds.gif?v120) repeat-x 0px -1800px;margin-top:3px}
+.CGRowBelow{background:url(./imgs/Backgrounds.gif?v120) repeat-x 0px bottom;margin-bottom:3px}
+.CGCellBase{border-bottom:1px solid #e0e0ff;border-right:1px solid #e0e0ff;border-left:0px none;border-top:0px none;vertical-align:top;overflow:hidden;overflow:auto!IE;height:auto;}
+.CGCellHeader,.CGCellHeaderEmpty{background:url(./imgs/Backgrounds.gif?v120) repeat-x 0px -2px}
+.CGCellIndex,.CGCellIndexAlternate,.CGCellIndexEmpty{background:#8EB4FF url(./imgs/Backgrounds.gif?v120) no-repeat right -1550px}
+.CGIndexSmall{margin-bottom:-50px}
+.CGCellUser{background-color:#E8F4FF}
+.CGCellEmpty{background:white;border-bottom-color:white}
+.CGCellHidden{background:transparent!important;border:none!important}
+.CGCellBorder,.CGCellHeaderBorder,.CGCellNoBorder{border-left:2px solid transparent;border-top:2px solid transparent}
+.CGCellNoBorder{border-color:transparent}
+.CGLastCell{border-right:1px solid;border-bottom:0px solid}
+.CGCellClassInner{padding-top:0px;padding-bottom:0px}
+.CGCellHeaderInnerIcon{padding-top:3px;padding-bottom:2px}
+.CGCellBorderFF3{border-left:0px none!important;border-top:0px none!important}
+.CGType,.CGUser{font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;white-space:nowrap;padding:2px 3px 2px 3px}
+ .CGInt,.CGFloat,.CGDate{text-align:right}
+.CGLines,.CGRadio,.CGHtml,.CGList{white-space:normal}
+	.CGImg,.CGHtml{padding-top:0px;padding-bottom:0px}
+.CGPass{font-size:15px;line-height:17px;padding:0px 0px 0px 3px}
+.CGRadio{padding:0px}
+.CGBool{text-align:center;line-height:0px}
+.CGIcon{background-repeat:no-repeat}
+.CGAbs{padding:0px}
+.CGUser{padding:0px}
+.CGSelect{padding-top:2px;padding-bottom:2px}
+.CGIndexText{font:11.9px/13px Verdana,Tahoma,"Trebuchet MS",sans-serif;color:white;padding:2px 3px 2px 3px;text-align:center}
+.CGHiddenSpace{display:none}
+.CGHiddenValue,.CGHiddenValue *{color:transparent!important}
+ .CGMain .CGOverflowVisible,.CGMain .CGOverflowLeftVisible{overflow:visible}
+.CGMain .CGOverflowLeftVisible>div{float:right}
+.CGMain .CGOverflowDisable{background-color:white;opacity:0.99}
+.CGMain.CGIE .CGOverflowDisable{opacity:1;position:relative}
+button.CGRightButton{font:10px/11px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;height:17px;width:19px;margin:0px;padding:0px}
+u.CGRightButton{background:url(./imgs/Backgrounds.gif?v120) 0px -3px;border-bottom:1px solid #048;border-top:1px solid #D5E9FE;border-radius:10px;padding:1px 5px 0px 5px;margin:1px;font:11px/12px Arial,Helvetica,sans-serif;color:white;text-decoration:none;display:inline-block;overflow:hidden;white-space:nowrap;}
+.CGRightHtml{font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;padding-top:2px;padding-bottom:2px}
+.CGLevelButton{background:url(./imgs/Button.gif?v120) 2px -1750px no-repeat;padding:5px 0px 4px 0px;width:21px;font:11.9px/13px Verdana,Tahoma,"Trebuchet MS",sans-serif;color:black;text-align:center!important;cursor:pointer;}
+.CGLevelButtonSpace{width:5px}
+.CGLevels>table{width:100%}
+.CGMergedCellH{padding:0px;padding-right:5px}
+.CGMergedCellV{padding:0px;padding-bottom:1px}
+.CGHeaderText{font:11.9px/13px Verdana,Tahoma,"Trebuchet MS",sans-serif;color:white;padding:5px 3px 4px 3px}
+.CGHeaderIconInner{padding-top:2px;padding-bottom:2px}
+.CGHeaderButton{padding:3px 0px 2px 0px}
+.CGHeaderButtonButton{padding:3px 0px 2px 0px}
+.CGHeaderButtonHtml{padding:5px 1px 4px 1px;color:white}
+.CGHeaderToolButton{text-align:center;padding:3px 0px 2px 0px}
+.CGHeaderFocus{background:#9FB9E9}
+.CGHeaderDrag{background:#9FB9E9;cursor:default;overflow:hidden;border-right:1px solid white}
+.CGHeaderResize{border-right:2px solid white}
+.CGDropCols{padding:4px 4px 3px 4px!important}
+.CGHeaderGroup{font:11.9px/13px Verdana,Tahoma,"Trebuchet MS",sans-serif;background:#7FA9E6;color:white;padding-left:3px;border-right:1px solid white}
+.CGHeaderGroupFocus{background-color:#C0C0A0}
+.CGHeaderGroupDelete{background-color:#F0F0E0;color:white}
+.CGHeaderGroupCustom{font:italic 11.5px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;color:#BBB;padding:1px 0px 0px 5px;white-space:nowrap}
+.CGResizingRow{border-bottom:1px solid black}
+.CGCellRotate{text-align:left}
+.CGRotate1,.CGRotate2{overflow:hidden;white-space:nowrap;display:inline-block;writing-mode:tb-rl}
+.CGRotate1{-ms-transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg)}
+.CGIconRotate{padding-left:2px!important;padding-top:20px!important;padding-right:2px!important;background-position-x:left!important}
+.CGIconRotateHeader{background-position-x:3px!important}
+.CGIconRotate.CGAlignCenter{background-position-x:center!important}
+.CGIconRotate.CGAlignRight{background-position-x:right!important}
+.CGWrap0{white-space:nowrap}
+.CGWrap1{white-space:normal}
+.CGAlignLeft{text-align:left}
+.CGAlignCenter{text-align:center}
+.CGAlignJustify{text-align:justify}
+.CGAlignRight{text-align:right}
+.CGVAlignMiddle{vertical-align:middle!important;display:table-cell}
+.CGVAlignBottom{vertical-align:bottom!important;display:table-cell}
+.CGVAlignTop{vertical-align:top!important;display:table-cell}
+.CGTextBold{font-weight:bold}
+.CGTextItalic{font-style:italic}
+.CGTextUnderline{text-decoration:underline}
+.CGTextStrike{text-decoration:line-through}
+.CGTextOverline{text-decoration:overline}
+.CGTextUnderlineStrike{text-decoration:underline line-through}
+.CGTextUnderlineOverline{text-decoration:underline overline}
+.CGTextStrikeOverline{text-decoration:line-through overline}
+.CGTextUnderlineStrikeOverline{text-decoration:underline line-through overline}
+.CGTextSmall{font-variant:small-caps}
+.CGTextShadow0{text-shadow:0px 0px 5px}
+.CGTextShadow1{text-shadow:-1px -1px}
+.CGTextShadow2{text-shadow:-1px -1px, -3px -3px silver}
+.CGTextShadow3{text-shadow:-1px -1px, 0px 0px 5px}
+.CGTextShadow4{text-shadow:-1px -1px, 0px 0px 10px}
+.CGTextShadow5{text-shadow:-2px -2px silver}
+.CGTextShadow6{text-shadow:-3px -3px silver, -1px -1px}
+.CGTextShadow7{text-shadow:0px 0px 3px black,0px 0px 3px black,0px 0px 3px black}
+.CGTextShadow8{text-shadow:0px 0px 5px yellow, -1px -1px}
+.CGTextShadow9{text-shadow:0px 0px 10px}
+.CGMain .CGIndentLeft1{padding-left:10px}
+ .CGMain .CGIndentRight1{padding-right:10px}
+.CGMain .CGIndentLeft2{padding-left:20px}
+ .CGMain .CGIndentRight2{padding-right:20px}
+.CGMain .CGIndentLeft3{padding-left:30px}
+ .CGMain .CGIndentRight3{padding-right:30px}
+.CGMain .CGIndentLeft4{padding-left:40px}
+ .CGMain .CGIndentRight4{padding-right:40px}
+.CGMain .CGIndentLeft5{padding-left:50px}
+ .CGMain .CGIndentRight5{padding-right:50px}
+.CGMain .CGIndentLeft6{padding-left:60px}
+ .CGMain .CGIndentRight6{padding-right:60px}
+.CGMain .CGIndentLeft7{padding-left:70px}
+ .CGMain .CGIndentRight7{padding-right:70px}
+.CGMain .CGIndentLeft8{padding-left:80px}
+ .CGMain .CGIndentRight8{padding-right:80px}
+.CGMain .CGIndentLeft9{padding-left:90px}
+ .CGMain .CGIndentRight9{padding-right:90px}
+.CGMain .CGIndentLeft10{padding-left:100px}
+ .CGMain .CGIndentRight10{padding-right:100px}
+.CGMain .CGIndentLeft15{padding-left:150px}
+ .CGMain .CGIndentRight15{padding-right:150px}
+.CGMain .CGIndentLeft20{padding-left:200px}
+ .CGMain .CGIndentRight20{padding-right:200px}
+.CGMain .CGIndentLeft25{padding-left:250px}
+ .CGMain .CGIndentRight25{padding-right:250px}
+.CGMain .CGIndentLeft30{padding-left:300px}
+ .CGMain .CGIndentRight30{padding-right:300px}
+.CGMain .CGIndentLeft35{padding-left:350px}
+ .CGMain .CGIndentRight30{padding-right:350px}
+.CGMain .CGIndentLeft40{padding-left:400px}
+ .CGMain .CGIndentRight40{padding-right:400px}
+.CGMain .CGIndentLeft45{padding-left:450px}
+ .CGMain .CGIndentRight40{padding-right:450px}
+.CGMain .CGIndentLeft50{padding-left:500px}
+ .CGMain .CGIndentRight50{padding-right:500px}
+.CGCellSpace,.CGCellSpaceIcon,.CGCellSpaceButton,.CGCellSpaceButtonIcon,.CGCellSpaceButtonButton,.CGCellSpaceBool,.CGCellSpaceRadio,.CGCellSpaceSelect,.CGCellSpaceEdit{vertical-align:top;}
+.CGCellSpace{padding-top:5px;padding-bottom:3px}
+.CGCellSpaceIcon{padding-top:2px;padding-bottom:3px}
+.CGSpaceIconInner{padding-top:3px;padding-bottom:0px}
+.CGSpaceIconInner > div{overflow:hidden}
+.CGCellSpaceButton{padding-top:5px;padding-bottom:3px;white-space:nowrap}
+.CGCellSpaceButtonIcon{padding-top:2px;padding-bottom:3px;white-space:nowrap}
+.CGSpaceButtonIconInner{padding-top:3px;padding-bottom:0px}
+.CGSpaceButtonIconInner > div{overflow:hidden}
+.CGCellSpaceTool{padding:0px}
+.CGCellSpaceBool{line-height:0px}
+.CGCellSpaceRadio{padding-top:3px;padding-bottom:1px}
+.CGCellSpaceSelect{padding:0px}
+.CGSpaceSelectInner,.CGSpaceSelectInnerIcon{border-left:1px solid #696969;padding:5px 20px 3px 3px;background:url(./imgs/BackgroundsRight.gif?v120) right -250px!important;white-space:nowrap;height:13px;}
+.CGSpaceSelectInnerIcon{padding:2px 20px 3px 1px;height:16px}
+.CGSpaceSelectIconInner{padding-top:3px;padding-bottom:0px}
+.CGSpaceSelectIconInner > div{overflow:hidden}
+.CGSpaceSelectInnerIE{overflow:hidden;height:21px}
+.CGCellSpaceEdit{padding:0px}
+.CGSpaceEditInner,.CGSpaceEditInnerIcon{border:1px solid #696969;padding:4px 2px 2px 3px;background:white url(./imgs/BackgroundsRight.gif?v120) right 0px}
+.CGSpaceEditInnerIcon{padding:1px 2px 0px 1px}
+.CGSpaceEditIconInner{padding-top:3px;padding-bottom:2px}
+.CGSpaceEditIconInner > div{overflow:hidden}
+.CGSpaceEditButtonIconInner{padding-top:0px;padding-bottom:0px}
+.CGCellSpaceAbove{border-top:1px solid #9cb6c8}
+.CGCellSpaceBelow{border-bottom:1px solid #9cb6c8}
+.CGSpaceClassInner{padding-top:0px;padding-bottom:0px}
+.CGSpaceWrap{white-space:normal}
+.CGCellSpaceWrap{display:inline-block;margin-top:2px;margin-bottom:2px}
+.CGCellSpaceWrap.CGEmpty{height:21px;padding-top:0px;padding-bottom:0px}
+.CGNoLeft,.CGNoSpaceLeft{border-left:0px none!important;border-bottom-left-radius:0px!important;border-top-left-radius:0px!important}
+.CGNoRight,.CGNoSpaceRight{border-right:0px none!important;border-bottom-right-radius:0px!important;border-top-right-radius:0px!important}
+.CGEmpty{text-decoration:none!important;font-size:0px!important;line-height:0px!important}
+.CGPages{overflow:visible;padding:0px!important}
+.CGPagesLink,.CGPagesLinkActive{padding:2px 1px 2px 2px;margin:2px 0px 2px 0px;display:inline-block;font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;cursor:pointer;color:blue;}
+.CGPagesLinkActive{color:black;font-weight:bold;border:1px dotted black;margin-top:1px;margin-bottom:1px}
+.CGTree{padding-top:0px;white-space:nowrap;line-height:0px;font-size:0px;height:0px}
+.CGSpannedTree{line-height:0px;font-size:0px;height:0px}
+.CGSpannedTree td{vertical-align:top}
+.CGNoTreeLines1{text-align:right}
+.CGNoTreeLines2{text-align:right;vertical-align:middle;padding-top:0px}
+.CGNoTreeLines3{text-align:left}
+.CGTreeTop{background-image:url(./imgs/Tree.gif?v120)}
+.CGTreeMiddle{background-image:url(./imgs/TreeMiddle.gif?v120)}
+.CGTreeBottom{background-image:url(./imgs/TreeBottom.gif?v120)}
+.CGTreeRevTop{background-image:url(./imgs/TreeRev.gif?v120)}
+.CGTreeRevMiddle{background-image:url(./imgs/TreeRevMiddle.gif?v120)}
+.CGTreeRevBottom{background-image:url(./imgs/TreeRevBottom.gif?v120)}
+.CGTreeIcon{background-repeat:no-repeat;background-position:left top}
+.CGTreeIconM{background-repeat:no-repeat;background-position:left center}
+.CGTreeIconB{background-repeat:no-repeat;background-position:left bottom}
+.CGTreeImage,.CGTreeImageM,.CGTreeImageB{display:inline-block;height:100%;width:0px}
+.CGTreeImageIE{padding-bottom:1000px}
+.CGTreeImageMIE{padding-top:500px;padding-bottom:500px}
+.CGTreeImageBIE{padding-top:1000px}
+.CGWidth1T{padding-left:26px}
+ .CGWidth1{padding-left:21px}
+.CGWidth2T{padding-left:47px}
+ .CGWidth2{padding-left:42px}
+.CGWidth3T{padding-left:68px}
+ .CGWidth3{padding-left:63px}
+.CGWidth4T{padding-left:89px}
+.CG000,.CG000T{background-position:0px top}
+ .CG000M,.CG000TM{background-position:0px center}
+ .CG000B,.CG000TB{background-position:0px bottom}
+.CG010,.CG010T{background-position:-128px top}
+ .CG010M,.CG010TM{background-position:-128px center}
+ .CG010B,.CG010TB{background-position:-128px bottom}
+.CG001,.CG001T{background-position:-256px top}
+ .CG001M,.CG001TM{background-position:-256px center}
+ .CG001B,.CG001TB{background-position:-256px bottom}
+.CG011,.CG011T{background-position:-384px top}
+ .CG011M,.CG011TM{background-position:-384px center}
+ .CG011B,.CG011TB{background-position:-384px bottom}
+.CG100,.CG100T{background-position:-512px top}
+ .CG100M,.CG100TM{background-position:-512px center}
+ .CG100B,.CG100TB{background-position:-512px bottom}
+.CG110,.CG110T{background-position:-640px top}
+ .CG110M,.CG110TM{background-position:-640px center}
+ .CG110B,.CG110TB{background-position:-640px bottom}
+.CG101,.CG101T{background-position:-768px top}
+ .CG101M,.CG101TM{background-position:-768px center}
+ .CG101B,.CG101TB{background-position:-768px bottom}
+.CG111,.CG111T{background-position:-896px top}
+ .CG111M,.CG111TM{background-position:-896px center}
+ .CG111B,.CG111TB{background-position:-896px bottom}
+.CG00,.CG00T{background-position:-21px top}
+ .CG00M,.CG00TM{background-position:-21px center}
+ .CG00B,.CG00TB{background-position:-21px bottom}
+.CG10,.CG10T{background-position:-149px top}
+ .CG10M,.CG10TM{background-position:-149px center}
+ .CG10B,.CG10TB{background-position:-149px bottom}
+.CG01,.CG01T{background-position:-277px top}
+ .CG01M,.CG01TM{background-position:-277px center}
+ .CG01B,.CG01TB{background-position:-277px bottom}
+.CG11,.CG11T{background-position:-405px top}
+ .CG11M,.CG11TM{background-position:-405px center}
+ .CG11B,.CG11TB{background-position:-405px bottom}
+.CG0,.CG0T{background-position:-42px top}
+ .CG0M,.CG0TM{background-position:-42px center}
+ .CG0B,.CG0TB{background-position:-42px bottom}
+.CG1,.CG1T{background-position:-298px top}
+ .CG1M,.CG1TM{background-position:-298px center}
+ .CG1B,.CG1TB{background-position:-298px bottom}
+.CGT{background-position:-63px top}
+ .CGTM{background-position:-63px center}
+ .CGTB{background-position:-63px bottom}
+.CG0TL{background-position:-1024px top}
+ .CG0TLM{background-position:-1024px center}
+ .CG0TLB{background-position:-1024px bottom}
+.CG1TL{background-position:-1088px top}
+ .CG1TLM{background-position:-1088px center}
+ .CG1TLB{background-position:-1088px bottom}
+.CG0C{background-position:-1152px top}
+ .CG0CM{background-position:-1152px center}
+ .CG0CB{background-position:-1152px bottom}
+.CG1C{background-position:-1216px top}
+ .CG1CM{background-position:-1216px center}
+ .CG1CB{background-position:-1216px bottom}
+.CG0CL{background-position:-1280px top}
+ .CG0CLM{background-position:-1280px center}
+ .CG0CLB{background-position:-1280px bottom}
+.CG1CL{background-position:-1344px top}
+ .CG1CLM{background-position:-1344px center}
+ .CG1CLB{background-position:-1344px bottom}
+.CG0E{background-position:-1408px top}
+ .CG0EM{background-position:-1408px center}
+ .CG0EB{background-position:-1408px bottom}
+.CG1E{background-position:-1472px top}
+ .CG1EM{background-position:-1472px center}
+ .CG1EB{background-position:-1472px bottom}
+.CG0EL{background-position:-1536px top}
+ .CG0ELM{background-position:-1536px center}
+ .CG0ELB{background-position:-1536px bottom}
+.CG1EL{background-position:-1600px top}
+ .CG1ELM{background-position:-1600px center}
+ .CG1ELB{background-position:-1600px bottom}
+.CGTL{background-position:-1045px top}
+ .CGTLM{background-position:-1045px center}
+ .CGTLB{background-position:-1045px bottom}
+.CGC{background-position:-1173px top}
+ .CGCM{background-position:-1173px center}
+ .CGCB{background-position:-1173px bottom}
+.CGCL{background-position:-1301px top}
+ .CGCLM{background-position:-1301px center}
+ .CGCLB{background-position:-1301px bottom}
+.CGE{background-position:-1429px top}
+ .CGEM{background-position:-1429px center}
+ .CGEB{background-position:-1429px bottom}
+.CGEL{background-position:-1557px top}
+ .CGELM{background-position:-1557px center}
+ .CGELB{background-position:-1557px bottom}
+.CGD0{background-position:-1664px top}
+ .CGD0M{background-position:-1664px center}
+ .CGD0B{background-position:-1664px bottom}
+.CGD1{background-position:-1696px top}
+ .CGD1M{background-position:-1696px center}
+ .CGD1B{background-position:-1696px bottom}
+.CGD2{background-position:-1728px top}
+ .CGD2M{background-position:-1728px center}
+ .CGD2B{background-position:-1728px bottom}
+.CGD3{background-position:-1760px top}
+ .CGD3M{background-position:-1760px center}
+ .CGD3B{background-position:-1760px bottom}
+.CGD0L{background-position:-1792px top}
+ .CGD0LM{background-position:-1792px center}
+ .CGD0LB{background-position:-1792px bottom}
+.CGD1L{background-position:-1824px top}
+ .CGD1LM{background-position:-1824px center}
+ .CGD1LB{background-position:-1824px bottom}
+.CGD2L{background-position:-1856px top}
+ .CGD2LM{background-position:-1856px center}
+ .CGD2LB{background-position:-1856px bottom}
+.CGD3L{background-position:-1888px top}
+ .CGD3LM{background-position:-1888px center}
+ .CGD3LB{background-position:-1888px bottom}
+.CGD4{background-position:-1920px top}
+ .CGD4M{background-position:-1920px center}
+ .CGD4B{background-position:-1920px bottom}
+.CGD4L{background-position:-1952px top}
+ .CGD4LM{background-position:-1952px center}
+ .CGD4LB{background-position:-1952px bottom}
+.CGNC,.CGNE,.CGND0,.CGND1,.CGND2,.CGND3,.CGND4,.CGNIcon{background-repeat:no-repeat;vertical-align:top;background-position:right top}
+.CGNCR,.CGNER,.CGND0R,.CGND1R,.CGND2R,.CGND3R,.CGND4R{background-repeat:no-repeat;vertical-align:top;background-position:left top}
+.CGNTreeImage{display:inline-block;height:17px;width:17px}
+.CGNWidth{width:21px}
+.CGND0,.CGND0R{background-image:url(./imgs/TreeNDrag0.gif?v120)}
+.CGND1,.CGND1R{background-image:url(./imgs/TreeNDrag1.gif?v120)}
+.CGND2,.CGND2R{background-image:url(./imgs/TreeNDrag2.gif?v120)}
+.CGND3,.CGND3R{background-image:url(./imgs/TreeNDrag3.gif?v120)}
+.CGND4,.CGND4R{background-image:url(./imgs/TreeNWait.gif?v120)}
+.CGNC,.CGNCR{background-image:url(./imgs/TreeNCollapse.gif?v120)}
+.CGNE,.CGNER{background-image:url(./imgs/TreeNExpand.gif?v120)}
+ .CGFilter0,.CGFilter1,.CGGroup0,.CGGroup1,.CGSearch0,.CGSearch1{background-image:url(./imgs/BoolSpace.gif?v120);background-repeat:no-repeat;display:inline-block;width:17px;height:21px}
+.CGFilter0,.CGFilter1{height:18px}
+.CGFilter0{background-position:right -2px}
+.CGFilter1{background-position:right -252px}
+.CGGroup0{background-position:center 0px}
+.CGGroup1{background-position:center -250px}
+.CGSearch0{background-position:center 0px}
+.CGSearch1{background-position:center -250px}
+.CGPSpace1{width:17px;text-align:center}
+.CGPSpace2{width:33px;text-align:center}
+.CGPSpace3{width:49px;text-align:center}
+.CGPSpace4{width:65px;text-align:center}
+ .CGTabHtml,.CGTabHtml1,.CGTabHtmlIcon,.CGTabHtmlIcon1{font-weight:bold;text-align:center;padding-left:5px;padding-right:5px;background:url(./imgs/Backgrounds.gif?v120) repeat-x left -1450px}
+.CGTabHtml1,.CGTabHtmlIcon1{background-position:left -1500px;color:white}
+.CGTabSep,.CGTabSepLeft,.CGTabSepRight{padding-left:3px;padding-right:0px;background:white!important;border:0px none;border-left:1px solid #9cb6c8;border-right:1px solid #9cb6c8;cursor:default!important;}
+.CGTabSepRight,.CGTabSepLeft{padding-left:5px}
+.CGTabSepLast{padding-left:1px;background:white!important;border:none;border-left:1px solid #9cb6c8;cursor:default!important}
+.CGTabSepFirst{padding-left:1px;background:white!important;border:none;border-right:1px solid #9cb6c8;cursor:default!important}
+.CGTabSepNoBack{background:none!important}
+ .CGToolButton{text-align:center;padding:0px 1px 0px 1px}
+button.CGToolButtonButton,button.CGToolButtonButton1{font:10px/11px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;height:17px;padding:0px;cursor:pointer;white-space:nowrap}
+button.CGToolSpaceButton,button.CGToolSpaceButton1{font:11px/12px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;height:21px;padding:0px;cursor:pointer;white-space:nowrap}
+button.CGToolButtonButton1,button.CGToolSpaceButton1{color:blue;font-weight:bold}
+u.CGToolButtonButton,u.CGToolButtonButton1,u.CGToolSpaceButton,u.CGToolSpaceButton1{background:url(./imgs/Backgrounds.gif?v120) 0px -3px;border-bottom:1px solid #048;border-top:1px solid #D5E9FE;border-radius:10px;color:white;cursor:pointer;text-decoration:none;display:block;overflow:hidden;white-space:nowrap;}
+u.CGToolButtonButton,u.CGToolButtonButton1{font:11px/12px Arial,Helvetica,sans-serif;padding:1px 5px 0px 5px;margin:1px}
+u.CGToolSpaceButton,u.CGToolSpaceButton1{font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;padding:1px 5px 1px 5px;margin:2px 0px 2px 0px}
+u.CGToolButtonButton1,u.CGToolSpaceButton1{color:#FF0;background:url(./imgs/Backgrounds.gif?v120) 0px -17px}
+u.CGToolButtonIcon{padding-top:0px;padding-bottom:0px}
+ .CGToolButtonIconInner{padding-top:1px;padding-bottom:0px;display:inline-block;font-style:normal}
+u.CGToolSpaceIcon{padding-top:0px;padding-bottom:0px}
+ .CGToolSpaceIconInner{padding-top:1px;padding-bottom:1px;display:inline-block;font-style:normal}
+.CGToolButtonEmpty{height:12px;width:0px;overflow:hidden;display:inline-block}
+.CGToolSpaceEmpty{height:13px;width:0px;overflow:hidden;display:inline-block}
+.CGToolButtonButtonAuto,.CGToolSpaceButtonAuto{padding-left:3px;padding-right:3px}
+ .CGToolHtml,.CGToolHtml1{padding-left:3px;padding-right:3px;text-align:center}
+.CGToolHtml1{font-weight:bold;color:blue}
+.CGToolHtmlIcon,.CGToolHtmlIcon1{text-align:center}
+.CGToolHtmlIconLeft{text-align:left}
+.CGToolHtmlIconRight{text-align:right}
+.CGToolHtmlEmpty{height:13px;width:0px;overflow:hidden;display:inline-block}
+.CGToolHtmlEmptyIE{overflow:hidden;display:inline-block}
+.CGDisabledButton{opacity:0.3;filter:alpha(opacity=30)}
+.CGPopupLeft,.CGPopupRight{background-image:url(./imgs/Menu.gif?v120);background-repeat:no-repeat}
+.CGPopupLeft{background-position:-6px -248px;padding-left:14px}
+.CGPopupRight{background-position:right -248px;padding-right:14px}
+.CGPopupNone{padding-right:14px}
+.CGToolAlignSingle{padding-left:24px;padding-right:0px}
+.CGToolAlignSingle.CGHasLine{padding-left:0px}
+.CGToolAlignLeft{padding-left:22px;padding-right:8px}
+.CGToolAlignRight{padding-left:8px;padding-right:22px}
+.CGToolAlignTop{padding:22px 5px 3px 5px}
+.CGToolAlignBottom{padding:5px 5px 24px 5px}
+.CGToolLineAlignSingle{margin:14px 19px -18px 0px;height:0px;width:21px}
+.CGToolLineAlignLeft{margin:14px 3px -18px -20px;height:0px}
+.CGToolLineAlignRight{margin:14px -23px -18px -2px;height:0px}
+.CGToolLineAlignTop{margin:-3px auto -1px auto;height:0px}
+.CGToolLineAlignBottom{margin:34px auto -38px auto;height:0px}
+.CGToolLine{border-bottom:4px solid;padding-top:0px}
+.CGToolLineEmpty{border-bottom:1px solid #D4D4D4!important;padding-top:2px}
+.CGToolLine0{border-bottom:0px none;padding-top:3px}
+.CGToolLine1{border-bottom:1px solid;padding-top:2px}
+.CGToolLine2{border-bottom:2px solid;padding-top:2px}
+.CGToolLine3{border-bottom:3px solid;padding-top:1px}
+.CGToolLine4{border-bottom:1px dotted;padding-top:2px}
+.CGToolLine5{border-bottom:2px dotted;padding-top:2px}
+.CGToolLine6{border-bottom:1px dashed;padding-top:2px}
+.CGToolLine7{border-bottom:2px dashed;padding-top:2px}
+.CGToolSave,.CGToolReload,.CGToolRepaint,.CGToolRepaint1,.CGToolPrint,.CGToolExportPDF,.CGToolExport,.CGToolImport,.CGToolUndo,.CGToolUndo1,.CGToolRedo,.CGToolRedo1,.CGToolAdd,.CGToolAddChild,.CGToolAddCol,.CGToolJoin,.CGToolSplit,.CGToolOutdent,.CGToolIndent,.CGToolSort,.CGToolSort1,.CGToolCalc,.CGToolCalc1,.CGToolExpandAll,.CGToolCollapseAll,.CGToolColumns,.CGToolCfg,.CGToolHelp,.CGToolDebug,.CGResizeSheet,.CGResizeSheetRtl{background-image:url(./imgs/Toolbar.png?v120);-background-image:url(./imgs/Toolbar.gif?v120);background-repeat:no-repeat;}
+.CGToolSave{background-position:center 0px}
+ .CGToolSaveLeft{background-position:left 0px}
+ .CGToolSaveRight{background-position:right 0px}
+ .CGToolSaveBottom{background-position:center 20px}
+.CGToolReload{background-position:center -100px}
+ .CGToolReloadLeft{background-position:left -100px}
+ .CGToolReloadRight{background-position:right -100px}
+ .CGToolReloadBottom{background-position:center -80px}
+.CGToolRepaint{background-position:center -200px}
+ .CGToolRepaintLeft{background-position:left -200px}
+ .CGToolRepaintRight{background-position:right -200px}
+ .CGToolRepaintBottom{background-position:center -180px}
+.CGToolRepaint1{background-position:center -300px}
+ .CGToolRepaintLeft1{background-position:left -300px}
+ .CGToolRepaintRight1{background-position:right -300px}
+ .CGToolRepaintBottom1{background-position:center -280px}
+.CGToolPrint{background-position:center -400px}
+ .CGToolPrintLeft{background-position:left -400px}
+ .CGToolPrintRight{background-position:right -400px}
+ .CGToolPrintBottom{background-position:center -380px}
+.CGToolExportPDF{background-position:center -500px}
+ .CGToolExportPDFLeft{background-position:left -500px}
+ .CGToolExportPDFRight{background-position:right -500px}
+ .CGToolExportPDFBottom{background-position:center -480px}
+.CGToolExport{background-position:center -600px}
+ .CGToolExportLeft{background-position:left -600px}
+ .CGToolExportRight{background-position:right -600px}
+ .CGToolExportBottom{background-position:center -580px}
+.CGToolImport{background-position:center -3000px}
+ .CGToolImportLeft{background-position:left -3000px}
+ .CGToolImportRight{background-position:right -3000px}
+ .CGToolImportBottom{background-position:center -2980px}
+.CGToolUndo{background-position:center -700px}
+ .CGToolUndoLeft{background-position:left -700px}
+ .CGToolUndoRight{background-position:right -700px}
+ .CGToolUndoBottom{background-position:center -680px}
+.CGToolUndo1{background-position:center -800px}
+ .CGToolUndoLeft1{background-position:left -800px}
+ .CGToolUndoRight1{background-position:right -800px}
+ .CGToolUndoBottom1{background-position:center -780px}
+.CGToolRedo{background-position:center -900px}
+ .CGToolRedoLeft{background-position:left -900px}
+ .CGToolRedoRight{background-position:right -900px}
+ .CGToolRedoBottom{background-position:center -880px}
+ .CGToolRedo1{background-position:center -1000px}
+ .CGToolRedoLeft1{background-position:left -1000px}
+ .CGToolRedoRight1{background-position:right -1000px}
+ .CGToolRedoBottom1{background-position:center -980px}
+.CGToolAdd{background-position:center -1100px}
+ .CGToolAddLeft{background-position:left -1100px}
+ .CGToolAddRight{background-position:right -1100px}
+ .CGToolAddBottom{background-position:center -1080px}
+.CGToolAddChild{background-position:center -1200px}
+ .CGToolAddChildLeft{background-position:left -1200px}
+ .CGToolAddChildRight{background-position:right -1200px}
+ .CGToolAddChildBottom{background-position:center -1180px}
+.CGToolAddCol{background-position:center -2900px}
+ .CGToolAddColLeft{background-position:left -2900px}
+ .CGToolAddColRight{background-position:right -2900px}
+ .CGToolAddColBottom{background-position:center -2880px}
+.CGToolJoin{background-position:center -1300px}
+ .CGToolJoinLeft{background-position:left -1300px}
+ .CGToolJoinRight{background-position:right -1300px}
+ .CGToolJoinBottom{background-position:center -1280px}
+.CGToolSplit{background-position:center -1400px}
+ .CGToolSplitLeft{background-position:left -1400px}
+ .CGToolSplitRight{background-position:right -1400px}
+ .CGToolSplitBottom{background-position:center -1380px}
+.CGToolOutdent{background-position:center -1500px}
+ .CGToolOutdentLeft{background-position:left -1500px}
+ .CGToolOutdentRight{background-position:right -1500px}
+ .CGToolOutdentBottom{background-position:center -1480px}
+.CGToolIndent{background-position:center -1600px}
+ .CGToolIndentLeft{background-position:left -1600px}
+ .CGToolIndentRight{background-position:right -1600px}
+ .CGToolIndentBottom{background-position:center -1580px}
+.CGToolSort{background-position:center -1700px}
+ .CGToolSortLeft{background-position:left -1700px}
+ .CGToolSortRight{background-position:right -1700px}
+ .CGToolSortBottom{background-position:center -1680px}
+.CGToolSort1{background-position:center -1800px}
+ .CGToolSortLeft1{background-position:left -1800px}
+ .CGToolSortRight1{background-position:right -1800px}
+ .CGToolSortBottom1{background-position:center -1780px}
+.CGToolCalc{background-position:center -1900px}
+ .CGToolCalcLeft{background-position:left -1900px}
+ .CGToolCalcRight{background-position:right -1900px}
+ .CGToolCalcBottom{background-position:center -1880px}
+.CGToolCalc1{background-position:center -2000px}
+ .CGToolCalcLeft1{background-position:left -2000px}
+ .CGToolCalcRight1{background-position:right -2000px}
+ .CGToolCalcBottom1{background-position:center -1980px}
+.CGToolExpandAll{background-position:center -2100px}
+ .CGToolExpandAllLeft{background-position:left -2100px}
+ .CGToolExpandAllRight{background-position:right -2100px}
+ .CGToolExpandAllBottom{background-position:center -2080px}
+.CGToolCollapseAll{background-position:center -2200px}
+ .CGToolCollapseAllLeft{background-position:left -2200px}
+ .CGToolCollapseAllRight{background-position:right -2200px}
+ .CGToolCollapseAllBottom{background-position:center -2180px}
+.CGToolColumns{background-position:center -2300px}
+ .CGToolColumnsLeft{background-position:left -2300px}
+ .CGToolColumnsRight{background-position:right -2300px}
+ .CGToolColumnsBottom{background-position:center -2280px}
+.CGToolCfg{background-position:center -2400px}
+ .CGToolCfgLeft{background-position:left -2400px}
+ .CGToolCfgRight{background-position:right -2400px}
+ .CGToolCfgBottom{background-position:center -2380px}
+.CGToolHelp{background-position:center -2500px}
+ .CGToolHelpLeft{background-position:left -2500px}
+ .CGToolHelpRight{background-position:right -2500px}
+ .CGToolHelpBottom{background-position:center -2480px}
+.CGToolDebug{background-position:center -2600px}
+ .CGToolDebugLeft{background-position:left -2600px}
+ .CGToolDebugRight{background-position:right -2600px}
+ .CGToolDebugBottom{background-position:center -2580px}
+.CGResizeSheet{background-position:center -2700px}
+ .CGResizeSheetLeft{background-position:left -2700px}
+ .CGResizeSheetRight{background-position:right -2700px}
+ .CGResizeSheetBottom{background-position:center -2680px}
+ .CGResizeSheetRtl{background-position:center -2800px}
+ .CGResizeSheetRtlLeft{background-position:left -2800px}
+ .CGResizeSheetRtlRight{background-position:right -2800px}
+ .CGResizeSheetRtlBottom{background-position:center -2780px}
+.CGToolPagerFirst,.CGToolPagerFirst1,.CGToolPagerPrev,.CGToolPagerPrev1,.CGToolPagerNext,.CGToolPagerNext1,.CGToolPagerLast,.CGToolPagerLast1{background-image:url(./imgs/Pager.png?v120);-background-image:url(./imgs/Pager.gif?v120);background-repeat:no-repeat;}
+.CGToolPagerFirst{background-position:center 0px}
+ .CGToolPagerFirstLeft{background-position:left 0px}
+ .CGToolPagerFirstRight{background-position:right 0px}
+ .CGToolPagerFirstBottom{background-position:center 20px}
+.CGToolPagerFirst1{background-position:center -100px}
+ .CGToolPagerFirstLeft1{background-position:left -100px}
+ .CGToolPagerFirstRight1{background-position:right -100px}
+ .CGToolPagerFirstBottom1{background-position:center -80px}
+.CGToolPagerPrev{background-position:center -200px}
+ .CGToolPagerPrevLeft{background-position:left -200px}
+ .CGToolPagerPrevRight{background-position:right -200px}
+ .CGToolPagerPrevBottom{background-position:center -180px}
+ .CGToolPagerPrev1{background-position:center -300px}
+ .CGToolPagerPrevLeft1{background-position:left -300px}
+ .CGToolPagerPrevRight1{background-position:right -300px}
+ .CGToolPagerPrevBottom1{background-position:center -280px}
+ .CGToolPagerNext{background-position:center -400px}
+ .CGToolPagerNextLeft{background-position:left -400px}
+ .CGToolPagerNextRight{background-position:right -400px}
+ .CGToolPagerNextBottom{background-position:center -380px}
+ .CGToolPagerNext1{background-position:center -500px}
+ .CGToolPagerNextLeft1{background-position:left -500px}
+ .CGToolPagerNextRight1{background-position:right -500px}
+ .CGToolPagerNextBottom1{background-position:center -480px}
+.CGToolPagerLast{background-position:center -600px}
+ .CGToolPagerLastLeft{background-position:left -600px}
+ .CGToolPagerLastRight{background-position:right -600px}
+ .CGToolPagerLastBottom{background-position:center -580px}
+ .CGToolPagerLast1{background-position:center -700px}
+ .CGToolPagerLastLeft1{background-position:left -700px}
+ .CGToolPagerLastRight1{background-position:right -700px}
+ .CGToolPagerLastBottom1{background-position:center -680px}
+.CGToolCorrect{background-position:center 0px}
+ .CGToolCorrectLeft{background-position:left 0px}
+ .CGToolCorrectRight{background-position:right 0px}
+ .CGToolCorrectBottom{background-position:center 20px}
+ .CGToolCorrect1{background-position:center -100px}
+ .CGToolCorrectLeft1{background-position:left -100px}
+ .CGToolCorrectRight1{background-position:right -100px}
+ .CGToolCorrectBottom1{background-position:center -80px}
+.CGToolZoomIn{background-position:center -200px}
+ .CGToolZoomInLeft{background-position:left -200px}
+ .CGToolZoomInRight{background-position:right -200px}
+ .CGToolZoomInBottom{background-position:center -180px}
+ .CGToolZoomIn1{background-position:center -300px}
+ .CGToolZoomInLeft1{background-position:left -300px}
+ .CGToolZoomInRight1{background-position:right -300px}
+ .CGToolZoomInBottom1{background-position:center -280px}
+.CGToolZoomOut{background-position:center -400px}
+ .CGToolZoomOutLeft{background-position:left -400px}
+ .CGToolZoomOutRight{background-position:right -400px}
+ .CGToolZoomOutBottom{background-position:center -380px}
+.CGToolZoomOut1{background-position:center -500px}
+ .CGToolZoomOutLeft1{background-position:left -500px}
+ .CGToolZoomOutRight1{background-position:right -500px}
+ .CGToolZoomOutBottom1{background-position:center -480px}
+ .CGToolZoomFit{background-position:center -600px}
+ .CGToolZoomFitLeft{background-position:left -600px}
+ .CGToolZoomFitRight{background-position:right -600px}
+ .CGToolZoomFitBottom{background-position:center -580px}
+.CGToolLeft,.CGToolCenter,.CGToolRight,.CGToolTop,.CGToolMiddle,.CGToolBottom,.CGToolBold,.CGToolItalic,.CGToolUnderline,.CGToolStrike,.CGToolRotateLeft,.CGToolRotateRight,.CGToolWrapText{background-image:url(./imgs/ToolbarSheet.png?v120);-background-image:url(./imgs/ToolbarSheet.gif?v120);background-repeat:no-repeat;}
+.CGToolLeft1,.CGToolCenter1,.CGToolRight1,.CGToolTop1,.CGToolMiddle1,.CGToolBottom1,.CGToolBold1,.CGToolItalic1,.CGToolUnderline1,.CGToolStrike1,.CGToolRotateLeft1,.CGToolRotateRight1,.CGToolWrapText1{background-image:url(./imgs/ToolbarSheet.png?v120);-background-image:url(./imgs/ToolbarSheet.gif?v120);background-repeat:no-repeat;background-color:#8DB4FF;}
+.CGToolLeft,.CGToolLeft1{background-position:center 0px}
+ .CGToolLeftLeft,.CGToolLeftLeft1{background-position:left 0px}
+ .CGToolLeftRight,.CGToolLeftRight1{background-position:right 0px}
+ .CGToolLeftBottom,.CGToolLeftBottom1{background-position:center 20px}
+ .CGToolCenter,.CGToolCenter1{background-position:center -100px}
+ .CGToolCenterLeft,.CGToolCenterLeft1{background-position:left -100px}
+ .CGToolCenterRight,.CGToolCenterRight1{background-position:right -100px}
+ .CGToolCenterBottom,.CGToolCenterBottom1{background-position:center -80px}
+ .CGToolRight,.CGToolRight1{background-position:center -200px}
+ .CGToolRightLeft,.CGToolRightLeft1{background-position:left -200px}
+ .CGToolRightRight,.CGToolRightRight1{background-position:right -200px}
+ .CGToolRightBottom,.CGToolRightBottom1{background-position:center -180px}
+ .CGToolTop,.CGToolTop1{background-position:center -300px}
+ .CGToolTopLeft,.CGToolTopLeft1{background-position:left -300px}
+ .CGToolTopRight,.CGToolTopRight1{background-position:right -300px}
+ .CGToolTopBottom,.CGToolTopBottom1{background-position:center -280px}
+ .CGToolMiddle,.CGToolMiddle1{background-position:center -400px}
+ .CGToolMiddleLeft,.CGToolMiddleLeft1{background-position:left -400px}
+ .CGToolMiddleRight,.CGToolMiddleRight1{background-position:right -400px}
+ .CGToolMiddleBottom,.CGToolMiddleBottom1{background-position:center -380px}
+ .CGToolBottom,.CGToolBottom1{background-position:center -500px}
+ .CGToolBottomLeft,.CGToolBottomLeft1{background-position:left -500px}
+ .CGToolBottomRight,.CGToolBottomRight1{background-position:right -500px}
+ .CGToolBottomBottom,.CGToolBottomBottom1{background-position:center -480px}
+ .CGToolBold,.CGToolBold1{background-position:center -600px}
+ .CGToolBoldLeft,.CGToolBoldLeft1{background-position:left -600px}
+ .CGToolBoldRight,.CGToolBoldRight1{background-position:right -600px}
+ .CGToolBoldBottom,.CGToolBoldBottom1{background-position:center -580px}
+ .CGToolItalic,.CGToolItalic1{background-position:center -700px}
+ .CGToolItalicLeft,.CGToolItalicLeft1{background-position:left -700px}
+ .CGToolItalicRight,.CGToolItalicRight1{background-position:right -700px}
+ .CGToolItalicBottom,.CGToolItalicBottom1{background-position:center -680px}
+ .CGToolUnderline,.CGToolUnderline1{background-position:center -800px}
+ .CGToolUnderlineLeft,.CGToolUnderlineLeft1{background-position:left -800px}
+ .CGToolUnderlineRight,.CGToolUnderlineRight1{background-position:right -800px}
+ .CGToolUnderlineBottom,.CGToolUnderlineBottom1{background-position:center -780px}
+ .CGToolStrike,.CGToolStrike1{background-position:center -900px}
+ .CGToolStrikeLeft,.CGToolStrikeLeft1{background-position:left -900px}
+ .CGToolStrikeRight,.CGToolStrikeRight1{background-position:right -900px}
+ .CGToolStrikeBottom,.CGToolStrikeBottom1{background-position:center -880px}
+ .CGToolRotateLeft,.CGToolRotateLeft1{background-position:center -1000px}
+ .CGToolRotateLeftLeft,.CGToolRotateLeftLeft1{background-position:left -1000px}
+ .CGToolRotateLeftRight,.CGToolRotateLeftRight{background-position:right -1000px}
+ .CGToolRotateLeftBottom,.CGToolRotateLeftBottom1{background-position:center -980px}
+ .CGToolRotateRight,.CGToolRotateRight1{background-position:center -1100px}
+ .CGToolRotateRightLeft,.CGToolRotateRightLeft1{background-position:left -1100px}
+ .CGToolRotateRightRight,.CGToolRotateRightRight1{background-position:right -1100px}
+ .CGToolRotateRightBottom,.CGToolRotateRightBottom1{background-position:center -1080px}
+ .CGToolWrapText,.CGToolWrapText1{background-position:center -1200px}
+ .CGToolWrapTextLeft,.CGToolWrapTextLeft1{background-position:left -1200px}
+ .CGToolWrapTextRight,.CGToolWrapTextRight{background-position:right -1200px}
+ .CGToolWrapTextBottom.CGToolWrapTextBottom1{background-position:center -1180px}
+ .CGToolColorText,.CGToolColorBackground,.CGToolBorder,.CGToolBorderAll,.CGToolBorderI3,.CGToolBorderI2,.CGToolBorderI1,.CGToolBorderO15,.CGToolBorderO1,.CGToolBorderO2,.CGToolBorderO4,.CGToolBorderO8,.CGToolBorderO5,.CGToolBorderO10,.CGToolColorShadow{background-image:url(./imgs/ToolbarSheetWide.png?v120);-background-image:url(./imgs/ToolbarSheetWide.gif?v120);background-repeat:no-repeat;}
+.CGToolColorText{background-position:center 0px}
+ .CGToolColorTextLeft{background-position:left 0px}
+ .CGToolColorTextRight{background-position:right 0px}
+ .CGToolColorTextBottom{background-position:center 20px}
+.CGToolColorBackground{background-position:center -100px}
+ .CGToolColorBackgroundLeft{background-position:left -100px}
+ .CGToolColorBackgroundRight{background-position:right -100px}
+ .CGToolColorBackgroundBottom{background-position:center -80px}
+.CGToolBorder{background-position:center -200px}
+ .CGToolBorderLeft{background-position:left -200px}
+ .CGToolBorderRight{background-position:right -200px}
+ .CGToolBorderBottom{background-position:center -180px}
+.CGToolBorderAll{background-position:center -300px}
+ .CGToolBorderAllLeft{background-position:left -300px}
+ .CGToolBorderAllRight{background-position:right -300px}
+ .CGToolBorderAllBottom{background-position:center -280px}
+.CGToolBorderO15{background-position:center -400px}
+ .CGToolBorderO15Left{background-position:left -400px}
+ .CGToolBorderO15Right{background-position:right -400px}
+ .CGToolBorderO15Bottom{background-position:center -380px}
+.CGToolBorderI3{background-position:center -500px}
+ .CGToolBorderI3Left{background-position:left -500px}
+ .CGToolBorderI3Right{background-position:right -500px}
+ .CGToolBorderI3Bottom{background-position:center -480px}
+.CGToolBorderI2{background-position:center -600px}
+ .CGToolBorderI2Left{background-position:left -600px}
+ .CGToolBorderI2Right{background-position:right -600px}
+ .CGToolBorderI2Bottom{background-position:center -580px}
+.CGToolBorderI1{background-position:center -700px}
+ .CGToolBorderI1Left{background-position:left -700px}
+ .CGToolBorderI1Right{background-position:right -700px}
+ .CGToolBorderI1Bottom{background-position:center -680px}
+.CGToolBorderO1{background-position:center -800px}
+ .CGToolBorderO1Left{background-position:left -800px}
+ .CGToolBorderO1Right{background-position:right -800px}
+ .CGToolBorderO1Bottom{background-position:center -780px}
+.CGToolBorderO2{background-position:center -900px}
+ .CGToolBorderO2Left{background-position:left -900px}
+ .CGToolBorderO2Right{background-position:right -900px}
+ .CGToolBorderO2Bottom{background-position:center -880px}
+.CGToolBorderO4{background-position:center -1000px}
+ .CGToolBorderO4Left{background-position:left -1000px}
+ .CGToolBorderO4Right{background-position:right -1000px}
+ .CGToolBorderO4Bottom{background-position:center -980px}
+.CGToolBorderO8{background-position:center -1100px}
+ .CGToolBorderO8Left{background-position:left -1100px}
+ .CGToolBorderO8Right{background-position:right -1100px}
+ .CGToolBorderO8Bottom{background-position:center -1080px}
+.CGToolBorderO5{background-position:center -1200px}
+ .CGToolBorderO5Left{background-position:left -1200px}
+ .CGToolBorderO5Right{background-position:right -1200px}
+ .CGToolBorderO5Bottom{background-position:center -1180px}
+.CGToolBorderO10{background-position:center -1300px}
+ .CGToolBorderO10Left{background-position:left -1300px}
+ .CGToolBorderO10Right{background-position:right -1300px}
+ .CGToolBorderO10Bottom{background-position:center -1280px}
+.CGToolColorShadow{background-position:center -1400px}
+.CGToolColorShadowLeft{background-position:left -1400px}
+ .CGToolColorShadowRight{background-position:right -1400px}
+ .CGToolColorShadowBottom{background-position:center -1380px}
+.CGToolResize{visibility:hidden}
+.CGToolImage{display:inline-block;width:24px;height:21px;padding:0px;overflow:hidden}
+.CGToolImageLeftText,.CGToolImageRightText,.CGToolImageTopText,.CGToolImageBottomText{display:inline-block;text-decoration:none}
+.CGToolImageLeftText{padding-top:5px;padding-bottom:3px}
+.CGToolImageRightText{padding-top:5px;padding-bottom:3px}
+.CGToolImageTopText{height:13px}
+.CGToolImageBottomText{height:13px;padding-top:5px;padding-bottom:24px}
+.CGToolIconSingle{background-position:center center}
+.CGToolIconLeft{background-position:left center}
+.CGToolIconRight{background-position:right center}
+.CGToolIconTop{background-position:center top}
+.CGToolIconBottom{background-position:center bottom}
+.CGPagerEdit > div{text-align:center}
+.CGResizeSheet{background-position:-2px -2703px;margin:-19px 0px 0px auto;height:19px;width:19px;overflow:hidden;padding:0px;cursor:nw-resize;position:relative}
+.CGResizeSheetRtl{background-position:-2px -2803px;margin:-19px auto 0px 0px;height:19px;width:19px;overflow:hidden;padding:0px;cursor:ne-resize;position:relative}
+.CGFilter0Left,.CGFilter1Left,.CGFilter2Left,.CGFilter3Left,.CGFilter4Left,.CGFilter5Left,.CGFilter6Left,.CGFilter7Left,.CGFilter8Left,.CGFilter9Left,.CGFilter10Left,.CGFilter11Left,.CGFilter12Left{background-image:url(./imgs/Filter.gif?v120);background-repeat:no-repeat;padding-left:17px;}
+.CGFilter0Right,.CGFilter1Right,.CGFilter2Right,.CGFilter3Right,.CGFilter4Right,.CGFilter5Right,.CGFilter6Right,.CGFilter7Right,.CGFilter8Right,.CGFilter9Right,.CGFilter10Right,.CGFilter11Right,.CGFilter12Right{background-image:url(./imgs/Filter.gif?v120);background-repeat:no-repeat;padding-right:17px;}
+.CGFilter0Left,.CGFilter0Menu{background-position:left 0px}
+ .CGFilter1Left,.CGFilter1Menu{background-position:left -150px}
+.CGFilter2Left,.CGFilter2Menu{background-position:left -300px}
+.CGFilter3Left,.CGFilter3Menu{background-position:left -450px}
+.CGFilter4Left,.CGFilter4Menu{background-position:left -600px}
+.CGFilter5Left,.CGFilter5Menu{background-position:left -750px}
+ .CGFilter6Left,.CGFilter6Menu{background-position:left -900px}
+.CGFilter7Left,.CGFilter7Menu{background-position:left -1050px}
+.CGFilter8Left,.CGFilter8Menu{background-position:left -1200px}
+.CGFilter9Left,.CGFilter9Menu{background-position:left -1350px}
+.CGFilter10Left,.CGFilter10Menu{background-position:left -1500px}
+.CGFilter11Left,.CGFilter11Menu{background-position:left -1650px}
+.CGFilter12Left,.CGFilter12Menu{background-position:left -1800px}
+.CGFilter0Right{background-position:right 0px}
+ .CGFilter1Right{background-position:right -150px}
+.CGFilter2Right{background-position:right -300px}
+.CGFilter3Right{background-position:right -450px}
+.CGFilter4Right{background-position:right -600px}
+.CGFilter5Right{background-position:right -750px}
+ .CGFilter6Right{background-position:right -900px}
+.CGFilter7Right{background-position:right -1050px}
+.CGFilter8Right{background-position:right -1200px}
+.CGFilter9Right{background-position:right -1350px}
+.CGFilter10Right{background-position:right -1500px}
+.CGFilter11Right{background-position:right -1650px}
+.CGFilter12Right{background-position:right -1800px}
+.CGFilter0Menu,.CGFilter1Menu,.CGFilter2Menu,.CGFilter3Menu,.CGFilter4Menu,.CGFilter5Menu,.CGFilter6Menu,.CGFilter7Menu,.CGFilter8Menu,.CGFilter9Menu,.CGFilter10Menu,.CGFilter11Menu,.CGFilter12Menu{width:17px;height:17px;overflow:hidden;background-image:url(./imgs/Filter.gif?v120);background-repeat:no-repeat;margin-left:-1px;}
+.CGFilter0Value{color:silver}
+.CGFilter1Value,.CGFilter2Value,.CGFilter3Value,.CGFilter4Value,.CGFilter5Value,.CGFilter6Value,.CGFilter7Value,.CGFilter8Value,.CGFilter9Value,.CGFilter10Value,.CGFilter11Value,.CGFilter12Value{color:blue}
+.CGSort0Left,.CGSort1Left,.CGSort2Left,.CGSort3Left,.CGSort4Left,.CGSort5Left,.CGSort6Left,.CGSort0Right,.CGSort1Right,.CGSort2Right,.CGSort3Right,.CGSort4Right,.CGSort5Right,.CGSort6Right{background-image:url(./imgs/Sort.gif?v120);background-repeat:no-repeat;}
+.CGSort0Left,.CGSort1Left,.CGSort2Left,.CGSort3Left,.CGSort4Left,.CGSort5Left,.CGSort6Left{padding-left:17px}
+.CGSort0Right,.CGSort1Right,.CGSort2Right,.CGSort3Right,.CGSort4Right,.CGSort5Right,.CGSort6Right{padding-right:17px}
+.CGSort0Left{background-position:left 0px}
+ .CGSort1Left{background-position:left -250px}
+.CGSort2Left{background-position:left -500px}
+.CGSort3Left{background-position:left -750px}
+.CGSort4Left{background-position:left -1000px}
+.CGSort5Left{background-position:left -1250px}
+.CGSort6Left{background-position:left -1500px}
+.CGSort0Right{background-position:right 0px}
+ .CGSort1Right{background-position:right -250px}
+.CGSort2Right{background-position:right -500px}
+.CGSort3Right{background-position:right -750px}
+.CGSort4Right{background-position:right -1000px}
+.CGSort5Right{background-position:right -1250px}
+.CGSort6Right{background-position:right -1500px}
+.CGDateLeft,.CGDatesLeft,.CGDefaultsLeft,.CGEnumLeft,.CGCollapseLeft,.CGExpandLeft,.CGFileLeft,.CGClearLeft{background-image:url(./imgs/Button.gif?v120);padding-left:17px;background-repeat:no-repeat}
+.CGDateRight,.CGDatesRight,.CGDefaultsRight,.CGEnumRight,.CGCollapseRight,.CGExpandRight,.CGFileRight,.CGClearRight{background-image:url(./imgs/Button.gif?v120);padding-right:17px;background-repeat:no-repeat}
+.CGDateTop,.CGDatesTop,.CGDefaultsTop,.CGEnumTop,.CGCollapseTop,.CGExpandTop,.CGFileTop,.CGClearTop{background-image:url(./imgs/Button.gif?v120);padding-top:20px;background-repeat:no-repeat}
+.CGDateBottom,.CGDatesBottom,.CGDefaultsBottom,.CGEnumBottom,.CGCollapseBottom,.CGExpandBottom,.CGFileBottom,.CGClearBottom{background-image:url(./imgs/Button.gif?v120);padding-bottom:20px;background-repeat:no-repeat}
+.CGDateLeft,.CGDatesLeft{background-position:left -250px;padding-left:20px}
+.CGDateRight,.CGDatesRight{background-position:right -250px;padding-right:20px}
+.CGDateTop,.CGDatesTop{background-position:center -250px}
+.CGDateBottom,.CGDatesBottom{background-position:center -230px}
+.CGDefaultsLeft{background-position:left 0px;padding-left:20px}
+.CGDefaultsRight{background-position:right 0px;padding-right:20px}
+.CGDefaultsTop{background-position:center 0px}
+.CGDefaultsBottom{background-position:center 20px}
+.CGEnumLeft{background-position:left -500px}
+.CGEnumRight{background-position:right -500px}
+.CGEnumTop{background-position:center -500px}
+.CGEnumBottom{background-position:center -480px}
+.CGExpandLeft{background-position:left -1000px}
+.CGExpandRight{background-position:right -1000px}
+.CGExpandTop{background-position:center -1000px}
+.CGExpandBottom{background-position:center -980px}
+.CGCollapseLeft{background-position:left -750px}
+.CGCollapseRight{background-position:right -750px}
+.CGCollapseTop{background-position:center -750px}
+.CGCollapseBottom{background-position:center -730px}
+.CGFileLeft{background-position:left -2000px;padding-left:20px}
+.CGFileRight{background-position:right -2000px;padding-right:20px}
+.CGFileTop{background-position:center -2000px}
+.CGFileBottom{background-position:center -1980px}
+.CGClearLeft{background-position:left -2250px}
+.CGClearRight{background-position:right -2250px}
+.CGClearTop{background-position:center -2250px}
+.CGClearBottom{background-position:center -1230px}
+.CGCheck0Left,.CGCheck1Left,.CGCheck2Left{background-image:url(./imgs/Bool.gif?v120);padding-left:17px;background-repeat:no-repeat}
+.CGCheck0Right,.CGCheck1Right,.CGCheck2Right{background-image:url(./imgs/Bool.gif?v120);padding-right:17px;background-repeat:no-repeat}
+.CGCheck0Top,.CGCheck1Top,.CGCheck2Top{background-image:url(./imgs/Bool.gif?v120);padding-top:20px;background-repeat:no-repeat}
+.CGCheck0Bottom,.CGCheck1Bottom,.CGCheck2Bottom{background-image:url(./imgs/Bool.gif?v120);padding-bottom:20px;background-repeat:no-repeat}
+.CGCheck0Left{background-position:left 0px}
+.CGCheck1Left{background-position:left -250px}
+.CGCheck2Left{background-position:left -500px}
+.CGCheck0Right{background-position:right 0px}
+.CGCheck1Right{background-position:right -250px}
+.CGCheck2Right{background-position:right -500px}
+.CGCheck0Top{background-position:center 0px}
+.CGCheck1Top{background-position:center -250px}
+.CGCheck2Top{background-position:center -500px}
+.CGCheck0Bottom{background-position:center 20px}
+.CGCheck1Bottom{background-position:center -230px}
+.CGCheck2Bottom{background-position:center -480px}
+.CGButtonImage{display:inline-block;height:17px;padding-left:0px;padding-right:0px}
+.CGIconLink{text-decoration:none;width:1000px;display:inline-block}
+.CGIconLeft{background-position:left 0px;padding-left:20px;background-repeat:no-repeat}
+.CGIconRight{background-position:right 0px;padding-right:20px;background-repeat:no-repeat}
+.CGIconCenter{background-position:center 0px;background-repeat:no-repeat}
+.CGIconTop{padding-top:20px;background-position:center 0px;background-repeat:no-repeat}
+.CGIconBottom{padding-bottom:21px;background-position:center 20px;background-repeat:no-repeat}
+.CGIconTopVAlignTop{padding-top:20px}
+.CGIconTopVAlignMiddle{padding-top:21px}
+.CGIconTopVAlignBottom{padding-top:22px}
+.CGIconBottomVAlignTop{padding-bottom:22px}
+.CGIconBottomVAlignMiddle{padding-bottom:21px}
+.CGIconBottomVAlignBottom{padding-bottom:21px}
+.CGRadio0Left,.CGRadio0Right,.CGRadio1Left,.CGRadio1Right,.CGRadio2Left,.CGRadio2Right,.CGRadio3Left,.CGRadio3Right,.CGRadioIconLeft,.CGRadioIconRight,.CGRadioNone{background-image:url(./imgs/Bool.gif?v120);background-repeat:no-repeat;font:11.9px/17px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;}
+.CGRadio0Left,.CGRadio1Left,.CGRadio2Left,.CGRadio3Left,.CGRadioIconLeft{padding-left:17px;padding-right:3px}
+.CGRadio0Right,.CGRadio1Right,.CGRadio2Right,.CGRadio3Right,.CGRadioIconRight{padding-right:17px;padding-left:3px}
+.CGRadio0Left{background-position:left -1500px}
+ .CGRadio1Left{background-position:left -1750px}
+ .CGRadio2Left{background-position:left 0px}
+.CGRadio3Left{background-position:left -250px}
+.CGRadio0Right{background-position:right -1500px}
+ .CGRadio1Right{background-position:right -1750px}
+ .CGRadio2Right{background-position:right 0px}
+.CGRadio3Right{background-position:right -250px}
+.CGRadioNone{background-image:none}
+.CGRadioIconLeft{background-position:left top}
+.CGRadioIconRight{background-position:right top}
+nobr.CGRadio0Left,nobr.CGRadio1Left,nobr.CGRadio2Left,nobr.CGRadio3Left,nobr.CGRadio0Right,nobr.CGRadio1Right,nobr.CGRadio2Right,nobr.CGRadio3Right,nobr.CGRadioIconLeft,nobr.CGRadioIconRight,span.CGRadio0Left,span.CGRadio1Left,span.CGRadio2Left,span.CGRadio3Left,span.CGRadio0Right,span.CGRadio1Right,span.CGRadio2Right,span.CGRadio3Right,span.CGRadioIconLeft,span.CGRadioIconRight{padding-top:2px;padding-bottom:2px;}
+.CGRadioCell{white-space:nowrap}
+.CGRadioInput{margin:1px 2px 0px 2px;padding:0px;margin-top:-4px!IE;line-height:13px}
+.CGRadioText{font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif}
+nobr.CGRadioCell,span.CGRadioCell{display:inline-block}
+.CGRadioChecked{color:blue}
+.CGBool0,.CGBool1,.CGBoolX,.CGBool0RO,.CGBool1RO,.CGBoolXRO,.CGBool2,.CGBool3,.CGBool2RO,.CGBool3RO{background-image:url(./imgs/Bool.gif?v120);background-repeat:no-repeat;padding-left:17px}
+.CGBoolIcon{background-repeat:no-repeat}
+.CGBool0{background-position:center 0px}
+.CGBool1{background-position:center -250px}
+.CGBoolX{background-position:center -500px}
+.CGBool0RO{background-position:center -750px}
+.CGBool1RO{background-position:center -1000px}
+.CGBoolXRO{background-position:center -1250px}
+.CGBool2,.CGBool2RO{background-position:center -1500px}
+.CGBool3,.CGBool3RO{background-position:center -1750px}
+.CGBoolImage{display:inline-block;width:17px;height:17px;overflow:hidden;padding:0px}
+.CGBoolXSpace,.CGBool0Space,.CGBool1Space,.CGBoolXSpaceRO,.CGBool0SpaceRO,.CGBool1SpaceRO{background-image:url(./imgs/BoolSpace.gif?v120);background-repeat:no-repeat;padding-left:18px}
+.CGBool2Space,.CGBool3Space,.CGBool2SpaceRO,.CGBool3SpaceRO{background-image:url(./imgs/Bool.gif?v120);background-repeat:no-repeat;padding-left:18px}
+.CGBoolIconSpace{background-repeat:no-repeat}
+.CGBool0Space{background-position:center 1px}
+.CGBool1Space{background-position:center -249px}
+.CGBoolXSpace{background-position:center -499px}
+.CGBool0SpaceRO{background-position:center -749px}
+.CGBool1SpaceRO{background-position:center -999px}
+.CGBoolXSpaceRO{background-position:center -1249px}
+.CGBool2Space,.CGBool2SpaceRO{background-position:center -1497px}
+.CGBool3Space,.CGBool3SpaceRO{background-position:center -1747px}
+.CGBoolImageSpace{display:inline-block;width:18px;height:21px;overflow:hidden;padding:0px}
+.CGBoolInput{margin-top:2px;margin-bottom:0px;padding:0px;margin-top:-2px!IE;margin-bottom:-6px!IE}
+.CGBoolInputSpace{margin-top:5px;margin-bottom:3px;padding:0px;margin-top:1px!IE;margin-bottom:1px!IE}
+.CGBoolChar0,.CGBoolChar1,.CGBoolChar2,.CGBoolChar0RO,.CGBoolChar1RO,.CGBoolChar2RO{height:9px;width:8px;border:2px ridge white;margin:2px auto 2px auto;font:bold 9px Arial;color:blue;text-align:center;overflow:hidden;}
+.CGBoolChar2{color:green}
+.CGBoolChar0RO,.CGBoolChar1RO,.CGBoolChar2RO{color:gray}
+.CGBoolCharIE{height:14px;width:12px}
+.CGPagerMain{overflow:hidden;white-space:nowrap}
+.CGPagerBody{background:#E8F4FF}
+.CGPagerBodyLeft{border-right:1px solid #c0c0ff}
+.CGPagerBodyRight{border-left:1px solid #c0c0ff}
+.CGPagerHeader{background:url(./imgs/Backgrounds.gif?v120) repeat-x 0px -2px;border-bottom:1px solid #E8F4FF;cursor:default}
+.CGPagerHeaderLeft{border-right:1px solid #d0d0c0}
+ .CGPagerHeaderRight{border-left:1px solid #d0d0c0}
+.CGPagerCaption{font:11.9px/13px Verdana,Tahoma,"Trebuchet MS",sans-serif;color:white;padding:5px 3px 4px 3px;white-space:nowrap}
+.CGPagerItem{font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;cursor:pointer;overflow:hidden;white-space:nowrap;border-top:1px solid white;border-bottom:1px solid #e0e0ff;padding:0px 3px 0px 3px;}
+.CGPagerItemTouch{padding-top:4px;padding-bottom:4px}
+.CGPagerItemUsed{color:green}
+.CGPagerItemUnused{color:#888}
+.CGPagerItemExcluded{background:#DDD}
+.CGPagerSort1{color:#006600}
+.CGPagerSort2{color:#00AE00}
+.CGPagerSort3{color:#00FF00}
+.CGPagerSep1,.CGPagerSep2,.CGPagerSep3{color:black}
+.CGPagerFocus,.CGPagerFocus2,.CGPagerFocus3{position:relative;cursor:pointer;overflow:hidden;opacity:0.3;filter:alpha(opacity=30);border:1px solid black;background:#0FF;}
+.CGPagerFocus2{background:#F0F}
+.CGPagerFocus3{background:#AFA}
+.CGPagerHover{position:relative;cursor:pointer;overflow:hidden;background:#66F;opacity:0.2;filter:alpha(opacity=20);}
+.CGColorDefault{background-color:#FFFFFF}
+ .CGColorNoFocus{background-color:#E8F4FF}
+ .CGColorReadOnly{background-color:#F4F4F4}
+ .CGColorPreview{background-color:#FFFFFF}
+ .CGColorFormula{background-color:#FFCC99}
+ .CGColorEdit{background-color:#FFFFFF}
+ .CGColorAlternate{background-color:#EBFFFF}
+  .CGColorSelected{background-color:#FFFF80}
+ .CGClassSelected{color:red}
+ .CGColorSelectedCell{background-color:#F0F070}
+ .CGClassSelectedCell{color:red}
+ .CGColorFill{background-color:#FF80FF}
+ .CGColorError{background-color:#FF6969}
+ .CGColorDeleted{background-color:#FFCDCD}
+ .CGClassDeleted{font-style:italic}
+.CGColorAdded{background-color:#CDFFCD}
+ .CGClassAdded{font-weight:bold}
+.CGColorMoved1{background-color:#FFFFFF}
+ .CGColorMoved2{background-color:#D7EBEB}
+ .CGColorChanged{background-color:#EBEBFF}
+ .CGColorChangedCell{background-color:#E1E1FF}
+ .CGClassChangedCell{font-weight:bold}
+.CGColorMaxChildren{background-color:#FFFFF0}
+ .CGColorDetail{background-color:#FFF0FF}
+ .CGColorDetailSelected{background-color:#FFF0E0}
+ .CGColorDragged{background-color:#E0E0C0}
+ .CGColorCellMenu{background-color:#FA0}
+ .CGColorFound1{background-color:#FF87FF}
+  .CGColorFound2{background-color:#FFC387}
+  .CGColorFound3{background-color:#87FF87}
+   .CGColorHovered{background-color:#F0F0FF}
+ .CGColorHoveredCell{background-color:#C0C0FF}
+ .CGColorHoveredCellReadOnly{background-color:#F0F0F0}
+ .CGColorHoveredCellNoFocus{background-color:#F8F8F8}
+  .CGClassHoveredCellHeader{background-position:0px -250px}
+.CGColorHoveredCellSpace{background-color:#FFFFFF}
+ .CGColorHoveredCellSpaceEdit{background-color:#FFFFFF}
+ .CGClassHoveredCellSpaceEdit > div{border:1px solid #E80!important}
+.CGColorHoveredCellSpaceDefaults{background-color:#FFFFFF}
+ .CGClassHoveredCellSpaceDefaults > div{background-position:right -500px!important}
+.CGColorHoveredCellSpaceBool0{background-color:#FFFFFE}
+ .CGClassHoveredCellSpaceBool0,.CGClassHoveredCellSpaceBool0 > u{background-position:center -749px}
+.CGColorHoveredCellSpaceBool1{background-color:#FFFFFE}
+ .CGClassHoveredCellSpaceBool1,.CGClassHoveredCellSpaceBool1 > u{background-position:center -999px}
+.CGColorHoveredCellSpaceBoolX{background-color:#FFFFFE}
+ .CGClassHoveredCellSpaceBoolX,.CGClassHoveredCellSpaceBoolX > u{background-position:center -1249px}
+.CGColorHoveredCellSpaceBoolIcon{background-color:#FFFFFE}
+ .CGColorHoveredCellButton{background-color:#FFFFFE}
+ .CGClassHoveredCellButton{color:green;background-color:#FA0!important}
+.CGColorHoveredCellButton1{background-color:#FFFFFE}
+ .CGClassHoveredCellButton1{color:red;background-color:#FA0!important}
+.CGColorHoveredCellButtonButton{background-color:#FFFFFE}
+ .CGClassHoveredCellButtonButton u{background-position:0px -253px}
+.CGColorHoveredCellButtonButton1{background-color:#FFFFFE}
+ .CGClassHoveredCellButtonButton1 u{background-position:0px -265px}
+.CGColorHoveredCellTab{background-color:#FFFFFE}
+ .CGClassHoveredCellTab{background:#FA0!important;color:green}
+.CGColorHoveredCellTab1{background-color:#99bbcc}
+ .CGClassHoveredCellTab1{background-image:none}
+ .CGClassHoveredCellIndex{background-position:right -250px}
+.CGColorFocused{background-color:#E6E6E6}
+  .CGColorFocusedCell,.CGColorFocusedCellRelative{background-color:#FFFFFE}
+ .CGClassFocusedCell,.CGClassFocusedCell *{color:black!important}
+.CGColorFocusedCellRect{background-color:#AFC}
+  .CGColorEditedCell{background-color:#FFFFFF}
+ .CGColorViewedCell{background-color:#FFFFFF}
+ .CGColorFocusedCellSafari{background-color:#A0A0FF}
+ .CGColorFocusedCellHeader{background-color:#FFFFFE}
+ .CGClassFocusedCellHeader{background-position:0px -250px}
+.CGColorFocusedCellSpace{background-color:#BCD}
+ .CGColorFocusedCellSpaceEdit{background-color:#FFFFFF}
+ .CGClassFocusedCellSpaceEdit > div{border:1px solid #E80!important}
+.CGColorFocusedCellSpaceDefaults{background-color:#FFFFFF}
+ .CGClassFocusedCellSpaceDefaults > div{background-position:right -500px!important}
+.CGColorFocusedCellSpaceBool{background-color:#BCD}
+ .CGColorFocusedCellButton{background-color:#BCD}
+ .CGColorSelectedCol{background-color:#F0F0B0}
+ .CGColorSelectedRow{background-color:#F0F0B0}
+ .CGColorFocusedCol{background-color:#DDD}
+ .CGColorFocusedRow{background-color:#DDD}
+ .CGColorEditedCol{background-color:#DDD}
+ .CGColorEditedRow{background-color:#DDD}
+ .CGColorHoveredCol{background-color:#E5E5FF}
+ .CGColorHoveredRow{background-color:#E5E5FF}
+ .CGHoverRowBackground{opacity:0.1;filter:alpha(opacity=10);background:#00F}
+ .CGHoverRowBorder{z-index:1;border-top:1px solid #BBF;border-bottom:1px solid #BBF;cursor:default}
+ .CGHoverCellBorder{z-index:3;padding:1px;border:1px solid #A0A0F0;background:white}
+ .CGFocusRowBackground{opacity:0.1;filter:alpha(opacity=10);background:black}
+ .CGFocusRowBorder{z-index:2;border:1px solid black}
+ .CGFocusCellBorder{z-index:4;border:2px solid #6666FF}
+.CGFocusCellSpaceBorder{z-index:4}
+ .CGFocusCellCorner{position:relative;padding:0px;border:1px solid white;background:#6666FF;margin-left:-3px;margin-top:-5px;width:5px;height:5px;z-index:4;cursor:crosshair}
+.CGFocusCellCornerTouch{width:10px;height:10px;margin-left:0px}
+.CGEditCellBorder{z-index:4;border:2px solid #FF6666}
+ .CGEditCellSpaceBorder{z-index:4}
+ .CGEditCellCorner{position:relative;padding:0px;border:1px solid white;background:#FF6666;margin-left:-3px;margin-top:-5px;width:5px;height:5px;z-index:4;cursor:crosshair}
+.CGEditCellCornerTouch{width:10px;height:10px;margin-left:0px}
+.CGEditCellInput{position:relative;border:1px solid #BBB;overflow:hidden;z-index:2;background-color:#FFDCFF;line-height:0px;font-size:0px}
+.CGCursorBackground{position:relative;border:none;padding:0px;overflow:hidden}
+.CGCursorBorderLeft,.CGCursorBorderRight,.CGCursorBorderTop,.CGCursorBorderBottom{position:relative;overflow:hidden;width:0px;height:0px}
+.CGCursorBorderLeft{border-right:none!important;border-top:none!important;border-bottom:none!important;padding-right:0px!important;padding-top:0px!important;padding-bottom:0px!important}
+.CGCursorBorderRight{border-left:none!important;border-top:none!important;border-bottom:none!important;padding-left:0px!important;padding-top:0px!important;padding-bottom:0px!important}
+.CGCursorBorderTop{border-bottom:none!important;border-left:none!important;border-right:none!important;padding-bottom:0px!important;padding-left:0px!important;padding-right:0px!important}
+.CGCursorBorderBottom{border-top:none!important;border-left:none!important;border-right:none!important;padding-top:0px!important;padding-left:0px!important;padding-right:0px!important}
+.CGEditInput,.CGEditTextarea{font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;border:0px none;margin:0px;padding:0px 3px 0px 0px;outline:none;box-sizing:content-box;resize:none}
+.CGEditInput::-ms-clear{height:13px}
+.CGEditNormalInput,.CGEditNormalTextarea{background-color:#FFDCFF}
+.CGEditHeaderInput,.CGEditHeaderTextarea{background-color:#D5E9FE;padding-top:2px;font:11.9px/13px Verdana,Tahoma,"Trebuchet MS",sans-serif}
+.CGEditSpaceInput,.CGEditSpaceTextarea{background-color:#FFDCFF}
+.CGEditInt,.CGEditFloat,.CGEditDate{text-align:right}
+.CGEditReadOnly{background-color:#FFEEFF}
+.CGMouseObject{opacity:0.5;filter:alpha(opacity=50);z-index:300;overflow:hidden}
+.CGVLine{width:1px;border-left:1px solid black;overflow:hidden;cursor:e-resize}
+.CGHLine{height:1px;border-top:1px solid black;overflow:hidden;cursor:e-resize}
+.CGDragObject{z-index:300;font:11.9px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;margin-left:15px;margin-top:10px;background:#E4E5F0 url(./imgs/Backgrounds.gif?v120) repeat-x 0px -750px;border:1px solid #777;padding-left:3px;padding-right:3px;}
+.CGDragColInsideTop,.CGDragColInsideBottom,.CGDragColOutsideTop,.CGDragColOutsideBottom,.CGDragRowLeft,.CGDragRowRight{position:absolute;background-image:url(./imgs/Sort.gif?v120);width:11px;height:11px;overflow:hidden;z-index:301;}
+.CGDragColInsideTop{background-position:-1px -1753px}
+.CGDragColInsideBottom{background-position:-1px -1772px}
+.CGDragColOutsideTop{background-position:-1px -1793px}
+.CGDragColOutsideBottom{background-position:-1px -1812px}
+.CGDragRowLeft{background-position:-2px -1832px}
+.CGDragRowRight{background-position:-1px -1852px}
+.CGDisabled,.CGDisabledHard{position:absolute;z-index:264;background:white;opacity:0;filter:alpha(opacity=0)}
+ .CGDisabledHard{opacity:0.5;filter:alpha(opacity=50)}
+ .CGMessage{font:13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;white-space:nowrap;text-align:center;visibility:hidden;z-index:266;position:absolute;left:0px;top:0px;background:#E2F0FF;border:1px solid black;padding:10px;}
+.CGMessageShadow{position:absolute;left:0px;top:0px;margin-left:3px;margin-top:3px;z-index:265;visibility:hidden;background:#888;opacity:0.5;filter:alpha(opacity=50);}
+	.CGPageMessage{background:#FAFAFA;border:1px solid black;padding:10px;font:13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif}
+.CGProgressMain{font:13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif}
+.CGProgressCaption{font-weight:bold;margin-bottom:15px}
+.CGProgressText{margin-bottom:15px}
+.CGProgressOuter{text-align:left;width:200px;border:1px solid black;padding:2px;margin-bottom:15px}
+.CGProgressInner{height:10px;background:green}
+.CGProgressButton,.CGMessageButton{border:1px solid #8a8fb5;background:#EEE;font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;text-align:center;white-space:nowrap;}
+.CGProgressButton{margin:5px 2px 0px 2px;padding-left:10px;padding-right:10px}
+.CGMessageButton{margin:10px 3px 0px 3px;width:50px}
+.CGMessageButtonHover,.CGProgressButtonHover{background:#ffeeaa;border:1px solid #aaaadd}
+ .CGMenuMain{position:absolute;left:0px;top:0px;z-index:258}
+.CGMenuShadow{position:absolute;margin-left:3px;margin-top:3px;z-index:257;background:#888;opacity:0.5;filter:alpha(opacity=50)}
+.CGMenuOuter{overflow:hidden;background:white;border:1px solid black;padding:1px}
+.CGMenuHeader{overflow:hidden;position:absolute;z-index:258;border:1px solid #b0b0c0;background:white;cursor:pointer;user-select:none;-o-user-select:none;-moz-user-select:none;-khtml-user-select:none;-webkit-user-select:none;}
+.CGMenuHead{background:#183873 url(./imgs/Backgrounds.gif?v120) repeat-x 0px -4px;padding:3px 0px 4px 0px;font:11.9px/13px Verdana,Tahoma,"Trebuchet MS",sans-serif;text-align:center;color:white;cursor:default;}
+.CGMenuClose{float:right;width:14px;cursor:pointer;display:none;background:url(./imgs/Menu.gif?v120) no-repeat right -354px}
+.CGMenuBody{cursor:default;padding-top:1px;padding-bottom:1px}
+.CGMenuFoot{border-top:1px solid #8CA9E1;background:#C6DBE9 url(./imgs/Backgrounds.gif?v120) repeat-x 0px -1400px;margin-top:5px;font:11.9px/13px Verdana,Tahoma,"Trebuchet MS",sans-serif;text-align:center;white-space:nowrap;}
+ .CGMenuButton{border:1px solid #8a8fb5;background:#dcecf8;width:48px;margin:5px 2px 4px 2px;padding-left:0px;padding-right:0px;font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;text-align:center;white-space:nowrap;overflow:hidden;}
+.CGMenuButtonHover{background:#ffeeaa;border:1px solid #aaaadd}
+.CGMenuItem{padding:2px 3px 2px 3px}
+ .CGMenuItemTouch{padding-top:5px;padding-bottom:5px}
+.CGMenuHover{margin-left:1px;margin-right:1px;padding:1px;background:#ffeeaa;border:1px solid #aaaadd}
+.CGMenuHoverTouch{padding-top:4px;padding-bottom:4px}
+.CGMenuFocus{margin-left:1px;margin-right:1px;padding:1px;background:#CAE1F3 url(./imgs/Backgrounds.gif?v120) repeat-x 0px -1250px;border:1px solid #aaaadd}
+.CGMenuFocusTouch{padding-top:4px;padding-bottom:4px}
+ .CGMenuFocus.CGMenuHover{background:#CAE1F3;border:1px solid black}
+.CGMenuCheckedIconLeft{background:url(./imgs/Menu.gif?v120) no-repeat -3px -51px;padding-left:15px}
+.CGMenuCheckedIconRight{background:url(./imgs/Menu.gif?v120) no-repeat right -51px;padding-right:15px}
+.CGMenuUncheckedIconLeft{background:url(./imgs/Menu.gif?v120) no-repeat -3px -1px;padding-left:15px}
+.CGMenuUncheckedIconRight{background:url(./imgs/Menu.gif?v120) no-repeat right -1px;padding-right:15px}
+.CGMenuCheckedRadioLeft{background:url(./imgs/Menu.gif?v120) no-repeat -3px -751px;padding-left:15px}
+.CGMenuCheckedRadioRight{background:url(./imgs/Menu.gif?v120) no-repeat right -751px;padding-right:15px}
+.CGMenuUncheckedRadioLeft{background:url(./imgs/Menu.gif?v120) no-repeat -3px -701px;padding-left:15px}
+.CGMenuUncheckedRadioRight{background:url(./imgs/Menu.gif?v120) no-repeat right -701px;padding-right:15px}
+.CGMenuCheckedColor{background:#CAE1F3 url(./imgs/Backgrounds.gif?v120) repeat-x 0px -1500px}
+.CGMenuCursorIcon{background:url(./imgs/Menu.gif?v120) no-repeat -6px -150px}
+.CGMenuHoverIcon{background:url(./imgs/Menu.gif?v120) no-repeat -6px -100px}
+ .CGMenuCursorIconRtl{background:url(./imgs/Menu.gif?v120) no-repeat right -1000px}
+.CGMenuHoverIconRtl{background:url(./imgs/Menu.gif?v120) no-repeat right -950px}
+ .CGMenuExpandedIcon{background:url(./imgs/Menu.gif?v120) no-repeat -6px -200px}
+.CGMenuCollapsedIcon{background:url(./imgs/Menu.gif?v120) no-repeat -6px -250px}
+.CGMenuNextIcon{background:url(./imgs/Menu.gif?v120) no-repeat right -300px;padding-right:10px}
+.CGMenuNextIconRtl{background:url(./imgs/Menu.gif?v120) no-repeat left -900px;padding-left:10px}
+.CGMenuItemText,.CGMenuItemLeftHtml,.CGMenuItemRightHtml{font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;white-space:nowrap;overflow:hidden}
+.CGMenuItemIcon{background-repeat:no-repeat}
+.CGMenuItemDisabled{opacity:0.70;filter:alpha(opacity=70)}
+.CGMenuLevel{color:blue;text-align:center}
+ .CGMenuEnumParent{padding-left:5px;padding-right:2px}
+.CGMenuEnum,.CGMenuEnumHeaderLeft{font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;white-space:nowrap;overflow:hidden}
+.CGMenuEnum{border:1px solid #DDD;border-top:1px solid #666;border-left:1px solid #666;background:white url(./imgs/Menu.gif?v120) no-repeat left -800px;padding-left:15px}
+.CGMenuEnumHeaderLeft{background:url(./imgs/Menu.gif?v120) no-repeat left -799px;padding:1px 0px 2px 15px;cursor:default}
+.CGMenuEnumParent,.CGMenuEnum,.CGMenuEnumHeaderLeft{width:90px}
+.CGMenuEditParent{padding-left:5px;padding-right:2px}
+.CGMenuEdit,.CGMenuEditIE{font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;background:white;overflow:hidden;white-space:nowrap;border:1px solid #DDD;border-top:1px solid #666;border-left:1px solid #666;padding-left:3px;padding-right:3px;height:13px;}
+.CGMenuEditIE{height:15px}
+.CGMenuEditParent,.CGMenuEdit,.CGMenuEditIE{width:30px}
+.CGMenuEditParentPDFName,.CGMenuEditParentPDFName .CGMenuEdit,.CGMenuEditParentPDFName .CGMenuEditIE,.CGMenuEditParentExportName,.CGMenuEditParentExportName .CGMenuEdit,.CGMenuEditParentExportName .CGMenuEditIE{width:104px}
+.CGMenuEditMulti{white-space:normal}
+.CGMenuEditEdit{background:#FDD}
+.CGMenuEditInput,.CGMenuEditTextarea{font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;border:0px none;margin:0px;padding:0px;outline:none;background:#FDD;box-sizing:content-box;resize:none;}
+.CGMenuEditInput::-ms-clear{height:13px}
+.CGMenuEditInt,.CGMenuEditFloat,.CGMenuEditDate{text-align:right}
+ .CGMenuCaption{padding:16px 2px 8px 2px;color:blue;text-align:center}
+.CGMenuSeparator{margin:3px 3px 2px 3px;height:1px;border-top:1px solid #aaaadd;overflow:hidden}
+.CGMenuVSeparator{border-right:1px solid #DDD;width:1px}
+.CGFilterMenuMain{margin-left:-4px;margin-top:-2px}
+.CGFilterMenuHeaderBottom{margin-left:-4px;margin-top:-2px;padding:2px 2px 0px 4px;border-bottom:0px none}
+.CGFilterMenuHeaderTop{margin-left:-4px;margin-top:-2px;padding:1px 2px 1px 4px;border-top:0px none}
+.CGFilterMenuShadow{margin-left:-1px}
+.CGEnumMenuHeader{background:white}
+.CGEnumMenuHeaderBottom{padding-top:1px}
+.CGEnumMenuHeaderTop{padding-bottom:1px}
+.CGEnumHeaderLeft,.CGEnumHeaderRight,.CGEnumHeaderNone{background:white;font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;padding:2px 4px 2px 2px;white-space:nowrap;cursor:pointer;}
+.CGEnumHeaderLeft{background:white url(./imgs/Menu.gif?v120) no-repeat 1px -798px;padding-left:17px}
+.CGEnumHeaderRight{background:white url(./imgs/Menu.gif?v120) no-repeat right -798px;padding-right:17px}
+.CGToolMenuHeader{border:1px solid #e0e0ff;margin-top:1px}
+.CGToolMenuOuter{border:1px solid #e0e0ff;background:#E8F4FF}
+.CGToolHeader,.CGToolHeaderAbove,.CGToolHeaderBelow{border:none;padding:1px 5px 100px 2px}
+.CGToolHeaderAbove{padding-top:2px;padding-left:4px}
+.CGToolHeaderBelow{padding-top:1px;padding-left:4px}
+.CGCfgMenuOuter,.CGColumnsMenuOuter{border:1px solid black}
+.CGCfgMenuHead,.CGColumnsMenuHead{padding-left:3px}
+.CGCfgMenuBody,.CGColumnsMenuBody{padding-left:4px;padding-right:4px}
+.CGCfgMenuFoot,.CGColumnsMenuFoot{padding-right:3px;padding-left:3px}
+.CGCfgMenuButton{width:72px}
+ .CGColumnsMenuButton{width:52px}
+.CGCfgMenuItemText{padding-left:3px}
+.CGColumnsMenuItemText{padding-left:3px;white-space:nowrap}
+.CGCfgMenuItem,.CGColumnsMenuItem{padding-top:3px;padding-bottom:3px}
+.CGCfgMenuHover,.CGColumnsMenuHover{padding-top:2px;padding-bottom:2px}
+.CGCfgMenuFocus,.CGColumnsMenuFocus{padding-top:2px;padding-bottom:2px}
+.CGCfgMenuItemTouch,.CGColumnsMenuItemTouch{padding-top:6px;padding-bottom:6px}
+.CGCfgMenuHoverTouch,.CGColumnsMenuHoverTouch{padding-top:5px;padding-bottom:5px}
+.CGCfgMenuFocusTouch,.CGColumnsMenuFocusTouch{padding-top:5px;padding-bottom:5px}
+.CGEditDialogSheetMain .CGRowAboveFirst > table .CGCellSpace{vertical-align:middle}
+.CGEditDialogSheetMain .CGRowBelow > table .CGCellSpaceButtonButton{vertical-align:middle}
+.CGEditDialogSheetMain .CGRowAboveFirst > table .CGSpaceWidthInner{font:18.0px/18px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif}
+.CGEditDialogSheetMain .CGMainTable .CGHeadMid{border-top:1px solid #cfd1d6;border-bottom:0px solid #cfd1d6}
+.CGPopupSheetOuter{border:0px none;overflow:visible}
+.CGPopupSheetHead{padding:0px}
+.CGPopupSheetBody{padding:0px}
+.CGPopupSheetFoot{padding:0px}
+.CGPopupSheetButton{width:50px;margin-top:-2px;margin-bottom:3px}
+.CGMenuItemBorderStyle{margin-bottom:9px;height:7px;width:50px;border-bottom-color:black}
+.CGMenuItemBorderEmpty{border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#D4D4D4}
+.CGMenuItemBorder0{border-bottom:0px none}
+.CGMenuItemBorder1{border-bottom-width:1px;border-bottom-style:solid}
+.CGMenuItemBorder2{border-bottom-width:2px;border-bottom-style:solid}
+.CGMenuItemBorder3{border-bottom-width:3px;border-bottom-style:solid}
+.CGMenuItemBorder4{border-bottom-width:1px;border-bottom-style:dotted}
+.CGMenuItemBorder5{border-bottom-width:2px;border-bottom-style:dotted}
+.CGMenuItemBorder6{border-bottom-width:1px;border-bottom-style:dashed}
+.CGMenuItemBorder7{border-bottom-width:2px;border-bottom-style:dashed}
+.CGMenuItemBorderEdge{height:20px;width:24px;background-image:url(./imgs/ToolbarSheetWide.png?v120);-background-image:url(./imgs/ToolbarSheetWide.gif?v120);background-repeat:no-repeat}
+.CGMenuItemBorder{background-position:left -200px}
+.CGMenuItemBorderAll{background-position:left -300px}
+.CGMenuItemBorderO15{background-position:left -400px}
+.CGMenuItemBorderI3{background-position:left -500px}
+.CGMenuItemBorderI2{background-position:left -600px}
+.CGMenuItemBorderI1{background-position:left -700px}
+.CGMenuItemBorderO1{background-position:left -800px}
+.CGMenuItemBorderO2{background-position:left -900px}
+.CGMenuItemBorderO4{background-position:left -1000px}
+.CGMenuItemBorderO8{background-position:left -1100px}
+.CGMenuItemBorderO5{background-position:left -1200px}
+.CGMenuItemBorderO10{background-position:left -1300px}
+ .CGPickMain{position:absolute;left:0px;top:0px;z-index:258}
+.CGPickShadow{position:absolute;background:#888;z-index:257;margin-left:3px;margin-top:3px;opacity:0.5;filter:alpha(opacity=50)}
+ .CGPickOuter{border:1px solid #426b8c;background:white;padding:1px;overflow:hidden}
+.CGPickBody{cursor:default;padding:0px}
+.CGPickHeader{position:absolute;z-index:258;border:1px solid black;background:white;font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;overflow:hidden;cursor:pointer;}
+.CGPickHeaderBottom{border-bottom:0px none}
+.CGPickHeaderTop{border-top:0px none}
+.CGPickHead,.CGPickFoot{background:#5c8397;padding:1px 0px 1px 5px;font:11.9px/13px Verdana,Tahoma,"Trebuchet MS",sans-serif;color:white;cursor:default}
+.CGPickHead{border-bottom:1px solid white}
+.CGPickFoot{border-top:1px solid white}
+ .CGPickClose{float:right;width:14px;cursor:pointer;display:none;background:url(./imgs/Menu.gif?v120) no-repeat right -354px}
+.CGPickMY{background:#183873 url(./imgs/Backgrounds.gif?v120) repeat-x 0px -4px;padding:2px 0px 4px 0px;font:11.9px/13px Verdana,Tahoma,"Trebuchet MS",sans-serif;color:white;cursor:default;text-align:center;}
+ .CGPickMYDown{padding-right:13px;background:url(./imgs/Menu.gif?v120) no-repeat right -400px;cursor:pointer}
+.CGPickMYUp{padding-right:13px;background:url(./imgs/Menu.gif?v120) no-repeat right -450px;cursor:pointer}
+.CGPickMYRtl{padding-right:0px;padding-left:13px}
+.CGPickBL,.CGPickBR{width:16px;line-height:13px;padding:2px 0px 4px 0px;overflow:hidden;cursor:pointer;display:none}
+.CGPickBL{float:left;background:url(./imgs/Menu.gif?v120) no-repeat left -500px}
+.CGPickBR{float:right;background:url(./imgs/Menu.gif?v120) no-repeat right -550px}
+.CGPickTable{table-layout:fixed;width:0px}
+.CGPickRow{background:white}
+.CGPickRowW{background:#C6DBE9 url(./imgs/Backgrounds.gif?v120) repeat-x 0px -1350px}
+.CGPickRowW > td{border-bottom:1px solid #8CA9E1}
+.CGPickCell{width:25px}
+.CGPickCellTouch{width:32px}
+.CGPickWDN{margin:2px 3px 2px 3px;padding:1px;font:11px/13px Arial,Helvetica,sans-serif;color:#333333;text-align:center;cursor:default}
+.CGPickHover,.CGPickSelHover,.CGPickWD,.CGPickSa,.CGPickSu,.CGPickSel,.CGPickNow,.CGPickWDNE,.CGPickSaNE,.CGPickSuNE,.CGPickSelNE,.CGPickNowNE,.CGPickOM,.CGPickOMNE{margin:2px;padding:0px 1px 0px 1px;border:1px solid white;font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;text-align:center;cursor:pointer;}
+.CGPickWN,.CGPickWNE{background:url(./imgs/Backgrounds.gif?v120) no-repeat -25px -1000px;padding:3px 4px 3px 4px;border-right:1px solid #8CA9E1;font:11px/13px Arial,Helvetica,sans-serif;text-align:center;cursor:pointer;}
+.CGPickWNE{cursor:default}
+.CGPickWDNE,.CGPickSaNE,.CGPickSuNE,.CGPickSelNE,.CGPickNowNE{cursor:default;text-decoration:line-through}
+.CGPickWD{background-color:white}
+.CGPickSa{background-color:white}
+.CGPickSu{background-color:white}
+.CGPickSel{background-color:#fbea54;border:1px solid #dad1d1}
+.CGPickSelNE{background-color:#fbea54;border:1px solid #dad1d1}
+.CGPickNow{background-color:#c0f3ff;border:1px solid #dad1d1}
+.CGPickNowNE{background-color:#c0f3ff;border:1px solid #dad1d1}
+.CGPickOM{background-color:white;color:#aaaaaa}
+.CGPickOMNE{color:#aaaaaa;cursor:default;text-decoration:line-through}
+.CGPickEmpty{background:url(./imgs/Menu.gif?v120) no-repeat center -1050px;cursor:pointer;height:17px}
+.CGPickHover{background-color:#ddd;border:1px solid #ddd}
+.CGPickSelHover{background-color:#eeeeaa;border:1px solid #ddd}
+.CGPickTouch{line-height:18px}
+.CGPick2Table{table-layout:fixed;width:0px;margin-left:3px;margin-right:3px}
+.CGPick2CellM{height:22px;width:60px}
+.CGPick2CellMTouch{height:26px;width:75px}
+.CGPick2CellY{height:22px;width:35px}
+.CGPick2CellYTouch{height:26px;width:45px}
+.CGPick2CellSep{height:22px;width:5px}
+.CGPick2CellSepTouch{height:26px;width:5px}
+.CGPick2SepH{width:1px;height:2px;overflow:hidden}
+.CGPick2SepHTouch{height:7px}
+.CGPick2M,.CGPick2Y,.CGPick2MSel,.CGPick2YSel,.CGPick2MHover,.CGPick2YHover,.CGPick2MSelHover,.CGPick2YSelHover{margin-left:1px;margin-right:1px;padding:3px 1px 2px 1px;font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;cursor:pointer;text-align:center;overflow:hidden;}
+.CGPick2MSel,.CGPick2YSel{background:#c0f3ff;border:1px solid #dad1d1;margin-left:0px;margin-right:0px}
+.CGPick2MHover,.CGPick2YHover{background:#DDD;border:1px solid white;margin-left:0px;margin-right:0px}
+.CGPick2MSelHover,.CGPick2YSelHover{background:#80e0f0;border:1px solid white;margin-left:0px;margin-right:0px}
+ .CGPick2Touch{line-height:18px}
+.CGPick2Sep{width:1px;background:#777;overflow:hidden;margin-left:2px;margin-right:2px;height:22px}
+.CGPick2SepTouch{height:26px}
+.CGPick2BL,.CGPick2BR{width:35px;cursor:pointer;height:22px}
+.CGPick2CellYTouch .CGPick2BL,.CGPick2CellYTouch .CGPick2BR{margin-left:5px}
+.CGPick2BL{background:url(./imgs/Menu.gif?v120) no-repeat center -595px}
+.CGPick2BR{background:url(./imgs/Menu.gif?v120) no-repeat center -645px}
+.CGPickTimeCell{padding:7px 5px 7px 0px;border-top:1px solid #adf;background:#f0f6ff;text-align:right;line-height:0px}
+.CGPickTime{background:#f0f6ff;font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;background:#f0f6ff;margin:0px;padding:0px;border:0px none;white-space:nowrap;text-align:right;outline:none;}
+.CGPickFooter,.CGPick2Footer{border-top:1px solid #8CA9E1;background:#C6DBE9 url(./imgs/Backgrounds.gif?v120) repeat-x 0px -1400px;padding-top:1px;cursor:default;text-align:center;}
+.CGPickButton{background:#dcecf8;border:1px solid #8a8fb5;width:60px;margin:5px 2px 4px 2px;padding-left:0px;padding-right:0px;font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;text-align:center;white-space:nowrap;overflow:hidden;}
+.CGPickButtonHover{background:#ffeeaa;border:1px solid #aaaadd}
+.CGEditParent{position:absolute;z-index:258;overflow:hidden}
+.CGEdit,.CGEditInline{padding:2px 4px 2px 4px;font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;border:1px solid #DDD;border-top:1px solid #666;border-left:1px solid #666;background:white;white-space:nowrap;overflow:hidden;}
+.CGEditInline{display:inline-block;vertical-align:bottom}
+.CGEditMulti{white-space:normal}
+.CGEnumControl,.CGEnumInline{background:white url(./imgs/Menu.gif?v120) no-repeat left -797px;overflow:hidden;font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;cursor:pointer;padding:2px 4px 2px 15px;border:1px solid #DDD;border-top:1px solid #666;border-left:1px solid #666;}
+.CGEnumInline{display:inline-block;vertical-align:bottom}
+.CGEnumHeader{background:white url(./imgs/Menu.gif?v120) no-repeat left -798px;font:11.9px/13px "Microsoft Sans Serif",Tahoma,"Trebuchet MS",sans-serif;cursor:pointer;padding:2px 4px 2px 15px}
+.CGMouseOrig{background:yellow!important;opacity:0.5;filter:alpha(opacity=50)}
+.CGMouseDragObject{position:absolute;z-index:260;background:#888;opacity:0.5;filter:alpha(opacity=50)}
+.CGFocus{border:1px solid #AAF;border-top:1px solid #00F;border-left:1px solid #00F;background-color:#EEE}
+ .CGHintMain{position:absolute;margin-left:-2px;margin-top:-2px;padding-left:1px;padding-top:1px;left:0px;top:0px;z-index:260;background:white;cursor:default;border:1px solid black;}
+.CGHintHeaderMain{padding:0px;margin-top:-1px}
+.CGHintSpaceMain{margin-left:-1px;margin-top:-1px;padding:0px;overflow:hidden}
+.CGHintSpaceEditMain,.CGHintSpaceSelectMain{border:0px none;background:none;margin-left:0px;margin-top:0px;padding:0px;overflow:hidden}
+.CGHintSpaceSelectMain{border:1px solid black}
+.CGHintOuter{overflow:hidden;background:white;color:black;text-align:left;border-color:white}
+ .CGHintOuter *{text-align:left}
+.CGHintSpaceOuter{background:#D5E9FE!important;margin-left:-1px;margin-top:-1px}
+.CGHintSpaceEditOuter{background:#D5E9FE}
+.CGHintSpaceSelectOuter{margin-top:-1px;margin-bottom:-1px}
+.CGHintHeaderOuter{background:url(./imgs/Backgrounds.gif?v120) repeat-x 0px -2px!important;color:white;border-left:1px solid white!important;border-bottom:1px solid white}
+.CGHintShadow{position:absolute;margin-left:2px;margin-top:2px;z-index:259;background:#888;opacity:0.3;filter:alpha(opacity=30)}
+.CGHintSpaceShadow{margin-left:4px;margin-top:4px}
+.CGHintSpaceEditShadow,.CGHintSpaceSelectShadow{margin-left:4px;margin-top:4px}
+.CGTipMain{position:absolute;left:0px;top:0px;z-index:262;visibility:hidden}
+.CGTipOuter{background:#E4E5F0 url(./imgs/Backgrounds.gif?v120) repeat-x 0px -750px;border:1px solid #777;padding:1px 3px 1px 3px;overflow:hidden;cursor:default}
+.CGTipBody{font:12px/14px Arial,Helvetica,sans-serif;white-space:nowrap}
+.CGTipShadow{position:absolute;margin-left:3px;margin-top:3px;z-index:261;background:#888;opacity:0.3;filter:alpha(opacity=30);visibility:hidden}
+.CGChart{padding:5px}
+.CGChartInner{background:white;width:100%}
+.CGChartLayer{overflow:hidden;height:1000px}
+.CGChartAxisY{background:black;height:1px;overflow:hidden}
+.CGChartAxisYLabel{overflow:hidden}
+.CGChartAxisYText{margin-right:5px;margin-top:12px;text-align:right;font:12px/14px Arial,Helvetica,sans-serif}
+.CGChartAxisX{width:1px;overflow:hidden;background:black}
+.CGChartAxisXLabel{overflow:hidden}
+.CGChartAxisXText{text-align:center;font:12px/14px Arial,Helvetica,sans-serif}
+.CGChartCaption{text-align:center;font:12px/14px Arial,Helvetica,sans-serif;margin-top:3px}
+.CGCustScroll1RightHidden{background:url(./imgs/VScroll.gif?v120) left -108px;height:17px}
+.CGCustScroll1Right{padding-right:17px;background:url(./imgs/VScroll.gif?v120) right 0px}
+.CGCustScroll1RightHover{padding-right:17px;background:url(./imgs/VScroll.gif?v120) right -18px}
+.CGCustScroll1Left{padding-left:17px;background:url(./imgs/VScroll.gif?v120) left 0px}
+.CGCustScroll1LeftHover{padding-left:17px;background:url(./imgs/VScroll.gif?v120) left -18px}
+.CGCustScroll1SliderRight{background:url(./imgs/VScroll.gif?v120) right -36px;padding-right:1px}
+.CGCustScroll1SliderRightHover{background:url(./imgs/VScroll.gif?v120) right -72px;padding-right:1px}
+.CGCustScroll1SliderLeft{background:url(./imgs/VScroll.gif?v120) left -36px;padding-left:1px}
+.CGCustScroll1SliderLeftHover{background:url(./imgs/VScroll.gif?v120) left -72px;padding-left:1px}
+.CGCustScroll1SliderHIn{height:17px;overflow:hidden;background:url(./imgs/VScroll.gif?v120) center -54px}
+.CGCustScroll1SliderHInHover{height:17px;overflow:hidden;background:url(./imgs/VScroll.gif?v120) center -90px}
+.CGCustScroll1X{background:#F4F4F4;cursor:default}
+.CGCustScroll2RightHidden{background:url(./imgs/VScroll.gif?v120) left -364px;height:34px}
+.CGCustScroll2Right{padding-right:36px;background:url(./imgs/VScroll.gif?v120) right -148px}
+.CGCustScroll2RightHover{padding-right:36px;background:url(./imgs/VScroll.gif?v120) right -184px}
+.CGCustScroll2Left{padding-left:36px;background:url(./imgs/VScroll.gif?v120) left -148px}
+.CGCustScroll2LeftHover{padding-left:36px;background:url(./imgs/VScroll.gif?v120) left -184px}
+.CGCustScroll2SliderRight{background:url(./imgs/VScroll.gif?v120) right -220px;padding-right:1px}
+.CGCustScroll2SliderRightHover{background:url(./imgs/VScroll.gif?v120) right -292px;padding-right:1px}
+.CGCustScroll2SliderLeft{background:url(./imgs/VScroll.gif?v120) left -220px;padding-left:1px}
+.CGCustScroll2SliderLeftHover{background:url(./imgs/VScroll.gif?v120) left -292px;padding-left:1px}
+.CGCustScroll2SliderHIn{height:34px;overflow:hidden;background:url(./imgs/VScroll.gif?v120) center -256px}
+.CGCustScroll2SliderHInHover{height:34px;overflow:hidden;background:url(./imgs/VScroll.gif?v120) center -328px}
+.CGCustScroll2X{background:#F4F4F4;cursor:default}
+.CGCustScroll3Right,.CGCustScroll3RightHidden{background:white;height:9px}
+.CGCustScroll3SliderRight,.CGCustScroll3SliderRightHover{padding-right:3px;height:9px;background:url(./imgs/VScroll.gif?v120) right -126px}
+.CGCustScroll3SliderRightHover{background-position:right -135px}
+.CGCustScroll3SliderLeft,.CGCustScroll3SliderLeftHover{height:9px;background:url(./imgs/VScroll.gif?v120) left -126px}
+.CGCustScroll3SliderLeftHover{background-position:left -135px}
+.CGCustScroll3X{background:white;cursor:default}
+.CGCustScroll4Right,.CGCustScroll4RightHidden,.CGCustScroll4SliderRight,.CGCustScroll4SliderRightHover{height:1px}
+.CGCustScroll1DownHidden{background:url(./imgs/HScroll.png?v120) -108px top;width:16px}
+.CGCustScroll1Down{padding-bottom:17px;background:url(./imgs/HScroll.png?v120) 0px bottom}
+.CGCustScroll1DownHover{padding-bottom:17px;background:url(./imgs/HScroll.png?v120) -18px bottom}
+.CGCustScroll1Up{padding-top:17px;background:url(./imgs/HScroll.png?v120) 0px top}
+.CGCustScroll1UpHover{padding-top:17px;background:url(./imgs/HScroll.png?v120) -18px top}
+.CGCustScroll1SliderDown{background:url(./imgs/HScroll.png?v120) -36px bottom;padding-bottom:1px}
+.CGCustScroll1SliderDownHover{background:url(./imgs/HScroll.png?v120) -72px bottom;padding-bottom:1px}
+.CGCustScroll1SliderUp{background:url(./imgs/HScroll.png?v120) -36px top;padding-top:1px}
+.CGCustScroll1SliderUpHover{background:url(./imgs/HScroll.png?v120) -72px top;padding-top:1px}
+.CGCustScroll1SliderVIn{background:url(./imgs/HScroll.png?v120) -54px center}
+.CGCustScroll1SliderVInHover{background:url(./imgs/HScroll.png?v120) -90px center}
+.CGCustScroll2DownHidden{background:url(./imgs/HScroll.png?v120) -364px top;width:33px}
+.CGCustScroll2Down{padding-bottom:36px;background:url(./imgs/HScroll.png?v120) -148px bottom}
+.CGCustScroll2DownHover{padding-bottom:36px;background:url(./imgs/HScroll.png?v120) -184px bottom}
+.CGCustScroll2Up{padding-top:36px;background:url(./imgs/HScroll.png?v120) -148px top}
+.CGCustScroll2UpHover{padding-top:36px;background:url(./imgs/HScroll.png?v120) -184px top}
+.CGCustScroll2SliderDown{background:url(./imgs/HScroll.png?v120) -220px bottom;padding-bottom:1px}
+.CGCustScroll2SliderDownHover{background:url(./imgs/HScroll.png?v120) -292px bottom;padding-bottom:1px}
+.CGCustScroll2SliderUp{background:url(./imgs/HScroll.png?v120) -220px top;padding-top:1px}
+.CGCustScroll2SliderUpHover{background:url(./imgs/HScroll.png?v120) -292px top;padding-top:1px}
+.CGCustScroll2SliderVIn{background:url(./imgs/HScroll.png?v120) -256px center}
+.CGCustScroll2SliderVInHover{background:url(./imgs/HScroll.png?v120) -328px center}
+.CGCustScroll3Down,.CGCustScroll3DownHidden{background:white;width:8px}
+.CGCustScroll3SliderDown,.CGCustScroll3SliderDownHover{padding-bottom:3px;background:url(./imgs/HScroll.png?v120) -126px bottom}
+.CGCustScroll3SliderDownHover{background-position:-135px bottom}
+.CGCustScroll3SliderUp,.CGCustScroll3SliderUpHover{background:url(./imgs/HScroll.png?v120) -126px top}
+.CGCustScroll3SliderUpHover{background-position:-135px top}
+.CGCustScroll4Down,.CGCustScroll4DownHidden,.CGCustScroll4SliderDown,.CGCustScroll4SliderDownHover{width:0px}
+.SheetDebugTag,.SheetDebugTagMax{overflow:auto;overflow-y:scroll;border:1px solid black;background:#DDD}
+.SheetDebugTag,.SheetDebugTagMax,.SheetDebugButtons,.SheetDebugButtonsMax{position:fixed;z-index:256;left:5px;right:5px;bottom:5px;height:200px;padding:4px;position:absolute!IE;left:expression((5+(document.compatMode=="CSS1Compat"?document.documentElement.scrollLeft:document.body.scrollLeft))+"px")!IE;width:expression((-10+(document.compatMode=="CSS1Compat"?document.documentElement.clientWidth-8:document.body.clientWidth))+"px")!IE;top:expression((-205+(document.compatMode=="CSS1Compat"?document.documentElement.scrollTop+document.documentElement.clientHeight-8:document.body.scrollTop+document.body.clientHeight))+"px")!IE;}
+.SheetDebugTagMax,.SheetDebugButtonsMax{top:5px;height:auto;top:expression((5+(document.compatMode=="CSS1Compat"?document.documentElement.scrollTop:document.body.scrollTop))+"px")!IE;height:expression((-10+(document.compatMode=="CSS1Compat"?document.documentElement.clientHeight-8:document.body.clientHeight))+"px")!IE;}
+.SheetDebugButtons,.SheetDebugButtonsMax{text-align:right;margin-right:25px;width:130px;left:auto;left:expression((-155+(document.compatMode=="CSS1Compat"?document.documentElement.clientWidth-8:document.body.clientWidth))+"px")!IE;}
+.SheetDebugButton{font-size:10px;width:40px;padding:0px}
+.SheetDebugTitle{font-size:10px;color:blue;font-style:normal;font-weight:normal}
+.SheetDebugMark{font-weight:bold}
+.SheetDebugStop{font-size:18px;font-weight:bold;color:red}
+.SheetDebugError{font-size:12px;color:red}
+.SheetDebugWarning{font-size:12px;color:#A60}
+.SheetDebugList{font-size:10px;color:#888}
+.SheetDebugInfo{font-size:12px}
+.CGAnimateOverflow{overflow:hidden}
+@keyframes GMExpandH{from{height:0px}
+ }
+@keyframes GMCollapseH{to{height:0px}
+ }
+.CGAnimateTransparent{opacity:0}
+@keyframes GMShow{from{opacity:0}
+ to{opacity:1}
+ }
+@keyframes GMHide{from{opacity:1}
+ to{opacity:0}
+ }
+.CGAnimateHidden{display:none}
+.CGAnimateVisible{display:inherit}
+.CGAnimateLeftTop{overflow:hidden;transform-origin:0% 0%}
+.CGAnimateCenterTop{overflow:hidden;transform-origin:50% 0%}
+.CGAnimateRightTop{overflow:hidden;transform-origin:100% 0%}
+.CGAnimateLeftBottom{overflow:hidden;transform-origin:0% 100%}
+.CGAnimateRightBottom{overflow:hidden;transform-origin:100% 100%}
+.CGAnimateCenterBottom{overflow:hidden;transform-origin:50% 100%}
+.CGAnimateLeftCenter{overflow:hidden;transform-origin:0% 50%}
+.CGAnimateRightCenter{overflow:hidden;transform-origin:100% 50%}
+.CGAnimateCenterCenter{overflow:hidden;transform-origin:50% 50%}
+@keyframes GMZoomInH{from{height:0px;transform:scale(1,0)}
+ to{transform:scale(1,1)}
+ }
+@keyframes GMZoomOutH{from{transform:scale(1,1)}
+ to{transform:scale(1,0);height:0px}
+ }
+@keyframes GMZoomInY{from{transform:scale(1,0)}
+ to{transform:scale(1,1)}
+ }
+@keyframes GMZoomOutY{from{transform:scale(1,1)}
+ to{transform:scale(1,0)}
+ }
+@keyframes GMZoomInX{from{transform:scale(0,1)}
+ to{transform:scale(1,1)}
+ }
+@keyframes GMZoomOutX{from{transform:scale(1,1)}
+ to{transform:scale(0,1)}
+ }
+@keyframes GMZoomIn{from{transform:scale(0)}
+ to{transform:scale(1)}
+ }
+@keyframes GMZoomOut{from{transform:scale(1)}
+ to{transform:scale(0)}
+ }
+@keyframes GMRotateX90{0%{transform:rotateX(0deg)}
+ 50%{transform:rotateX(90deg)}
+ 100%{transform:rotateX(0deg)}
+ }
+@keyframes GMRotateX90To{from{transform:rotateX(0deg)}
+ to{transform:rotateX(90deg)}
+ }
+@keyframes GMRotateX90From{from{transform:rotateX(90deg)}
+ to{transform:rotateX(0deg)}
+ }
+@keyframes GMRotateY90{0%{transform:rotateY(0deg)}
+ 50%{transform:rotateY(90deg)}
+ 100%{transform:rotateY(0deg)}
+ }
+@keyframes GMRotateY90To{from{transform:rotateY(0deg)}
+ to{transform:rotateY(90deg)}
+ }
+@keyframes GMRotateY90From{from{transform:rotateY(90deg)}
+ to{transform:rotateY(0deg)}
+ }
+@keyframes GMFocus{0%{color:inherit}
+ 50%{color:red}
+ 100%{color:inherit}
+ }
+@keyframes GMCopy{0%{transform:translateX(0px)}
+ 25%{transform:translateX(1px)}
+ 75%{transform:translateX(-1px)}
+ 100%{transform:translateX(0px)}
+ }
+@keyframes GMOpacityBlink{0%{opacity:1}
+ 50%{opacity:0.2}
+ 100%{opacity:1}
+ }
+@keyframes GMBackgroundBlink{0%{background-color:#FFF}
+ 50%{background-color:#888}
+ 100%{background-color:#FFF}
+ }
+.CGMark{background-color:#AAA!important}
+@keyframes GMMark{0%{background-color:#FFF}
+ 25%{background-color:#AAA}
+ 75%{background-color:#AAA}
+ 100%{background-color:#FFF}
+ }
+@keyframes GMHighlight{0%{background-color:#FFF}
+ 25%{background-color:#AAA}
+ 50%{background-color:#FFF}
+ 75%{background-color:#AAA}
+ 100%{background-color:#FFF}
+ }
+@keyframes GMHighlightDeselect{0%{background-color:#FFF}
+ 25%{background-color:#FF0}
+ 50%{background-color:#FFF}
+ 75%{background-color:#FF0}
+ 100%{background-color:#FFF}
+ }
+@keyframes GMHighlightSelect{0%{background-color:#FF0}
+ 25%{background-color:#FFF}
+ 50%{background-color:#FF0}
+ 75%{background-color:#FFF}
+ 100%{background-color:#FF0}
+ }
+@keyframes GMHighlightDelete{0%{background-color:#FAA}
+ 25%{background-color:#FFF}
+ 50%{background-color:#FAA}
+ 75%{background-color:#FFF}
+ 100%{background-color:#FAA}
+ }
+@keyframes GMHighlightMove{0%{background-color:#AEE}
+ 25%{background-color:#FFF}
+ 50%{background-color:#AEE}
+ 75%{background-color:#FFF}
+ 100%{background-color:#AEE}
+ }
+@keyframes GMHighlightAdd{0%{background-color:#AFA}
+ 25%{background-color:#FFF}
+ 50%{background-color:#AFA}
+ 75%{background-color:#FFF}
+ 100%{background-color:#AFA}
+ }
+@keyframes GMHighlightChange{0%{background-color:#AAF}
+ 25%{background-color:#FFF}
+ 50%{background-color:#AAF}
+ 75%{background-color:#FFF}
+ 100%{background-color:#AAF}
+ }
+.CGBodyPrint{margin:0px!important;padding:0px!important;border:0px none!important;background:none!important;-webkit-print-color-adjust:exact}
+.CGResizeBorder{border:1px dashed black!important}
+.SheetNoMomentumScroll *{-webkit-overflow-scrolling:auto!important}
+.SheetTmpTag{position:absolute;left:5px;top:5px;visibility:hidden}
+ .SheetCalcWidth table{width:auto!important}
+.SheetDisabled{position:absolute;z-index:256;background:white;opacity:0.5;filter:alpha(opacity=50)}
+ .SheetMain{z-index:255}
+.CGLoaded{border:1px solid black!important}

@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
-import { useNavigate } from "react-router-dom";
-import {useRecoilState, useRecoilValue, useResetRecoilState} from "recoil";
-import {sidebarState, userState} from "../../store/Atom";
+import {useRecoilState} from "recoil";
+import {sidebarState} from "../../store/atom";
 import styles from "./LeftMenu.module.css";
 import Logo from "../layout/Logo";
 
@@ -30,14 +29,10 @@ const buildTree = (menuList, parentId = undefined) => {
 const treeMenu = buildTree(menuData);
 
 const LeftMenu = ({ onMenuClick, onLogoClick, onLogout}) => {
-    const navigate = useNavigate();
+
     const [collapsed, setCollapsed] = useRecoilState(sidebarState);
     
-    // ✅ 로그인 상태 관련
-    const loginUser = useRecoilValue(userState);
-    const loginUserReset = useResetRecoilState(userState);
 
- 
     return (
         <div className={`${styles.sidebarContainer} ${collapsed ? styles.collapsed : ""}`}>
             {/* ✅ 사이드바 토글 버튼 */}
@@ -47,7 +42,7 @@ const LeftMenu = ({ onMenuClick, onLogoClick, onLogout}) => {
             </button>
 
             {/* 🔹 상단 로고 */}
-            <div className={""}>
+            <div>
                 <Logo small={collapsed} onClick={onLogoClick}/>
             </div>
 

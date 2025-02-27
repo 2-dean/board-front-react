@@ -1,6 +1,6 @@
 import {Api} from "./axiosProvider";
 import {useRecoilState, useRecoilValue} from "recoil";
-import {activePageState, boardListState, boardPageListState} from "../store/Atom";
+import {activePageState, boardListState, boardPageListState} from "../store/atom";
 
 
 // Back 에서 데이터 받아온 다음에 boardState에 저장해주기

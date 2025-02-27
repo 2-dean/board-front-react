@@ -1,5 +1,5 @@
 import {Api} from "./axiosProvider";
-import {userState} from "../store/Atom";
+import {userState} from "../store/atom";
 import {useRecoilState} from "recoil";
 import {useEffect} from "react";
 
