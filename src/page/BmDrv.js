@@ -78,6 +78,7 @@ export default function BmDrv() {
             },
             data: []
         },
+        /*
         {
             id: "sheet2",
             el: "sheetDiv2",
@@ -96,6 +97,7 @@ export default function BmDrv() {
             },
             data: []
         }
+        */
     ];
 
     const optionsArray = sheetConfigs.map((config, index) => ({
@@ -109,6 +111,7 @@ export default function BmDrv() {
 
     useEffect(() => {
         //console.log("[BmDrv] 마운트")
+        // 그리드 여러개 만들경우 . . .
         optionsArray.forEach(options => {
             dispatch(createSample(name, title, subTitle, options, menuIndex));
         });
