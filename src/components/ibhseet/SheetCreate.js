@@ -48,6 +48,8 @@ const IBSheet8 = () => {
           eventBinding(name, sheet);
           // 시트생성
           console.log("sheet :: ",sheet )
+          console.log("sheet.el : ",sheet.el )
+          console.log("sheet.options : ",sheet.options )
           loader.createSheet({
                 id: sheet.id,
                 el: sheet.el,
@@ -122,8 +124,8 @@ const IBSheet8 = () => {
         {options.length > 0 &&
             options.map((sheet, index) => {
               return (
-                  <div style={ basicStyle(sheet.width) } key={ sheet.id }>
-                    <div id={ sheet.el } style={ elStyle(sheet.height) } key={ index }></div>
+                  <div style={basicStyle(sheet.width)} key={sheet.id}>
+                      <div id={sheet.el} style={elStyle(sheet.height)} key={index}></div>
                   </div>
               )
             })
