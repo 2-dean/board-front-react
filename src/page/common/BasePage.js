@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import styles from "./BasePage.module.css";
 
@@ -11,23 +11,21 @@ import {useSelector} from "react-redux";
 import {gridApi} from "../../api/gridApi";
 
 
-export default function BasePage({searchFields, layoutType }) {
-    console.log("=====================[BASE PAGE]=====================")
+export default function BasePage({searchFields, layoutType, retrieveUrl, saveUrl}) {
+    //console.log("=====================[BASE PAGE]=====================")
     const title = useSelector((state) => state.title);
     const subTitle = useSelector((state) => state.subTitle);
     const name = useSelector((state) => state.name);
     const sheet = useSelector((state) => state.sheet);
-    console.log("=====================================================")
+    //console.log("=====================================================")
 
-    //TODO 수정필요
-    // ✅ 데이터를 관리할 상태 추가
-    const [gridData, setGridData] = useState([]);
-
+    const [values, setValues] = useState({}); // 🔍 검색 조건 상태
+    const [gridData, setGridData] = useState([]); // 그리드에 넣을 데이터
     const handleSearch = async () => {
         try {
             // ✅ API 데이터 가져오기
-            const responseData = await gridApi("/react/bm/BmDrv/retrieve.do");
-            console.log("API 응답 데이터:", responseData.IBSHEET01.Data);
+            const responseData = await gridApi(retrieveUrl, values);
+            //console.log("API 응답 데이터:", responseData.IBSHEET01.Data);
 
             const processedData = Array.isArray(responseData.IBSHEET01?.Data) ? responseData.IBSHEET01.Data : [];
 
@@ -35,7 +33,7 @@ export default function BasePage({searchFields, layoutType }) {
             setGridData(processedData);
             sheet[sheet.length - 1].loadSearchData(processedData)
         } catch (error) {
-            console.error("데이터 불러오기 오류:", error);
+            //console.error("데이터 불러오기 오류:", error);
         }
     };
 
@@ -48,6 +46,7 @@ export default function BasePage({searchFields, layoutType }) {
     const handleSave = () => {
       //  dispatch(saveSheetData());
     };
+
 
     return (
         <div>
@@ -69,7 +68,7 @@ export default function BasePage({searchFields, layoutType }) {
 
             {/* ✅ 검색 바 */}
             <div className={styles.searchBar}>
-                {searchFields.length > 0 && <SearchBar fields={searchFields}/>}
+                {searchFields.length > 0 && <SearchBar fields={searchFields} values={values} setValues={setValues} />}
             </div>
             {/* ✅  IBSheet8 렌더링 */}
             <div className={`${styles.gridContainer} ${styles[`layout-${layoutType}`]}`}>

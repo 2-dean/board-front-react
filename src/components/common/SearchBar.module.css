@@ -9,8 +9,12 @@
     width: 100%; /* 부모 요소 크기 설정 */
 }
 
+.search-label{
+    font-weight :bold;
+}
 .search-field {
     display: flex;
     align-items: center;
     gap: 5px;
 }
+
