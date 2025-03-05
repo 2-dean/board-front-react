@@ -102,7 +102,7 @@ const doSheetMAppendRow = function(layoutButton) {
     return obj;
 };
 const doSheetSAppendRow = function(layoutButton) {
-    consol.elog(">>> 행추가 버튼 클릭")
+    console.log(">>> 행추가 버튼 클릭")
     var obj = new Object();
     obj.Value = "<img src='/images/common/ic-append-row.png' title='행추가'>";
     obj.Type = "Button";

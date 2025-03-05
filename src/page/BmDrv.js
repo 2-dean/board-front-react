@@ -72,7 +72,20 @@ export default function BmDrv() {
                     { Header: "상태", Name: "STATUS", Extend: IB_Preset.STATUS, CanEdit: "0", MinWidth: 50, Align: "Center", NoExcelDown: 1 }
                 ],
                 Cols: [
-                    { Header: "기사연락처", Name: "drv_tel_no", Type: "Text", CanEdit: "1", MinWidth: 120, Align: "Center", Required: 1, Size: "11", EditMask: "^\\d{0,11}$", ShowHint: 3, NoExcelDown: 1 }
+                    {Header: "기사연락처",		Name: "drv_tel_no",				Type: "Text",				CanEdit: "1",	MinWidth: 120,	Align: "Center",	Required: 1,	Size: "11",		EditMask: "^\\d{0,11}$"	, ShowHint: 3, NoExcelDown: 1, }
+                    /*엑셀다운로드용*/
+                    , {Header: "기사연락처",		Name: "drv_tel_no_plain",		Type: "Text",				CanEdit: "0",	MinWidth: 120,	Align: "Center",	Visible: 0,		NoPersonalize: 1}
+                    , {Header: "입사일",			Name: "join_date",				Extend: IB_Preset.YMD,		CanEdit: "1",	MinWidth: 120,	Align: "Center",	EditMask: "^\\d{0,8}$"}
+                    , {Header: "비고",			Name: "rm",						Type: "Text",				CanEdit: "1",	MinWidth: 120,	Align: "Left",		Size: "200"}
+                    , {Header: "사용",			Name: "use_yn",					Type: "Bool",				CanEdit: "1",	MinWidth: 80,	Align: "Center",	TrueValue: "Y",	FalseValue: "N"}
+                    , {Header: "삭제",			Name: "del_yn",					Type: "Bool",				CanEdit: "0",	MinWidth: 80,	Align: "Center",	TrueValue: "Y",	FalseValue: "N"}
+                    , {Header: "수정자",			Name: "upd_nm",					Type: "Text",				CanEdit: "0",	MinWidth: 80,	Align: "Center"}
+                    , {Header: "수정일시",			Name: "upd_dtm",				Extend: IB_Preset.YMDHMS,	CanEdit: "0",	MinWidth: 150,	Align: "Center"}
+                    , {Header: "등록자",			Name: "reg_nm",					Type: "Text",				CanEdit: "0",	MinWidth: 80,	Align: "Center"}
+                    , {Header: "등록일시",			Name: "reg_dtm",				Extend: IB_Preset.YMDHMS,	CanEdit: "0",	MinWidth: 150,	Align: "Center"}
+                    // Visible: 0
+                    , {Header: '회사코드',			Name: "comp_cd",				Type: "Text",				CanEdit: "0",	MinWidth: 80,	Align: "Left",		Visible: 0,		NoPersonalize:1,	NoExcelDown: 1}
+                    , {Header: "변경전 기사연락처",	Name: "org_tel_no",				Type: "Text",				CanEdit: "0",	MinWidth: 120,	Align: "Center",	Visible: 0,		NoPersonalize:1,	NoExcelDown: 1}
                 ],
                 Events: {}
             },
