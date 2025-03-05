@@ -4,26 +4,13 @@ import {useDispatch, useSelector} from "react-redux";
 import {createSheet} from "../../reducer";
 
 const IBSheet8 = () => {
+    const mounted= useRef(false);
+    const state = useSelector(state => state);
+    const dispatch = useDispatch();
+    const options = useSelector((state) => state.options);
+    const name = useSelector((state) => state.name);
 
-  /*
-  loader.config({
-    registry: [{
-      name: 'ibsheet',
-      baseUrl: '/',
-      theme:"default",
-      locales:"ko"
-      //plugins: ['common', 'dialog', 'excel']
-    }]
-  });
-
-   */
-//loader.load()
-
-  const mounted= useRef(false);
-  const state = useSelector(state => state);
-  const name = state.name;
-  const options = state.options;
-  const dispatch = useDispatch();
+    console.log("state : ", state)
 
   const basicStyle = (width) => ({
     width: width || "100%",
@@ -36,20 +23,15 @@ const IBSheet8 = () => {
     "background-color": "antiquewhite"
   });
 
+
+
   useEffect(() => {
 
       if (!mounted.current) {
           mounted.current = true;
       } else if (options.length > 0) {
-        console.log("----------- create Sheet mount")
-        console.log(state)
-
         options.map(sheet => {
           eventBinding(name, sheet);
-          // 시트생성
-          console.log("sheet :: ",sheet )
-          console.log("sheet.el : ",sheet.el )
-          console.log("sheet.options : ",sheet.options )
           loader.createSheet({
                 id: sheet.id,
                 el: sheet.el,
@@ -72,7 +54,6 @@ const IBSheet8 = () => {
       });
     };
   }, [options]);
-
   // 이벤트 바인딩
   const eventBinding = (name, sheet) => {
     const events = {

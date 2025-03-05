@@ -3,12 +3,10 @@ import {useEffect} from "react";
 import {useDispatch} from "react-redux";
 import { createSample, removeSample } from '../reducer';
 import IB_Preset from '../config/common';
-import xgrid from "../config/xgrid"
+
 
 export default function BmDrv() {
     const dispatch = useDispatch();
-    // 객체배열
-    var objSheetArray = [];
 
     //페이지 정보
     const name = "BmDrv";
@@ -54,17 +52,7 @@ export default function BmDrv() {
                     FitWidth: true,
                     ShowFilter: true,
                     InfoRowConfig: {
-                        Visible: 1,
-                        Layout: xgrid.getSheetLayout({
-                            COUNT: { Visible: 1 },
-                            SAPPEND: { Visible: 1, Callback: { Method: "doCallbackAddLine" } },
-                            REMOVE: { Visible: 1 },
-                            DOWNLOAD: { Visible: 0, HiddenCol: 1 },
-                            UPLOAD: { Visible: 0, Uri: "/task/bm/BmDrv/retrieve.do" },
-                            FILTER: { Visible: 1 },
-                            PERSONALIZE: { Visible: 1 }
-                        }),
-                        Space: "Top"
+                        Visible: 1
                     }
                 },
                 LeftCols: [

@@ -20,7 +20,7 @@ export default function BasePage({searchFields, layoutType, retrieveUrl, saveUrl
     //console.log("=====================================================")
 
     const [values, setValues] = useState({}); // 🔍 검색 조건 상태
-    const [gridData, setGridData] = useState([]); // 그리드에 넣을 데이터
+    //const [gridData, setGridData] = useState([]); // 그리드에 넣을 데이터
     const handleSearch = async () => {
         try {
             // ✅ API 데이터 가져오기
@@ -30,7 +30,7 @@ export default function BasePage({searchFields, layoutType, retrieveUrl, saveUrl
             const processedData = Array.isArray(responseData.IBSHEET01?.Data) ? responseData.IBSHEET01.Data : [];
 
             // ✅ 상태 업데이트 (데이터 저장)
-            setGridData(processedData);
+            //setGridData(processedData);
             sheet[sheet.length - 1].loadSearchData(processedData)
         } catch (error) {
             //console.error("데이터 불러오기 오류:", error);
@@ -39,13 +39,11 @@ export default function BasePage({searchFields, layoutType, retrieveUrl, saveUrl
 
     // ✅ 초기화 버튼 클릭 핸들러
     const handleReset = () => {
-
+        //시트, 검색조건 초기화
     };
 
     // ✅ 저장 버튼 클릭 핸들러
-    const handleSave = () => {
-      //  dispatch(saveSheetData());
-    };
+    const handleSave = () => {};
 
 
     return (
@@ -72,7 +70,7 @@ export default function BasePage({searchFields, layoutType, retrieveUrl, saveUrl
             </div>
             {/* ✅  IBSheet8 렌더링 */}
             <div className={`${styles.gridContainer} ${styles[`layout-${layoutType}`]}`}>
-                {sheet ? <IBSheet8 /> : <p>표시할 데이터가 없습니다.</p>}
+                {sheet && <IBSheet8 />}
             </div>
         </div>
     );
