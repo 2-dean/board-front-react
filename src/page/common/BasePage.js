@@ -9,6 +9,8 @@ import IBSheet8 from "../../components/ibhseet/SheetCreate";
 
 import {useSelector} from "react-redux";
 import {gridApi} from "../../api/gridApi";
+import {useRecoilState} from "recoil";
+import {activeTabState, tabsState} from "../../store/atom";
 
 
 export default function BasePage({searchFields, layoutType, retrieveUrl, saveUrl}) {
@@ -20,6 +22,12 @@ export default function BasePage({searchFields, layoutType, retrieveUrl, saveUrl
     //console.log("=====================================================")
 
     const [values, setValues] = useState({}); // 🔍 검색 조건 상태
+    const [tabs, setTabs] = useRecoilState(tabsState);
+    const [activeTab, setActiveTab] = useRecoilState(activeTabState);  // activeTabState를 사용
+    // 현재 활성화된 탭 찾기
+    const activeTabInfo = tabs.find(tab => tab.path === activeTab);
+    console.log("activeTab :  ",activeTab)
+    console.log("activeTabInfo :  ",activeTabInfo)
     //const [gridData, setGridData] = useState([]); // 그리드에 넣을 데이터
     const handleSearch = async () => {
         try {
@@ -33,7 +41,7 @@ export default function BasePage({searchFields, layoutType, retrieveUrl, saveUrl
             //setGridData(processedData);
             sheet[sheet.length - 1].loadSearchData(processedData)
         } catch (error) {
-            //console.error("데이터 불러오기 오류:", error);
+            console.error("데이터 불러오기 오류:", error);
         }
     };
 

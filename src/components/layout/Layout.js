@@ -36,28 +36,31 @@ const Layout = () => {
     }, [activeTab]);
 
     const [collapsed] = useRecoilState(sidebarState); // ✅ 사이드바 상태 가져오기
-    // 🔹 메뉴 클릭 시 탭 추가 및 활성화
+
+    // 메뉴 클릭 시 탭 추가 및 활성화
     const handleMenuClick = (name, path) => {
         const menuItem = { name, path };
 
         setTabs((prevTabs) => {
             if (!prevTabs.some((tab) => tab.path === path)) {
-                return [...prevTabs, menuItem];
+                return [...prevTabs, menuItem]; // 중복 방지하고 탭 추가
             }
-            return prevTabs; // 중복 방지
+            return prevTabs;
         });
 
-        setActiveTab(path);
-        navigate(path);
+        setActiveTab(path); // 활성 탭 설정
+        navigate(path); // 해당 탭 페이지로 이동
     };
 
 
-    // 🔹 탭 클릭 시 해당 페이지 이동
+
+    // 탭 클릭 시 해당 페이지 이동
     const handleTabClick = (path) => {
         setActiveTab(path);
+        navigate(path); // 클릭한 탭 페이지로 이동
     };
 
-    // 🔹 탭 닫기
+    // 탭 닫기
     const handleCloseTab = (path) => {
         setTabs((prevTabs) => prevTabs.filter((tab) => tab.path !== path));
 
@@ -72,7 +75,7 @@ const Layout = () => {
             }
         }
     };
-    // 🔹 전체 탭 닫기
+    // 전체 탭 닫기
     const handleCloseAllTab = () => {
         setTabs([]);
         setActiveTab("/"); // 대시보드 탭까지 닫았을경우
@@ -95,7 +98,7 @@ const Layout = () => {
     };
 
 
-    // 🔹 로그아웃 함수
+    // 로그아웃 함수
     const handleLogout = async () => {
 
         console.log("logout ===============>");

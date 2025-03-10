@@ -1,4 +1,4 @@
-import { atom } from "recoil";
+import {atom, useRecoilState} from "recoil";
 import { recoilPersist } from "recoil-persist";
 /**
  * 🔹 Atom이란?
@@ -42,9 +42,12 @@ export const activeTabState = atom({
 export const tabsState = atom({
     key: "tabsState",
     default: [
-        { name: "대시보드", path: "/dashboard" }  // 기본 탭 목록은 배열로 설정
+        { menuCd: "dashboard", name: "대시보드", path: "/dashboard", options: [], sheet: []}  // 기본 탭 목록은 배열로 설정
     ],
 });
+
+
+
 
 
 /* ------------------ 미사용  ------------------------- */

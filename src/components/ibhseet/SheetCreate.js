@@ -40,6 +40,7 @@ const IBSheet8 = () => {
               .then(sheet => {
                 // 주의: 해당 구간에서 데이터 조회를 하면 안됩니다. 데이터 조회는 onRenderFirstFinish 이벤트에서 실행해야합니다.
                 dispatch(createSheet(sheet));
+                // 여기서 탭에 option 넣어줌
               })
               .catch(err => {
                 console.log('Failed to create sheet', err);
