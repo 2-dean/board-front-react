@@ -12,8 +12,8 @@ const menuData = [
     { id: 2, name: "환경설정", path: "", menu_level: 1, sort_seq: 2 },
     { id: 5, name: "사용자", path: "/em/user", menu_level: 2, sort_seq: 1, parent_id: 2 },
     { id: 6, name: "권한", path: "", menu_level: 2, sort_seq: 2, parent_id: 2 },
-    { id: 7, name: "권한그룹", path: "/em/auth-group", menu_level: 3, sort_seq: 1, parent_id: 6 },
-    { id: 8, name: "메뉴권한", path: "/em/auth-menu", menu_level: 3, sort_seq: 2, parent_id: 6 },
+    { id: 7, name: "권한그룹", path: "/em/EmAuthGrpMan", menu_level: 3, sort_seq: 1, parent_id: 6 },
+    { id: 8, name: "메뉴권한", path: "/em/EmScreenAuth", menu_level: 3, sort_seq: 2, parent_id: 6 },
 ];
 
 // 🔹 트리 구조 생성 함수
