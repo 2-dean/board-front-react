@@ -1,10 +1,12 @@
 import React from "react";
-import styles from "./Tabs.module.css"; // ✅ CSS 모듈 임포트
+import styles from "./Tabs.module.css";
+import {activeTabState, tabsState} from "../../store/atom";
+import {useRecoilValue} from "recoil"; // ✅ CSS 모듈 임포트
 
-export default function Tabs({ tabs, activeTab, onTabClick, onCloseTab, onCloseAllTabs }) {
+export default function Tabs({ onTabClick, onCloseTab, onCloseAllTabs }) {
 
-    console.log("========TAB========")
-    console.log(tabs)
+    const tabs = useRecoilValue(tabsState)
+    const activeTab = useRecoilValue(activeTabState)
     return (
         <div style={{display: "flex", borderBottom: "1px solid #ccc", padding: "5px"}}>
             {tabs.map((tab) => (

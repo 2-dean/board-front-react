@@ -1,8 +1,8 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import {useRecoilState, useResetRecoilState} from "recoil";
-import {sidebarState, userState} from "../../store/atom";
+import {activeTabState, sidebarState, tabsState, userState} from "../../store/atom";
 import LeftMenu from "../common/LeftMenu";
 import Tabs from "../common/Tabs";
 import {Api} from "../../api/axiosProvider";
@@ -18,10 +18,9 @@ const Layout = () => {
     const [loginUser] = useRecoilState(userState);
     const loginUserReset = useResetRecoilState(userState);
 
-    console.log("[Layout] loginUser :: ", loginUser);
     //탭 관련
-    const [tabs, setTabs] = useState([{ name: "대시보드", path: "/dashboard" }]); // ✅ 대시보드 기본 탭 추가
-    const [activeTab, setActiveTab] = useState("/dashboard"); // ✅ 초기 활성 탭을 대시보드로 설정
+    const [tabs, setTabs] = useRecoilState(tabsState);
+    const [activeTab, setActiveTab] = useRecoilState(activeTabState);
     const navigate = useNavigate();
 
     // ✅ 앱 로드 시 대시보드로 이동
@@ -30,7 +29,7 @@ const Layout = () => {
     }, []);
 
     useEffect(() => {
-        console.log("[Layout] Outlet이 렌더링하는 컴포넌트:", activeTab);
+        //console.log("[Layout] Outlet이 렌더링하는 컴포넌트:", activeTab);
         if (activeTab) {
             navigate(activeTab);
         }
@@ -39,8 +38,6 @@ const Layout = () => {
     const [collapsed] = useRecoilState(sidebarState); // ✅ 사이드바 상태 가져오기
     // 🔹 메뉴 클릭 시 탭 추가 및 활성화
     const handleMenuClick = (name, path) => {
-        console.log("탭 추가 요청:", name, path);
-
         const menuItem = { name, path };
 
         setTabs((prevTabs) => {
@@ -57,7 +54,6 @@ const Layout = () => {
 
     // 🔹 탭 클릭 시 해당 페이지 이동
     const handleTabClick = (path) => {
-        console.log("탭 클릭:", path);
         setActiveTab(path);
     };
 

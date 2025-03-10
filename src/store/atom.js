@@ -26,13 +26,25 @@ export const userState = atom({
 
 
 
-// ✅ 사이드바 상태를 전역으로 관리
+// ✅ 사이드바 상태
 export const sidebarState = atom({
     key: "sidebarState",
     default: false, //사이드바 열림
 });
 
+// ✅ 현재 탭 상태
+export const activeTabState = atom({
+    key: "activeTabState",
+    default: "/dashboard",  // 현재 활성화된 탭의 경로 (문자열)
+});
 
+// 탭 목록 상태
+export const tabsState = atom({
+    key: "tabsState",
+    default: [
+        { name: "대시보드", path: "/dashboard" }  // 기본 탭 목록은 배열로 설정
+    ],
+});
 
 
 /* ------------------ 미사용  ------------------------- */

@@ -10,7 +10,7 @@ const IBSheet8 = () => {
     const options = useSelector((state) => state.options);
     const name = useSelector((state) => state.name);
 
-    console.log("state : ", state)
+    console.log("state : ", state) // init
 
   const basicStyle = (width) => ({
     width: width || "100%",

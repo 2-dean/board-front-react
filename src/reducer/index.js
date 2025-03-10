@@ -42,11 +42,15 @@ const createSheet = sheet => {
 const reducer = (state = initalState, action) => {
     switch (action.type) {
         case CREATE_SHEET:
+            console.log("CREATE_SHEET")
+            console.log(state)
+            console.log(action)
             return {
                 ...state,
                 sheet: [...state.sheet, action.sheet]
             };
         case CREATE_SAMPLE:
+            console.log("CREATE_SAMPLE")
             return {
                 ...state,
                 name: action.name,
@@ -55,7 +59,9 @@ const reducer = (state = initalState, action) => {
                 options: [...state.options, action.options],
                 menuIndex: action.menuIndex
             };
+
         case REMOVE_SAMPLE:
+            console.log("REMOVE_SAMPLE")
             return {
                 ...state,
                 name: null,
