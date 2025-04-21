@@ -1,0 +1,11 @@
+<svg id="sliders" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 28 24">
+  <line id="선_10" data-name="선 10" y1="12.271" transform="translate(3.818 11.729)" fill="none" stroke="#fff" stroke-width="2.5"/>
+  <line id="선_11" data-name="선 11" y1="8.654" transform="translate(3.818 0)" fill="none" stroke="#fff" stroke-width="2.5"/>
+  <line id="선_12" data-name="선 12" y1="14.809" transform="translate(14 9.191)" fill="none" stroke="#fff" stroke-width="2.5"/>
+  <line id="선_13" data-name="선 13" y1="6.181" transform="translate(14 0)" fill="none" stroke="#fff" stroke-width="2.5"/>
+  <line id="선_14" data-name="선 14" y1="9.972" transform="translate(24.182 14.028)" fill="none" stroke="#fff" stroke-width="2.5"/>
+  <line id="선_15" data-name="선 15" y1="11.126" transform="translate(24.182 0)" fill="none" stroke="#fff" stroke-width="2.5"/>
+  <line id="선_16" data-name="선 16" x2="7.636" transform="translate(0 11.663)" fill="none" stroke="#fff" stroke-width="2.5"/>
+  <line id="선_17" data-name="선 17" x2="7.636" transform="translate(10.182 6.181)" fill="none" stroke="#fff" stroke-width="2.5"/>
+  <line id="선_18" data-name="선 18" x2="7.636" transform="translate(20.364 14.136)" fill="none" stroke="#fff" stroke-width="2.5"/>
+</svg>
